@@ -14,6 +14,10 @@ class DataConfig:
             self.root_dir = '/home/wxs/lc/WHU-CD-256'
         elif data_name == 'DSIFN':
             self.root_dir = '/home/wxs/lc/DSIFN-CD-256'
+        elif data_name == 'OMBRIAS2':
+            self.root_dir = 'raw_data/OMBRIA/OmbriaS2'
+        elif data_name == 'OMBRIAS1':
+            self.root_dir = 'raw_data/OMBRIA/OmbriaS1'
         else:
             raise TypeError('%s has not defined' % data_name)
         return self

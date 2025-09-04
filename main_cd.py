@@ -49,7 +49,7 @@ if __name__ == '__main__':
 
     # model
     parser.add_argument('--n_class', default=2, type=int)
-    parser.add_argument('--net_G', default='base_transformer_pos_s4_dd8', type=str,
+    parser.add_argument('--net_G', default='base_GCN', type=str,
                         help='base_resnet18 | base_transformer_pos_s4 | '
                              'base_transformer_pos_s4_dd8 | '
                              'base_transformer_pos_s4_dd8_dedim8|')

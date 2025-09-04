@@ -14,7 +14,7 @@ def get_loader(data_name, img_size=256, batch_size=8, split='test',
     label_transform = dataConfig.label_transform
 
     if dataset == 'CDDataset':
-        data_set = CDDataset(root_dir=root_dir, split=split,
+        data_set = CDDataset(root_dir=root_dir, split=split,data_name=data_name,
                                  img_size=img_size, is_train=is_train,
                                  label_transform=label_transform)
     else:

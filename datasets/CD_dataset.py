@@ -19,16 +19,16 @@ CD data set with pixel-level labels；
 └─list
 """
 IMG_FOLDER_NAME = "A"
-IMG_POST_FOLDER_NAME = 'B'
+IMG_POST_FOLDER_NAME = "B"
 LIST_FOLDER_NAME = 'list'
-ANNOT_FOLDER_NAME = "label"
+ANNOT_FOLDER_NAME = "TMPmask"
 
 IGNORE = 255
 
 label_suffix='.png' # jpg for gan dataset, others : png
 
 def load_img_name_list(dataset_path):
-    img_name_list = np.loadtxt(dataset_path, dtype=np.str)
+    img_name_list = np.loadtxt(dataset_path, dtype=str)
     if img_name_list.ndim == 2:
         return img_name_list[:, 0]
     return img_name_list

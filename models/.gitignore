@@ -19,3 +19,4 @@ docs/src/**/*
 *.pt
 *.pth
 checkpoints
+raw_data/*
