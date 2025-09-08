@@ -41,7 +41,7 @@ def get_scheduler(optimizer, args):
         # args.lr_decay_iters
         scheduler = lr_scheduler.StepLR(optimizer, step_size=step_size, gamma=0.1)
     else:
-        return NotImplementedError('learning rate policy [%s] is not implemented', args.lr_policy)
+        return NotImplementedError('learning rate policy [%s] is not implemented' % args.lr_policy)
     return scheduler
 
 
@@ -126,7 +126,10 @@ def init_net(net, init_type='normal', init_gain=0.02, gpu_ids=[]):
 
 
 def define_G(args, init_type='normal', init_gain=0.02, gpu_ids=[]):
-    if args.net_G == 'base_GCN':
+
+    if args.data_name == 'SenForFlood' and args.net_G == 'base_GCN':
+        net = BASE_GCN(input_nc=8, output_nc=2,  resnet_stages_num=4)
+    elif args.net_G == 'base_GCN':
         net = BASE_GCN(input_nc=3, output_nc=2,  resnet_stages_num=4)
 
     else:
@@ -195,6 +198,9 @@ class ResNet(torch.nn.Module):
         self.edge = EDGModule(channel)
 
         self.pre = BasicConv2d(1024, 256, 1)
+
+        if input_nc != 3:
+            self.resnet.conv1 = nn.Conv2d(input_nc, 64, kernel_size=7, stride=2, padding=3, bias=False)
 
     def forward(self, x1, x2):
         x1 = self.forward_single(x1)

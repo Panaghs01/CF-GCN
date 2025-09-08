@@ -5,6 +5,8 @@ import os
 import utils
 from models.addGCNnetworks import *
 
+from torchsummary import summary
+
 import torch
 import torch.optim as optim
 
@@ -249,6 +251,8 @@ class CDTrainer():
 
 
     def train_models(self):
+
+        #summary(self.net_G, (3, 224, 224))
 
         self._load_checkpoint()
 

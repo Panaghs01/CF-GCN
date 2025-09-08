@@ -5,6 +5,7 @@
 import os
 from PIL import Image
 import numpy as np
+import rasterio
 
 from torch.utils import data
 from datasets import FDA_source_to_target_np
@@ -21,7 +22,7 @@ CD data set with pixel-level labels；
 IMG_FOLDER_NAME = "A"
 IMG_POST_FOLDER_NAME = "B"
 LIST_FOLDER_NAME = 'list'
-ANNOT_FOLDER_NAME = "TMPmask"
+ANNOT_FOLDER_NAME = "mask"
 
 IGNORE = 255
 
@@ -51,6 +52,12 @@ def get_label_path(root_dir, img_name):
     return os.path.join(root_dir, ANNOT_FOLDER_NAME, img_name.replace('.jpg', label_suffix))
 
 
+def load_multispectral_image(path):
+    with rasterio.open(path) as src:
+        img = src.read()  # shape: (bands, H, W)
+        img = np.transpose(img, (1, 2, 0))  # shape: (H, W, bands)
+    return img
+
 class ImageDataset(data.Dataset):
     """VOCdataloder"""
     def __init__(self, root_dir, split='train', img_size=256, is_train=True,to_tensor=True):
@@ -75,16 +82,19 @@ class ImageDataset(data.Dataset):
         else:
             self.augm = CDDataAugmentation(
                 img_size=self.img_size
-            )
+        )
     def __getitem__(self, index):
         name = self.img_name_list[index]
         A_path = get_img_path(self.root_dir, self.img_name_list[index % self.A_size])
         B_path = get_img_post_path(self.root_dir, self.img_name_list[index % self.A_size])
 
-        img = np.asarray(Image.open(A_path).convert('RGB'))
-        img_B = np.asarray(Image.open(B_path).convert('RGB'))
+        #img = np.asarray(Image.open(A_path).convert('RGB'))
+        #img_B = np.asarray(Image.open(B_path).convert('RGB'))
 
-        [img, img_B], _ = self.augm.transform([img, img_B],[], to_tensor=self.to_tensor)
+        img = load_multispectral_image(A_path)  # shape: (H, W, 12)
+        img_B = load_multispectral_image(B_path)
+
+        [img, img_B], _ = self.augm.transform([img, img_B], [], to_tensor=self.to_tensor)
 
         return {'A': img, 'B': img_B, 'name': name}
 
@@ -106,9 +116,13 @@ class CDDataset(ImageDataset):
         name = self.img_name_list[index]
         A_path = get_img_path(self.root_dir, self.img_name_list[index % self.A_size])
         B_path = get_img_post_path(self.root_dir, self.img_name_list[index % self.A_size])
-        img = np.asarray(Image.open(A_path).convert('RGB'))
+        #img = np.asarray(Image.open(A_path).convert('RGB'))
         # print(img_B.type())
-        img_B = np.asarray(Image.open(B_path).convert('RGB'))
+        #img_B = np.asarray(Image.open(B_path).convert('RGB'))
+
+        img = load_multispectral_image(A_path)  # shape: (H, W, 12)
+        img_B = load_multispectral_image(B_path)
+
         L_path = get_label_path(self.root_dir, self.img_name_list[index % self.A_size])
 
         if self.data_name=='WHU':
