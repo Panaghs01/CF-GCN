@@ -18,6 +18,8 @@ class DataConfig:
             self.root_dir = 'raw_data/OMBRIA/OmbriaS2'
         elif data_name == 'OMBRIAS1':
             self.root_dir = 'raw_data/OMBRIA/OmbriaS1'
+        elif data_name == 'SenForFlood':
+            self.root_dir = 'raw_data/SenForFlood'
         else:
             raise TypeError('%s has not defined' % data_name)
         return self
