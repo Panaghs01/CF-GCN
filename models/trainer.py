@@ -189,6 +189,7 @@ class CDTrainer():
             vis_pred = utils.make_numpy_grid(self._visualize_pred())
 
             vis_gt = utils.make_numpy_grid(self.batch['L'])
+            print(f"attempting to conacat {vis_input.shape, vis_input2.shape, vis_pred.shape, vis_gt.shape}, {type(vis_input)}")
             vis = np.concatenate([vis_input, vis_input2, vis_pred, vis_gt], axis=0)
             vis = np.clip(vis, a_min=0.0, a_max=1.0)
             file_name = os.path.join(
@@ -244,6 +245,8 @@ class CDTrainer():
         self.G_pred = self.net_G(img_in1, img_in2)
 
 
+
+
     def _backward_G(self):
         gt = self.batch['L'].to(self.device).long()
         self.G_loss = self._pxl_loss(self.G_pred, gt)
@@ -251,9 +254,6 @@ class CDTrainer():
 
 
     def train_models(self):
-
-        #summary(self.net_G, (3, 224, 224))
-
         self._load_checkpoint()
 
         # loop over the dataset multiple times
@@ -267,6 +267,7 @@ class CDTrainer():
             # Iterate over data.
             self.logger.write('lr: %0.7f\n' % self.optimizer_G.param_groups[0]['lr'])
             for self.batch_id, batch in enumerate(self.dataloaders['train'], 0):
+                print(f"A:{batch['A'].shape}, B:{batch['B'].shape}, L:{batch['L'].shape}")
                 self._forward_pass(batch)
                 # update G
                 self.optimizer_G.zero_grad()

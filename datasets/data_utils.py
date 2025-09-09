@@ -46,53 +46,142 @@ class CDDataAugmentation:
         self.with_scale_random_crop = with_scale_random_crop
         self.with_random_blur = with_random_blur
 
+    def pil_crop(image, box, cropsize, default_value):
+        assert isinstance(image, Image.Image)
+        img = np.array(image)
+
+        if len(img.shape) == 3:
+            cont = np.ones((cropsize, cropsize, img.shape[2]), img.dtype)*default_value
+        else:
+            cont = np.ones((cropsize, cropsize), img.dtype)*default_value
+        cont[box[0]:box[1], box[2]:box[3]] = img[box[4]:box[5], box[6]:box[7]]
+
+        return Image.fromarray(cont)
+
+
+    def get_random_crop_box(imgsize, cropsize):
+        h, w = imgsize
+        ch = min(cropsize, h)
+        cw = min(cropsize, w)
+
+        w_space = w - cropsize
+        h_space = h - cropsize
+
+        if w_space > 0:
+            cont_left = 0
+            img_left = random.randrange(w_space + 1)
+        else:
+            cont_left = random.randrange(-w_space + 1)
+            img_left = 0
+
+        if h_space > 0:
+            cont_top = 0
+            img_top = random.randrange(h_space + 1)
+        else:
+            cont_top = random.randrange(-h_space + 1)
+            img_top = 0
+
+        return cont_top, cont_top+ch, cont_left, cont_left+cw, img_top, img_top+ch, img_left, img_left+cw
+
+    def pil_resize(img, size, order):
+        assert isinstance(img, Image.Image)
+        if size[0] == img.size[0] and size[1] == img.size[1]:
+            return img
+        if order == 3:
+            resample = Image.BICUBIC
+        elif order == 0:
+            resample = Image.NEAREST
+        return img.resize(size[::-1], resample)
+
+    def pil_rescale(img, scale, order):
+        assert isinstance(img, Image.Image)
+        height, width = img.size
+        target_size = (int(np.round(height*scale)), int(np.round(width*scale)))
+        return pil_resize(img, target_size, order)
+
     def transform(self, imgs, labels, to_tensor=True):
         """
-        :param imgs: [ndarray,] (H, W, C)
-        :param labels: [ndarray,] (H, W)
-        :return: [tensor,],[tensor,]
+        :param imgs: [ndarray,]
+        :param labels: [ndarray,]
+        :return: [ndarray,],[ndarray,]
         """
-        # Convert to torch tensors (C, H, W)
-        imgs = [torch.from_numpy(img.transpose(2, 0, 1)).float() for img in imgs]
-        labels = [torch.from_numpy(np.array(label, np.uint8)).long() for label in labels]
+        # resize image and covert to tensor
+        imgs = [TF.to_pil_image(img) for img in imgs]
+        if self.img_size is None:
+            self.img_size = None
 
-        # Resize
         if not self.img_size_dynamic:
-            if imgs[0].shape[1:] != (self.img_size, self.img_size):
-                imgs = [TF.resize(img, [self.img_size, self.img_size], antialias=True) for img in imgs]
-                labels = [TF.resize(label.unsqueeze(0), [self.img_size, self.img_size], interpolation=TF.InterpolationMode.NEAREST).squeeze(0) for label in labels]
+            if imgs[0].size != (self.img_size, self.img_size):
+                imgs = [TF.resize(img, [self.img_size, self.img_size], interpolation=3)
+                        for img in imgs]
         else:
-            self.img_size = imgs[0].shape[1]
+            self.img_size = imgs[0].size[0]
 
-        # Random horizontal flip
+        labels = [TF.to_pil_image(img) for img in labels]
+        if len(labels) != 0:
+            if labels[0].size != (self.img_size, self.img_size):
+                labels = [TF.resize(img, [self.img_size, self.img_size], interpolation=0)
+                        for img in labels]
+
+        random_base = 0.5
         if self.with_random_hflip and random.random() > 0.5:
             imgs = [TF.hflip(img) for img in imgs]
-            labels = [TF.hflip(label) for label in labels]
+            labels = [TF.hflip(img) for img in labels]
 
-        # Random vertical flip
         if self.with_random_vflip and random.random() > 0.5:
             imgs = [TF.vflip(img) for img in imgs]
-            labels = [TF.vflip(label) for label in labels]
+            labels = [TF.vflip(img) for img in labels]
 
-        # Random rotation (by 90, 180, 270 degrees)
-        if self.with_random_rot and random.random() > 0.5:
-            angle = random.choice([90, 180, 270])
+        if self.with_random_rot and random.random() > random_base:
+            angles = [90, 180, 270]
+            index = random.randint(0, 2)
+            angle = angles[index]
             imgs = [TF.rotate(img, angle) for img in imgs]
-            labels = [TF.rotate(label, angle) for label in labels]
+            labels = [TF.rotate(img, angle) for img in labels]
 
-        # Random crop (centered, or random if you want)
         if self.with_random_crop and random.random() > 0:
-            i, j, h, w = transforms.RandomResizedCrop(size=self.img_size).get_params(
-                imgs[0], scale=(0.8, 1.0), ratio=(1, 1))
-            imgs = [TF.resized_crop(img, i, j, h, w, size=(self.img_size, self.img_size)) for img in imgs]
-            labels = [TF.resized_crop(label.unsqueeze(0), i, j, h, w, size=(self.img_size, self.img_size), interpolation=TF.InterpolationMode.NEAREST).squeeze(0) for label in labels]
+            i, j, h, w = transforms.RandomResizedCrop(size=self.img_size). \
+                get_params(img=imgs[0], scale=(0.8, 1.0), ratio=(1, 1))
 
-        # NOTE: with_scale_random_crop and with_random_blur are not implemented here, as they require more custom logic for tensors.
-        # You can implement them using torch.nn.functional.interpolate and torch.nn.functional.pad if needed.
+            imgs = [TF.resized_crop(img, i, j, h, w,
+                                    size=(self.img_size, self.img_size),
+                                    interpolation=Image.CUBIC)
+                    for img in imgs]
+
+            labels = [TF.resized_crop(img, i, j, h, w,
+                                      size=(self.img_size, self.img_size),
+                                      interpolation=Image.NEAREST)
+                      for img in labels]
+
+        if self.with_scale_random_crop:
+            # rescale
+            scale_range = [1, 1.2]
+            target_scale = scale_range[0] + random.random() * (scale_range[1] - scale_range[0])
+
+            imgs = [pil_rescale(img, target_scale, order=3) for img in imgs]
+            labels = [pil_rescale(img, target_scale, order=0) for img in labels]
+            # crop
+            imgsize = imgs[0].size  # h, w
+            box = get_random_crop_box(imgsize=imgsize, cropsize=self.img_size)
+            imgs = [pil_crop(img, box, cropsize=self.img_size, default_value=0)
+                    for img in imgs]
+            labels = [pil_crop(img, box, cropsize=self.img_size, default_value=255)
+                    for img in labels]
+
+        if self.with_random_blur and random.random() > 0:
+            radius = random.random()
+            imgs = [img.filter(ImageFilter.GaussianBlur(radius=radius))
+                    for img in imgs]
 
         if to_tensor:
-            mean = [0.5] * imgs[0].shape[0]
-            std = [0.5] * imgs[0].shape[0]
-            imgs = [TF.normalize(img, mean=mean, std=std) for img in imgs]
+            # to tensor
+            imgs = [TF.to_tensor(img) for img in imgs]
+            labels = [torch.from_numpy(np.array(img, np.uint8)).unsqueeze(dim=0)
+                      for img in labels]
+
+            imgs = [TF.normalize(img, mean=[0.5, 0.5, 0.5],std=[0.5, 0.5, 0.5])
+                    for img in imgs]
 
         return imgs, labels
+
+

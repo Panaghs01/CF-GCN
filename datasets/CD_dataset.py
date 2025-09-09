@@ -91,7 +91,7 @@ class ImageDataset(data.Dataset):
         #img = np.asarray(Image.open(A_path).convert('RGB'))
         #img_B = np.asarray(Image.open(B_path).convert('RGB'))
 
-        img = load_multispectral_image(A_path)  # shape: (H, W, 12)
+        img = load_multispectral_image(A_path)  # shape: (H, W, 8)
         img_B = load_multispectral_image(B_path)
 
         [img, img_B], _ = self.augm.transform([img, img_B], [], to_tensor=self.to_tensor)
@@ -120,7 +120,7 @@ class CDDataset(ImageDataset):
         # print(img_B.type())
         #img_B = np.asarray(Image.open(B_path).convert('RGB'))
 
-        img = load_multispectral_image(A_path)  # shape: (H, W, 12)
+        img = load_multispectral_image(A_path)  # shape: (H, W, 8)
         img_B = load_multispectral_image(B_path)
 
         L_path = get_label_path(self.root_dir, self.img_name_list[index % self.A_size])
@@ -142,7 +142,7 @@ class CDDataset(ImageDataset):
         if self.label_transform == 'norm':
             label = label // 255
 
-        [img, img_B], [label] = self.augm.transform([np.asarray(img, np.uint8), img_B], [label], to_tensor=self.to_tensor)
+        #[img, img_B], [label] = self.augm.transform([np.asarray(img, np.uint8), img_B], [label], to_tensor=self.to_tensor)
         # print(label.max())
         return {'name': name, 'A': img, 'B': img_B, 'L': label}
 
