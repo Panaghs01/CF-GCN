@@ -1,11 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+import cv2
 
 import utils
 from models.addGCNnetworks import *
-
-from torchsummary import summary
 
 import torch
 import torch.optim as optim
@@ -189,6 +188,14 @@ class CDTrainer():
             vis_pred = utils.make_numpy_grid(self._visualize_pred())
 
             vis_gt = utils.make_numpy_grid(self.batch['L'])
+
+            # Convert all to RGB and resize to same shape
+            target_shape = vis_input.shape[:2]
+            vis_input = to_rgb(resize(vis_input, target_shape))
+            vis_input2 = to_rgb(resize(vis_input2, target_shape))
+            vis_pred = to_rgb(resize(vis_pred, target_shape))
+            vis_gt = to_rgb(resize(vis_gt, target_shape))
+
             print(f"attempting to conacat {vis_input.shape, vis_input2.shape, vis_pred.shape, vis_gt.shape}, {type(vis_input)}")
             vis = np.concatenate([vis_input, vis_input2, vis_pred, vis_gt], axis=0)
             vis = np.clip(vis, a_min=0.0, a_max=1.0)
@@ -246,7 +253,6 @@ class CDTrainer():
 
 
 
-
     def _backward_G(self):
         gt = self.batch['L'].to(self.device).long()
         self.G_loss = self._pxl_loss(self.G_pred, gt)
@@ -279,7 +285,9 @@ class CDTrainer():
             self._collect_epoch_states()
             self._update_training_acc_curve()
             self._update_lr_schedulers()
-
+            
+            del batch
+            torch.cuda.empty_cache()
 
             ################## Eval ##################
             ##########################################
@@ -299,4 +307,20 @@ class CDTrainer():
             ##########################################
             self._update_val_acc_curve()
             self._update_checkpoints()
+
+def to_rgb(arr):
+    # If arr has 8 channels, select first 3 for visualization
+    if arr.shape[2] == 8:
+        return arr[..., :3]
+    # If arr has 1 channel, repeat to make 3 channels
+    elif arr.shape[2] == 1:
+        return np.repeat(arr, 3, axis=2)
+    # If arr has 2 channels, pad to 3 channels
+    elif arr.shape[2] == 2:
+        return np.concatenate([arr, np.zeros_like(arr[..., :1])], axis=2)
+    # If arr has 3 channels, do nothing
+    return arr
+
+def resize(arr, shape):
+    return cv2.resize(arr, (shape[1], shape[0]))
 

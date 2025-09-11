@@ -9,7 +9,7 @@ for folder in CEMS/*/; do
         if [[ -d "$folder/flood_mask" ]]; then
             for img in "$folder/flood_mask"/*; do
                 ext="${img##*.}"
-                cp "$img" "MASKS/s2_$(printf %06d $counterM)_mask.$ext"
+                cp "$img" "MASKS/s2_$(printf %06d $counterM).$ext"
                 counterM=$((counterM+1))
             done
         fi
@@ -21,7 +21,7 @@ for folder in DFO/*/*/; do
         if [[ -d "$folder/flood_mask" ]]; then
             for img in "$folder/flood_mask"/*; do
                 ext="${img##*.}"
-                cp "$img" "MASKS/s2_$(printf %06d $counterM)_mask.$ext"
+                cp "$img" "MASKS/s2_$(printf %06d $counterM).$ext"
                 counterM=$((counterM+1))
             done
         fi

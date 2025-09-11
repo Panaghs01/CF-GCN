@@ -22,7 +22,7 @@ CD data set with pixel-level labels；
 IMG_FOLDER_NAME = "A"
 IMG_POST_FOLDER_NAME = "B"
 LIST_FOLDER_NAME = 'list'
-ANNOT_FOLDER_NAME = "mask"
+ANNOT_FOLDER_NAME = "MASKS"
 
 IGNORE = 255
 
@@ -55,7 +55,8 @@ def get_label_path(root_dir, img_name):
 def load_multispectral_image(path):
     with rasterio.open(path) as src:
         img = src.read()  # shape: (bands, H, W)
-        img = np.transpose(img, (1, 2, 0))  # shape: (H, W, bands)
+        img = img.astype(np.float32)
+        #img = np.transpose(img, (1, 2, 0))  # shape: (H, W, bands)
     return img
 
 class ImageDataset(data.Dataset):
