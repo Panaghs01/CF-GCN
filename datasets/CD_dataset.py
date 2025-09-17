@@ -152,7 +152,7 @@ class CDDataset(ImageDataset):
             label = label // 255
         #print(f"A:{img.shape}, B:{img_B.shape}, L:{label.shape}, uniq={torch.unique(label)}")
 
-        #print(label.shape,img.shape,img_B.shape)
+        
         [img, img_B], [label] = self.augm.transform([np.asarray(img, np.uint8), img_B], [label], to_tensor=self.to_tensor)
         label = label.long()  
         # print(label.max())

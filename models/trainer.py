@@ -277,11 +277,10 @@ class CDTrainer():
             # Iterate over data.
             self.logger.write('lr: %0.7f\n' % self.optimizer_G.param_groups[0]['lr'])
             for self.batch_id, batch in enumerate(self.dataloaders['train'], 0):
-                img = batch['A'][0].cpu().numpy()
-                img = np.transpose(img,(1,2,0))
+                #img = batch['L'][0].cpu().numpy()
+                #img = np.transpose(img,(1,2,0))
                 #img = (img - img.min()) / (img.max() - img.min() + 1e-8)
-                plt.imshow(img)
-                plt.show()
+               
                 self._forward_pass(batch)
                 # update G
                 self.optimizer_G.zero_grad()
