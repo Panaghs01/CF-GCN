@@ -194,7 +194,11 @@ class CDTrainer():
             vis_input = to_rgb(resize(vis_input, target_shape))
             vis_input2 = to_rgb(resize(vis_input2, target_shape))
             vis_pred = to_rgb(resize(vis_pred, target_shape))
-            vis_gt = to_rgb(resize(vis_gt, target_shape))
+            if vis_gt.ndim == 3 and vis_gt.shape[2] == 2:
+                vis_gt = np.argmax(vis_gt, axis=2).astype(np.uint8)
+            if vis_gt.ndim == 2:
+                vis_gt = np.stack([vis_gt]*3, axis=-1)
+            vis_gt = resize(vis_gt, target_shape)
 
             print(f"attempting to conacat {vis_input.shape, vis_input2.shape, vis_pred.shape, vis_gt.shape}, {type(vis_input)}")
             vis = np.concatenate([vis_input, vis_input2, vis_pred, vis_gt], axis=0)
@@ -273,7 +277,11 @@ class CDTrainer():
             # Iterate over data.
             self.logger.write('lr: %0.7f\n' % self.optimizer_G.param_groups[0]['lr'])
             for self.batch_id, batch in enumerate(self.dataloaders['train'], 0):
-                print(f"A:{batch['A'].shape}, B:{batch['B'].shape}, L:{batch['L'].shape}")
+                img = batch['A'][0].cpu().numpy()
+                img = np.transpose(img,(1,2,0))
+                #img = (img - img.min()) / (img.max() - img.min() + 1e-8)
+                plt.imshow(img)
+                plt.show()
                 self._forward_pass(batch)
                 # update G
                 self.optimizer_G.zero_grad()
@@ -322,5 +330,6 @@ def to_rgb(arr):
     return arr
 
 def resize(arr, shape):
+    arr = arr.astype(np.uint8)
     return cv2.resize(arr, (shape[1], shape[0]))
 

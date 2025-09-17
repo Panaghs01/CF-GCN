@@ -6,11 +6,11 @@ import os
 from PIL import Image
 import numpy as np
 import rasterio
-
+import torch
 from torch.utils import data
 from datasets import FDA_source_to_target_np
 from datasets.data_utils import CDDataAugmentation
-
+import matplotlib.pyplot as plt
 
 """
 CD data set with pixel-level labels；
@@ -52,10 +52,12 @@ def get_label_path(root_dir, img_name):
     return os.path.join(root_dir, ANNOT_FOLDER_NAME, img_name.replace('.jpg', label_suffix))
 
 
-def load_multispectral_image(path):
+def load_multispectral_image(path,channels=[3,4,5]):
     with rasterio.open(path) as src:
-        img = src.read()  # shape: (bands, H, W)
+        img = src.read()[channels]  # shape: (bands, H, W)
         img = img.astype(np.float32)
+        #plt.imshow(img[0], cmap='gray')
+        #plt.show()
         #img = np.transpose(img, (1, 2, 0))  # shape: (H, W, bands)
     return img
 
@@ -137,13 +139,23 @@ class CDDataset(ImageDataset):
            src_in_trg = FDA_source_to_target_np(im_src, im_trg, L=0.01)
             #  A偏向于B风格
            img = src_in_trg.transpose((1, 2, 0))
+        with rasterio.open(L_path) as src:
+            label = src.read(1)  
+            label = (label > 0).astype(np.uint8)  # binarize 0/1
+            #plt.imshow(label, cmap='gray')
+            #plt.show()
+        #print(f"loaded label {L_path} with unique values {np.unique(label)}")
 
-        label = np.array(Image.open(L_path), dtype=np.uint8)
+        
         #  二分类中，前景标注为255
         if self.label_transform == 'norm':
             label = label // 255
+        #print(f"A:{img.shape}, B:{img_B.shape}, L:{label.shape}, uniq={torch.unique(label)}")
 
-        #[img, img_B], [label] = self.augm.transform([np.asarray(img, np.uint8), img_B], [label], to_tensor=self.to_tensor)
+        #print(label.shape,img.shape,img_B.shape)
+        [img, img_B], [label] = self.augm.transform([np.asarray(img, np.uint8), img_B], [label], to_tensor=self.to_tensor)
+        label = label.long()  
         # print(label.max())
+        #label = label.unsqueeze(0) 
         return {'name': name, 'A': img, 'B': img_B, 'L': label}
 
