@@ -182,7 +182,7 @@ class CDTrainer():
 
 
         if np.mod(self.batch_id, 500) == 1:
-            vis_input = utils.make_numpy_grid(de_norm(self.batch['A']))
+            vis_input = utils.make_numpy_grid(de_norm(self.batch['A'])) #de_norm
             vis_input2 = utils.make_numpy_grid(de_norm(self.batch['B']))
 
             vis_pred = utils.make_numpy_grid(self._visualize_pred())
@@ -191,9 +191,7 @@ class CDTrainer():
 
             # Convert all to RGB and resize to same shape
             target_shape = vis_input.shape[:2]
-            vis_input = to_rgb(resize(vis_input, target_shape))
-            vis_input2 = to_rgb(resize(vis_input2, target_shape))
-            vis_pred = to_rgb(resize(vis_pred, target_shape))
+
             if vis_gt.ndim == 3 and vis_gt.shape[2] == 2:
                 vis_gt = np.argmax(vis_gt, axis=2).astype(np.uint8)
             if vis_gt.ndim == 2:
@@ -277,10 +275,11 @@ class CDTrainer():
             # Iterate over data.
             self.logger.write('lr: %0.7f\n' % self.optimizer_G.param_groups[0]['lr'])
             for self.batch_id, batch in enumerate(self.dataloaders['train'], 0):
-                #img = batch['L'][0].cpu().numpy()
-                #img = np.transpose(img,(1,2,0))
-                #img = (img - img.min()) / (img.max() - img.min() + 1e-8)
-               
+                """img = batch['A'][0].cpu().numpy()
+                img = np.transpose(img,(1,2,0))
+                img = (img - img.min()) / (img.max() - img.min() + 1e-8)
+                plt.imshow(img)
+                plt.show() """
                 self._forward_pass(batch)
                 # update G
                 self.optimizer_G.zero_grad()

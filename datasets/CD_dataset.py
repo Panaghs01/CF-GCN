@@ -52,7 +52,7 @@ def get_label_path(root_dir, img_name):
     return os.path.join(root_dir, ANNOT_FOLDER_NAME, img_name.replace('.jpg', label_suffix))
 
 
-def load_multispectral_image(path,channels=[3,4,5]):
+def load_multispectral_image(path,channels=[2,3,4]):
     with rasterio.open(path) as src:
         img = src.read()[channels]  # shape: (bands, H, W)
         img = img.astype(np.float32)
@@ -60,6 +60,10 @@ def load_multispectral_image(path,channels=[3,4,5]):
         #plt.show()
         #img = np.transpose(img, (1, 2, 0))  # shape: (H, W, bands)
     return img
+
+def scale(img):
+    img = 255 * (img - img.min()) / (img.max() - img.min())
+    return img.astype(np.uint8)
 
 class ImageDataset(data.Dataset):
     """VOCdataloder"""
@@ -126,6 +130,7 @@ class CDDataset(ImageDataset):
         img = load_multispectral_image(A_path)  # shape: (H, W, 8)
         img_B = load_multispectral_image(B_path)
 
+
         L_path = get_label_path(self.root_dir, self.img_name_list[index % self.A_size])
 
         if self.data_name=='WHU':
@@ -150,11 +155,12 @@ class CDDataset(ImageDataset):
         #  二分类中，前景标注为255
         if self.label_transform == 'norm':
             label = label // 255
-        #print(f"A:{img.shape}, B:{img_B.shape}, L:{label.shape}, uniq={torch.unique(label)}")
+        #print(f"A:{img.shape}, B:{img_B.shape}, L:{label.shape}, uniq={torch.unique(label)}"))
 
-        
+
         [img, img_B], [label] = self.augm.transform([np.asarray(img, np.uint8), img_B], [label], to_tensor=self.to_tensor)
-        label = label.long()  
+        label = label.long() 
+        #print(torch.unique(img))
         # print(label.max())
         #label = label.unsqueeze(0) 
         return {'name': name, 'A': img, 'B': img_B, 'L': label}

@@ -12,13 +12,12 @@ import torch
 def to_tensor_and_norm(imgs, labels):
     # imgs: list of np.ndarray (H, W, C)
     imgs = [torch.from_numpy(img.transpose(2, 0, 1)).float() for img in imgs]
+
+    # Scale floats from [0,1] → [0,255] and cast to uint8
+    imgs = [ (img * 255).to(torch.uint8) for img in imgs ]
+
     labels = [torch.from_numpy(np.array(img, np.uint8)).unsqueeze(dim=0)
               for img in labels]
-
-    # Assume 12 bands for multispectral, adjust if needed
-    mean = [0.5] * imgs[0].shape[0]
-    std = [0.5] * imgs[0].shape[0]
-    imgs = [TF.normalize(img, mean=mean, std=std) for img in imgs]
     return imgs, labels
 
 def pil_crop(image, box, cropsize, default_value):
@@ -181,9 +180,9 @@ class CDDataAugmentation:
             imgs = [TF.to_tensor(img) for img in imgs]
             labels = [torch.from_numpy(np.array(img, np.uint8)).unsqueeze(dim=0)
                       for img in labels]
-
-            imgs = [TF.normalize(img, mean=[0.5, 0.5, 0.5],std=[0.5, 0.5, 0.5])
-                    for img in imgs]
+            #imgs = [(img * 255).to(torch.uint8) for img in imgs]
+            #imgs = [TF.normalize(img, mean=[0.5, 0.5, 0.5],std=[0.5, 0.5, 0.5])
+            #        for img in imgs]
 
         return imgs, labels
 
