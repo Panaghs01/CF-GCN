@@ -128,7 +128,7 @@ def init_net(net, init_type='normal', init_gain=0.02, gpu_ids=[]):
 def define_G(args, init_type='normal', init_gain=0.02, gpu_ids=[]):
 
     if args.data_name == 'SenForFlood' and args.net_G == 'base_GCN':
-        net = BASE_GCN(input_nc=3, output_nc=2,  resnet_stages_num=4)
+        net = BASE_GCN(input_nc=5, output_nc=2,  resnet_stages_num=4)
     elif args.net_G == 'base_GCN':
         net = BASE_GCN(input_nc=3, output_nc=2,  resnet_stages_num=4)
 
@@ -239,7 +239,7 @@ class ResNet(torch.nn.Module):
             raise NotImplementedError
 
         edge_feat = self.edge(x3_rfb, x2_rfb, x1_rfb)
-        alledges = F.interpolate(edge_feat, size=(32,32), mode='bilinear', align_corners=True)
+        alledges = F.interpolate(edge_feat, size=(64,64), mode='bilinear', align_corners=True)  #TODO 64-32
 
         # resnet50
         x_8 = self.pre(x_8)
@@ -435,9 +435,10 @@ class BASE_GCN(ResNet):
         x2_coarse_mask = self.coarse_mask_generation(x2)
 
         edge_abs = self.edge(A3-B3, A2-B2, A1-B1)
-        alledge_abs = F.interpolate(edge_abs, size=(32,32), mode='bilinear', align_corners=True)
+        alledge_abs = F.interpolate(edge_abs, size=(64,64), mode='bilinear', align_corners=True)
 
         #  encoder
+        #print(x1.shape,x2.shape,alledge_abs.shape,type(x1),'\n\n\n\n')
         self.tokens_ = torch.cat([x1, x2, alledge_abs], dim=1)
         self.tokens = self.cfgcn(self.tokens_, None)
 

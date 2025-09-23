@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 import cv2
-
+import rasterio
 import utils
 from models.addGCNnetworks import *
 
@@ -135,8 +135,10 @@ class CDTrainer():
         return imps, est
 
     def _visualize_pred(self):
+
         pred = torch.argmax(self.G_pred, dim=1, keepdim=True)
         pred_vis = pred * 255
+        #print(pred_vis.shape)
         return pred_vis
 
     def _save_checkpoint(self, ckpt_name):
@@ -182,11 +184,13 @@ class CDTrainer():
 
 
         if np.mod(self.batch_id, 500) == 1:
-            vis_input = utils.make_numpy_grid(de_norm(self.batch['A'])) #de_norm
-            vis_input2 = utils.make_numpy_grid(de_norm(self.batch['B']))
+            vis_input = utils.make_numpy_grid(self.batch['A']) #de_norm
+            vis_input2 = utils.make_numpy_grid(self.batch['B'])
 
             vis_pred = utils.make_numpy_grid(self._visualize_pred())
-
+            print(vis_pred.shape)
+            vis_pred = np.stack([vis_pred[:,:,0]]*5, axis=-1)
+            print(vis_pred.shape)
             vis_gt = utils.make_numpy_grid(self.batch['L'])
 
             # Convert all to RGB and resize to same shape
@@ -195,16 +199,22 @@ class CDTrainer():
             if vis_gt.ndim == 3 and vis_gt.shape[2] == 2:
                 vis_gt = np.argmax(vis_gt, axis=2).astype(np.uint8)
             if vis_gt.ndim == 2:
-                vis_gt = np.stack([vis_gt]*3, axis=-1)
+                vis_gt = np.stack([vis_gt]*5, axis=-1)
             vis_gt = resize(vis_gt, target_shape)
 
-            print(f"attempting to conacat {vis_input.shape, vis_input2.shape, vis_pred.shape, vis_gt.shape}, {type(vis_input)}")
+            print(f"\n\n\nattempting to conacat {vis_input.shape, vis_input2.shape, vis_pred.shape, vis_gt.shape}, {type(vis_input)}")
             vis = np.concatenate([vis_input, vis_input2, vis_pred, vis_gt], axis=0)
             vis = np.clip(vis, a_min=0.0, a_max=1.0)
             file_name = os.path.join(
                 self.vis_dir, 'istrain_'+str(self.is_training)+'_'+
                               str(self.epoch_id)+'_'+str(self.batch_id)+'.jpg')
-            plt.imsave(file_name, vis)
+            #print(vis.shape,type(vis))
+            #plt.imsave(file_name, vis)
+            with rasterio.open(file_name, 'w', driver='GTiff', height=vis.shape[0],\
+                                width=vis.shape[1], count=vis.shape[2], dtype=vis.dtype) as dst:
+                for i in range(3):
+                    dst.write((vis[:,:,i]).astype(np.uint8), i+1)
+                    
 
     def _collect_epoch_states(self):
         scores = self.running_metric.get_scores()
@@ -275,11 +285,12 @@ class CDTrainer():
             # Iterate over data.
             self.logger.write('lr: %0.7f\n' % self.optimizer_G.param_groups[0]['lr'])
             for self.batch_id, batch in enumerate(self.dataloaders['train'], 0):
-                """img = batch['A'][0].cpu().numpy()
-                img = np.transpose(img,(1,2,0))
-                img = (img - img.min()) / (img.max() - img.min() + 1e-8)
-                plt.imshow(img)
-                plt.show() """
+                #img = batch['A'][0].cpu().numpy()
+                #img = np.transpose(img,(1,2,0))
+                #img = (img - img.min()) / (img.max() - img.min() + 1e-8)
+                #plt.imshow(img)
+                #plt.show() 
+                
                 self._forward_pass(batch)
                 # update G
                 self.optimizer_G.zero_grad()
@@ -328,6 +339,7 @@ def to_rgb(arr):
     return arr
 
 def resize(arr, shape):
-    arr = arr.astype(np.uint8)
+    arr = arr[:,:,0,:].astype(np.uint8)
+    #print(f"array size {arr[:,:,0,:].shape}, target shape {shape}")
     return cv2.resize(arr, (shape[1], shape[0]))
 

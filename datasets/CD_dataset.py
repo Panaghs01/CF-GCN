@@ -6,6 +6,7 @@ import os
 from PIL import Image
 import numpy as np
 import rasterio
+
 import torch
 from torch.utils import data
 from datasets import FDA_source_to_target_np
@@ -52,17 +53,26 @@ def get_label_path(root_dir, img_name):
     return os.path.join(root_dir, ANNOT_FOLDER_NAME, img_name.replace('.jpg', label_suffix))
 
 
-def load_multispectral_image(path,channels=[2,3,4]):
+def load_multispectral_image(path,channels=[0,1,2,3,4]):
     with rasterio.open(path) as src:
         img = src.read()[channels]  # shape: (bands, H, W)
         img = img.astype(np.float32)
-        #plt.imshow(img[0], cmap='gray')
-        #plt.show()
+        #flip = img[:,:,::-1]
+        """plt.figure(figsize=(10, 4))
+        plt.subplot(1, 2, 1)
+        plt.imshow(img[0], cmap='gray')
+        plt.title('Original')
+        plt.subplot(1, 2, 2)
+        plt.imshow(flip[0], cmap='gray')
+        plt.title('Flipped')
+        plt.show() """
         #img = np.transpose(img, (1, 2, 0))  # shape: (H, W, bands)
     return img
 
 def scale(img):
+    #print(img.min(), img.max())
     img = 255 * (img - img.min()) / (img.max() - img.min())
+    #print(img)
     return img.astype(np.uint8)
 
 class ImageDataset(data.Dataset):
@@ -102,7 +112,8 @@ class ImageDataset(data.Dataset):
         img_B = load_multispectral_image(B_path)
 
         [img, img_B], _ = self.augm.transform([img, img_B], [], to_tensor=self.to_tensor)
-
+        print(img.shape)
+        #rasterio.show(img.permute(1,2,0))
         return {'A': img, 'B': img_B, 'name': name}
 
     def __len__(self):
@@ -128,6 +139,7 @@ class CDDataset(ImageDataset):
         #img_B = np.asarray(Image.open(B_path).convert('RGB'))
 
         img = load_multispectral_image(A_path)  # shape: (H, W, 8)
+        
         img_B = load_multispectral_image(B_path)
 
 
@@ -156,10 +168,16 @@ class CDDataset(ImageDataset):
         if self.label_transform == 'norm':
             label = label // 255
         #print(f"A:{img.shape}, B:{img_B.shape}, L:{label.shape}, uniq={torch.unique(label)}"))
-
-
-        [img, img_B], [label] = self.augm.transform([np.asarray(img, np.uint8), img_B], [label], to_tensor=self.to_tensor)
+        img = scale(img)
+        img_B = scale(img_B)
+        #rasterio.plot.show(img[0])
+        [img, img_B], [label] = self.augm.transform([np.asarray(img, np.uint8),\
+                                                      img_B], [label], to_tensor=self.to_tensor,rasterio_read=True)
         label = label.long() 
+
+        #plt.imshow(np.transpose(img.numpy(),(1,2,0)))
+        #plt.show()
+
         #print(torch.unique(img))
         # print(label.max())
         #label = label.unsqueeze(0) 

@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
-
+first_test_results
 checkpoints
 vis
 .Python

@@ -59,7 +59,7 @@ def get_loaders(args):
 
     datasets = {'train': training_set, 'val': val_set}
     dataloaders = {x: DataLoader(datasets[x], batch_size=args.batch_size,
-                                 shuffle=True, num_workers=args.num_workers)
+                                 shuffle=True, num_workers=args.num_workers,pin_memory=True)
                    for x in ['train', 'val']}
 
     return dataloaders
@@ -69,8 +69,9 @@ def make_numpy_grid(tensor_data, pad_value=0,padding=0):
     tensor_data = tensor_data.detach()
     vis = utils.make_grid(tensor_data, pad_value=pad_value,padding=padding)
     vis = np.array(vis.cpu()).transpose((1,2,0))
-    if vis.shape[2] == 1:
-        vis = np.stack([vis, vis, vis], axis=-1)
+    #print(vis.shape)
+    if vis.shape[2] <= 2:
+        vis = np.stack([vis]*5, axis=-1)
     return vis
 
 
