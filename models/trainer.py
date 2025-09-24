@@ -23,7 +23,7 @@ class CDTrainer():
     def __init__(self, args, dataloaders):
 
         self.dataloaders = dataloaders
-
+        self.data_name = args.data_name
         self.n_class = args.n_class
         # define G
         self.net_G = define_G(args=args, gpu_ids=args.gpu_ids)
@@ -138,7 +138,7 @@ class CDTrainer():
 
         pred = torch.argmax(self.G_pred, dim=1, keepdim=True)
         pred_vis = pred * 255
-        #print(pred_vis.shape)
+        print(pred)
         return pred_vis
 
     def _save_checkpoint(self, ckpt_name):
@@ -188,32 +188,41 @@ class CDTrainer():
             vis_input2 = utils.make_numpy_grid(self.batch['B'])
 
             vis_pred = utils.make_numpy_grid(self._visualize_pred())
-            print(vis_pred.shape)
-            vis_pred = np.stack([vis_pred[:,:,0]]*5, axis=-1)
-            print(vis_pred.shape)
+
             vis_gt = utils.make_numpy_grid(self.batch['L'])
 
-            # Convert all to RGB and resize to same shape
+            # Convert all to 8-channel format
             target_shape = vis_input.shape[:2]
 
-            if vis_gt.ndim == 3 and vis_gt.shape[2] == 2:
-                vis_gt = np.argmax(vis_gt, axis=2).astype(np.uint8)
-            if vis_gt.ndim == 2:
-                vis_gt = np.stack([vis_gt]*5, axis=-1)
-            vis_gt = resize(vis_gt, target_shape)
+            if self.data_name == 'SenForFlood':
+                # Ensure vis_gt has 8 channels using np.stack([vis_gt]*8, axis=2)
+                if vis_gt.shape[2] < 8:
+                    vis_gt = np.stack([vis_gt[..., 0]] * 8, axis=2)
+                # Ensure vis_pred has 8 channels using np.stack([vis_pred]*8, axis=2)
+                if vis_pred.shape[2] < 8:
+                    vis_pred = np.stack([vis_pred[..., 0]] * 8, axis=2)
 
+                vis_gt = resize(vis_gt, target_shape)
+            #vis_pred = resize(vis_pred, target_shape)
+            print(f"visgt: {vis_gt.shape}, vispred: {vis_pred.shape}, target: {target_shape}")
+            
             print(f"\n\n\nattempting to conacat {vis_input.shape, vis_input2.shape, vis_pred.shape, vis_gt.shape}, {type(vis_input)}")
             vis = np.concatenate([vis_input, vis_input2, vis_pred, vis_gt], axis=0)
-            vis = np.clip(vis, a_min=0.0, a_max=1.0)
+            vis = np.clip(vis, a_min=0.0, a_max=255.0)
+
             file_name = os.path.join(
                 self.vis_dir, 'istrain_'+str(self.is_training)+'_'+
                               str(self.epoch_id)+'_'+str(self.batch_id)+'.jpg')
             #print(vis.shape,type(vis))
-            #plt.imsave(file_name, vis)
-            with rasterio.open(file_name, 'w', driver='GTiff', height=vis.shape[0],\
-                                width=vis.shape[1], count=vis.shape[2], dtype=vis.dtype) as dst:
-                for i in range(3):
-                    dst.write((vis[:,:,i]).astype(np.uint8), i+1)
+
+
+            if self.data_name == 'SenForFlood':
+                with rasterio.open(file_name, 'w', driver='GTiff', height=vis.shape[0],\
+                                    width=vis.shape[1], count=vis.shape[2], dtype=vis.dtype) as dst:
+                    for i in range(8):
+                        dst.write((vis[:,:,i]).astype(np.uint8), i+1)
+            else:
+                plt.imsave(file_name, vis)
                     
 
     def _collect_epoch_states(self):
@@ -267,7 +276,7 @@ class CDTrainer():
 
     def _backward_G(self):
         gt = self.batch['L'].to(self.device).long()
-        self.G_loss = self._pxl_loss(self.G_pred, gt)
+        self.G_loss = self._pxl_loss(self.G_pred, gt, ignore_index=256,weight=torch.tensor([0.5,0.6]).to(self.device))
         self.G_loss.backward()
 
 
@@ -285,25 +294,23 @@ class CDTrainer():
             # Iterate over data.
             self.logger.write('lr: %0.7f\n' % self.optimizer_G.param_groups[0]['lr'])
             for self.batch_id, batch in enumerate(self.dataloaders['train'], 0):
-                #img = batch['A'][0].cpu().numpy()
-                #img = np.transpose(img,(1,2,0))
-                #img = (img - img.min()) / (img.max() - img.min() + 1e-8)
-                #plt.imshow(img)
-                #plt.show() 
-                
+
                 self._forward_pass(batch)
                 # update G
+                
                 self.optimizer_G.zero_grad()
                 self._backward_G()
+                #print(self.G_pred)
                 self.optimizer_G.step()
                 self._collect_running_batch_states()
                 self._timer_update()
 
+                del batch
             self._collect_epoch_states()
             self._update_training_acc_curve()
             self._update_lr_schedulers()
             
-            del batch
+
             torch.cuda.empty_cache()
 
             ################## Eval ##################
@@ -339,7 +346,8 @@ def to_rgb(arr):
     return arr
 
 def resize(arr, shape):
-    arr = arr[:,:,0,:].astype(np.uint8)
+    arr = arr.astype(np.uint8)
+    arr = 255 * (arr - arr.min()) / (arr.max() - arr.min() + 1e-8)
     #print(f"array size {arr[:,:,0,:].shape}, target shape {shape}")
     return cv2.resize(arr, (shape[1], shape[0]))
 

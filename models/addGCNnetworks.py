@@ -128,7 +128,7 @@ def init_net(net, init_type='normal', init_gain=0.02, gpu_ids=[]):
 def define_G(args, init_type='normal', init_gain=0.02, gpu_ids=[]):
 
     if args.data_name == 'SenForFlood' and args.net_G == 'base_GCN':
-        net = BASE_GCN(input_nc=5, output_nc=2,  resnet_stages_num=4)
+        net = BASE_GCN(input_nc=8, output_nc=2,  resnet_stages_num=4)
     elif args.net_G == 'base_GCN':
         net = BASE_GCN(input_nc=3, output_nc=2,  resnet_stages_num=4)
 

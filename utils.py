@@ -69,9 +69,7 @@ def make_numpy_grid(tensor_data, pad_value=0,padding=0):
     tensor_data = tensor_data.detach()
     vis = utils.make_grid(tensor_data, pad_value=pad_value,padding=padding)
     vis = np.array(vis.cpu()).transpose((1,2,0))
-    #print(vis.shape)
-    if vis.shape[2] <= 2:
-        vis = np.stack([vis]*5, axis=-1)
+    
     return vis
 
 

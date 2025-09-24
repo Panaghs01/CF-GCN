@@ -148,7 +148,7 @@ class CDDataAugmentation:
                 imgs = [TF.resize(torch.from_numpy(img.transpose(2, 0, 1).copy()), [self.img_size, self.img_size], interpolation=TF.InterpolationMode.BICUBIC).numpy().transpose(1, 2, 0) for img in imgs]
                 labels = [TF.resize(torch.from_numpy(label[np.newaxis, ...].copy()), [self.img_size, self.img_size], interpolation=TF.InterpolationMode.NEAREST).numpy()[0] for label in labels]
         """ 
-           
+            #rasterio.plot.show(imgs[0][:3])
             if to_tensor:
                 
                 imgs = [torch.from_numpy(img.copy()).float() for img in imgs]

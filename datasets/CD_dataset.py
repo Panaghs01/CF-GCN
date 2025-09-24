@@ -53,7 +53,7 @@ def get_label_path(root_dir, img_name):
     return os.path.join(root_dir, ANNOT_FOLDER_NAME, img_name.replace('.jpg', label_suffix))
 
 
-def load_multispectral_image(path,channels=[0,1,2,3,4]):
+def load_multispectral_image(path,channels=[0,1,2,3,4,5,6,7]):
     with rasterio.open(path) as src:
         img = src.read()[channels]  # shape: (bands, H, W)
         img = img.astype(np.float32)
@@ -71,7 +71,7 @@ def load_multispectral_image(path,channels=[0,1,2,3,4]):
 
 def scale(img):
     #print(img.min(), img.max())
-    img = 255 * (img - img.min()) / (img.max() - img.min())
+    img = 255 * (img - img.min()) / (img.max() - img.min() + 1e-8)
     #print(img)
     return img.astype(np.uint8)
 
@@ -105,6 +105,7 @@ class ImageDataset(data.Dataset):
         A_path = get_img_path(self.root_dir, self.img_name_list[index % self.A_size])
         B_path = get_img_post_path(self.root_dir, self.img_name_list[index % self.A_size])
 
+        
         #img = np.asarray(Image.open(A_path).convert('RGB'))
         #img_B = np.asarray(Image.open(B_path).convert('RGB'))
 
@@ -112,7 +113,7 @@ class ImageDataset(data.Dataset):
         img_B = load_multispectral_image(B_path)
 
         [img, img_B], _ = self.augm.transform([img, img_B], [], to_tensor=self.to_tensor)
-        print(img.shape)
+        #print(img.shape)
         #rasterio.show(img.permute(1,2,0))
         return {'A': img, 'B': img_B, 'name': name}
 
@@ -129,18 +130,20 @@ class CDDataset(ImageDataset):
                                         to_tensor=to_tensor)
         self.label_transform = label_transform
         self.data_name = data_name
+        self.raster = True if self.data_name == 'SenForFlood' or 'OMBRIA' else False
 
     def __getitem__(self, index):
         name = self.img_name_list[index]
         A_path = get_img_path(self.root_dir, self.img_name_list[index % self.A_size])
         B_path = get_img_post_path(self.root_dir, self.img_name_list[index % self.A_size])
-        #img = np.asarray(Image.open(A_path).convert('RGB'))
-        # print(img_B.type())
-        #img_B = np.asarray(Image.open(B_path).convert('RGB'))
+        if self.data_name=='SenForFlood':
 
-        img = load_multispectral_image(A_path)  # shape: (H, W, 8)
-        
-        img_B = load_multispectral_image(B_path)
+            img = load_multispectral_image(A_path)  # shape: (H, W, 8)
+            img_B = load_multispectral_image(B_path)
+        else:
+            img = np.asarray(Image.open(A_path).convert('RGB'))
+            # print(img_B.type())
+            img_B = np.asarray(Image.open(B_path).convert('RGB'))
 
 
         L_path = get_label_path(self.root_dir, self.img_name_list[index % self.A_size])
@@ -170,9 +173,9 @@ class CDDataset(ImageDataset):
         #print(f"A:{img.shape}, B:{img_B.shape}, L:{label.shape}, uniq={torch.unique(label)}"))
         img = scale(img)
         img_B = scale(img_B)
-        #rasterio.plot.show(img[0])
+        #rasterio.plot.show(img[4:7])
         [img, img_B], [label] = self.augm.transform([np.asarray(img, np.uint8),\
-                                                      img_B], [label], to_tensor=self.to_tensor,rasterio_read=True)
+                                                      img_B], [label], to_tensor=self.to_tensor,rasterio_read=self.raster)
         label = label.long() 
 
         #plt.imshow(np.transpose(img.numpy(),(1,2,0)))
