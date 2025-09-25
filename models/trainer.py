@@ -276,7 +276,7 @@ class CDTrainer():
 
     def _backward_G(self):
         gt = self.batch['L'].to(self.device).long()
-        self.G_loss = self._pxl_loss(self.G_pred, gt, ignore_index=256,weight=torch.tensor([0.5,0.6]).to(self.device))
+        self.G_loss = self._pxl_loss(self.G_pred, gt, ignore_index=255,weight=torch.tensor([0.5,0.8]).to(self.device))
         self.G_loss.backward()
 
 
@@ -293,9 +293,11 @@ class CDTrainer():
             self.net_G.train()  # Set model to training mode
             # Iterate over data.
             self.logger.write('lr: %0.7f\n' % self.optimizer_G.param_groups[0]['lr'])
+            print(self.dataloaders['train'].__len__())
             for self.batch_id, batch in enumerate(self.dataloaders['train'], 0):
-
+                
                 self._forward_pass(batch)
+                
                 # update G
                 
                 self.optimizer_G.zero_grad()

@@ -77,7 +77,7 @@ def scale(img):
 
 class ImageDataset(data.Dataset):
     """VOCdataloder"""
-    def __init__(self, root_dir, split='train', img_size=256, is_train=True,to_tensor=True):
+    def __init__(self, root_dir, split='val', img_size=256, is_train=True,to_tensor=True):
         super(ImageDataset, self).__init__()
         self.root_dir = root_dir
         self.img_size = img_size
@@ -124,7 +124,7 @@ class ImageDataset(data.Dataset):
 
 class CDDataset(ImageDataset):
 
-    def __init__(self, root_dir, img_size, data_name, split='train', is_train=True, label_transform=None,
+    def __init__(self, root_dir, img_size, data_name, split='val', is_train=True, label_transform=None,
                  to_tensor=True):
         super(CDDataset, self).__init__(root_dir, img_size=img_size, split=split, is_train=is_train,
                                         to_tensor=to_tensor)

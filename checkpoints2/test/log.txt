@@ -1,1022 +1,156 @@
-================ (Tue Sep 23 12:01:09 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 8 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:09:04 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 8 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:10:46 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 8 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:14:05 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 8 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:16:30 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 8 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:18:16 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 8 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:18:43 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 8 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:19:19 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 8 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:19:37 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 8 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:23:19 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 8 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:24:22 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 8 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:24:48 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 8 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:25:30 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 6 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:25:55 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 6 dataset: CDDataset data_name: SenForFlood batch_size: 4 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:26:15 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 6 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:26:34 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 6 dataset: CDDataset data_name: SenForFlood batch_size: 8 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:28:47 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 6 dataset: CDDataset data_name: SenForFlood batch_size: 8 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,4177], imps: 15.31, est: 484.88h, G_loss: 0.63010, running_mf1: 0.49524
-================ (Tue Sep 23 12:33:12 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 6 dataset: CDDataset data_name: SenForFlood batch_size: 4 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:34:57 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 6 dataset: CDDataset data_name: SenForFlood batch_size: 4 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:36:03 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 6 dataset: CDDataset data_name: SenForFlood batch_size: 4 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:36:29 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 6 dataset: CDDataset data_name: SenForFlood batch_size: 4 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:38:43 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 4 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:39:03 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:39:52 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.81, est: 660.68h, G_loss: 0.61248, running_mf1: 0.48676
-================ (Tue Sep 23 12:40:27 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:41:32 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:42:15 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:43:46 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:45:44 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.82, est: 659.00h, G_loss: 0.71405, running_mf1: 0.47751
-================ (Tue Sep 23 12:52:21 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:54:09 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:54:53 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:55:40 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 12:58:12 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.16, est: 859.99h, G_loss: 0.67933, running_mf1: 0.46127
-================ (Tue Sep 23 12:59:51 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.91, est: 969.60h, G_loss: 0.75629, running_mf1: 0.47420
-================ (Tue Sep 23 13:00:52 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 13:02:59 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.49, est: 744.33h, G_loss: 0.67116, running_mf1: 0.40355
-================ (Tue Sep 23 13:04:35 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.12, est: 875.34h, G_loss: 0.60537, running_mf1: 0.49266
-================ (Tue Sep 23 13:05:12 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.30, est: 805.83h, G_loss: 0.71581, running_mf1: 0.47170
-================ (Tue Sep 23 13:07:36 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.98, est: 937.55h, G_loss: 0.70225, running_mf1: 0.51518
-================ (Tue Sep 23 13:08:46 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.16, est: 858.85h, G_loss: 0.65972, running_mf1: 0.42273
-================ (Tue Sep 23 13:09:36 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.32, est: 799.06h, G_loss: 0.59848, running_mf1: 0.52048
-================ (Tue Sep 23 13:10:50 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.32, est: 800.77h, G_loss: 0.66457, running_mf1: 0.48135
-================ (Tue Sep 23 13:11:12 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.34, est: 792.60h, G_loss: 0.84914, running_mf1: 0.22221
-================ (Tue Sep 23 13:14:28 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.44, est: 759.47h, G_loss: 0.69456, running_mf1: 0.41605
-================ (Tue Sep 23 13:15:06 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.92, est: 965.66h, G_loss: 0.70385, running_mf1: 0.51271
-================ (Tue Sep 23 13:15:48 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.11, est: 878.43h, G_loss: 0.71010, running_mf1: 0.45999
-================ (Tue Sep 23 13:16:36 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.95, est: 951.30h, G_loss: 0.73257, running_mf1: 0.43331
-================ (Tue Sep 23 13:17:20 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.87, est: 994.39h, G_loss: 0.64486, running_mf1: 0.47599
-================ (Tue Sep 23 13:18:30 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.24, est: 829.62h, G_loss: 0.66701, running_mf1: 0.52294
-================ (Tue Sep 23 13:24:31 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.50, est: 742.29h, G_loss: 0.68610, running_mf1: 0.47383
-================ (Tue Sep 23 13:25:20 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.21, est: 838.45h, G_loss: 0.64047, running_mf1: 0.47407
-================ (Tue Sep 23 13:27:00 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.36, est: 788.10h, G_loss: 0.70526, running_mf1: 0.49656
-================ (Tue Sep 23 13:27:27 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.51, est: 740.12h, G_loss: 0.63055, running_mf1: 0.44946
-================ (Tue Sep 23 13:29:43 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.11, est: 879.06h, G_loss: 0.66844, running_mf1: 0.42309
-================ (Tue Sep 23 13:30:05 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.38, est: 780.81h, G_loss: 0.65272, running_mf1: 0.46993
-================ (Tue Sep 23 13:30:50 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.99, est: 934.18h, G_loss: 0.67536, running_mf1: 0.50263
-================ (Tue Sep 23 13:31:53 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.30, est: 808.18h, G_loss: 0.67196, running_mf1: 0.44501
-================ (Tue Sep 23 13:32:53 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.35, est: 791.07h, G_loss: 0.64975, running_mf1: 0.42654
-================ (Tue Sep 23 13:33:35 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.04, est: 910.25h, G_loss: 0.72646, running_mf1: 0.46930
-================ (Tue Sep 23 13:34:07 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.33, est: 796.35h, G_loss: 0.64897, running_mf1: 0.47365
-================ (Tue Sep 23 13:34:40 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.72, est: 1080.87h, G_loss: 0.69990, running_mf1: 0.44397
-================ (Tue Sep 23 13:35:06 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.01, est: 922.50h, G_loss: 0.63626, running_mf1: 0.39031
-================ (Tue Sep 23 13:35:27 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.97, est: 943.38h, G_loss: 0.65250, running_mf1: 0.47210
-================ (Tue Sep 23 13:40:19 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.98, est: 938.03h, G_loss: 0.70585, running_mf1: 0.48181
-================ (Tue Sep 23 13:51:44 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.19, est: 846.70h, G_loss: 0.64371, running_mf1: 0.43142
-================ (Tue Sep 23 13:53:02 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.57, est: 1185.01h, G_loss: 0.65517, running_mf1: 0.49593
-================ (Tue Sep 23 14:15:06 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.60, est: 1157.78h, G_loss: 0.54718, running_mf1: 0.47152
-================ (Tue Sep 23 14:16:33 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.09, est: 888.62h, G_loss: 0.63939, running_mf1: 0.45525
-================ (Tue Sep 23 14:24:55 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.21, est: 841.38h, G_loss: 0.65024, running_mf1: 0.49230
-Is_training: True. [0,99][101,16707], imps: 11.80, est: 157.27h, G_loss: 1.13159, running_mf1: 0.22077
-Is_training: True. [0,99][201,16707], imps: 12.69, est: 146.24h, G_loss: 0.70900, running_mf1: 0.35072
-Is_training: True. [0,99][301,16707], imps: 12.99, est: 142.87h, G_loss: 0.77139, running_mf1: 0.31121
-================ (Tue Sep 23 14:26:54 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.22, est: 836.47h, G_loss: 0.70729, running_mf1: 0.41391
-================ (Tue Sep 23 14:30:31 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.14, est: 866.38h, G_loss: 0.75136, running_mf1: 0.35466
-================ (Tue Sep 23 14:32:48 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.32, est: 798.76h, G_loss: 0.71296, running_mf1: 0.50924
-Is_training: True. [0,99][101,16707], imps: 11.98, est: 155.01h, G_loss: 0.73436, running_mf1: 0.35685
-================ (Tue Sep 23 14:33:42 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.39, est: 777.00h, G_loss: 0.63081, running_mf1: 0.53618
-================ (Tue Sep 23 14:35:50 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 14:36:47 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 14:37:04 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 14:38:14 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 14:40:44 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.27, est: 818.09h, G_loss: 0.70729, running_mf1: 0.47183
-================ (Tue Sep 23 14:41:16 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.45, est: 758.44h, G_loss: 0.73181, running_mf1: 0.43320
-Is_training: True. [0,99][101,16707], imps: 11.65, est: 159.30h, G_loss: 0.37251, running_mf1: 0.48865
-================ (Tue Sep 23 14:42:08 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.71, est: 685.58h, G_loss: 0.63766, running_mf1: 0.41141
-Is_training: True. [0,99][101,16707], imps: 12.48, est: 148.70h, G_loss: 0.62432, running_mf1: 0.45918
-================ (Tue Sep 23 14:45:13 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.15, est: 862.91h, G_loss: 0.61019, running_mf1: 0.47949
-================ (Tue Sep 23 14:45:34 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.32, est: 799.50h, G_loss: 0.67754, running_mf1: 0.41182
-================ (Tue Sep 23 14:45:50 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.25, est: 825.56h, G_loss: 0.71553, running_mf1: 0.42071
-Is_training: True. [0,99][101,16707], imps: 12.27, est: 151.27h, G_loss: 0.60751, running_mf1: 0.41570
-Is_training: True. [0,99][201,16707], imps: 12.92, est: 143.63h, G_loss: 0.54250, running_mf1: 0.43412
-================ (Tue Sep 23 14:47:04 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.21, est: 840.49h, G_loss: 0.72096, running_mf1: 0.47141
-Is_training: True. [0,99][101,16707], imps: 11.93, est: 155.57h, G_loss: 0.63642, running_mf1: 0.39960
-================ (Tue Sep 23 14:48:40 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 14:48:57 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:04:04 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:23:27 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:24:06 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:32:17 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:32:31 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:32:42 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:33:09 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:33:27 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:33:49 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:34:14 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:34:42 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:37:38 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:37:56 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:38:08 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:38:35 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:38:58 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:50:41 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:50:55 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.52, est: 736.93h, G_loss: 0.73320, running_mf1: 0.40441
-================ (Tue Sep 23 15:51:32 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:51:51 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:52:20 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:52:40 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:53:00 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 15:53:12 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 16:00:52 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 16:01:08 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 16:23:48 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Tue Sep 23 16:24:31 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.86, est: 996.63h, G_loss: 0.63582, running_mf1: 0.51938
-================ (Tue Sep 23 16:25:40 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.91, est: 969.45h, G_loss: 0.69986, running_mf1: 0.51236
-================ (Tue Sep 23 16:26:15 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.25, est: 825.93h, G_loss: 0.70383, running_mf1: 0.46231
-================ (Tue Sep 23 16:26:45 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.49, est: 744.09h, G_loss: 0.59859, running_mf1: 0.48724
-================ (Tue Sep 23 16:27:39 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.69, est: 1100.42h, G_loss: 0.69400, running_mf1: 0.45970
-================ (Tue Sep 23 16:30:58 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.23, est: 831.09h, G_loss: 0.69525, running_mf1: 0.50140
-================ (Tue Sep 23 16:32:16 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.17, est: 854.53h, G_loss: 0.55707, running_mf1: 0.45262
-================ (Tue Sep 23 16:33:30 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.14, est: 866.84h, G_loss: 0.68184, running_mf1: 0.45925
-================ (Tue Sep 23 16:34:15 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.78, est: 1043.16h, G_loss: 0.66167, running_mf1: 0.45215
-================ (Tue Sep 23 16:36:08 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.15, est: 864.10h, G_loss: 0.65007, running_mf1: 0.45617
-Is_training: True. [0,99][101,16707], imps: 11.47, est: 161.81h, G_loss: 0.69103, running_mf1: 0.37555
-Is_training: True. [0,99][201,16707], imps: 12.25, est: 151.46h, G_loss: 0.66893, running_mf1: 0.38337
-================ (Tue Sep 23 16:37:39 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.58, est: 718.83h, G_loss: 0.70154, running_mf1: 0.51475
-Is_training: True. [0,99][101,16707], imps: 11.73, est: 158.28h, G_loss: 0.53315, running_mf1: 0.46234
-Is_training: True. [0,99][201,16707], imps: 12.52, est: 148.29h, G_loss: 0.67884, running_mf1: 0.38020
-Is_training: True. [0,99][301,16707], imps: 12.84, est: 144.56h, G_loss: 0.54825, running_mf1: 0.46157
-Is_training: True. [0,99][401,16707], imps: 12.98, est: 143.00h, G_loss: 0.74015, running_mf1: 0.35558
-Is_training: True. [0,99][501,16707], imps: 13.04, est: 142.36h, G_loss: 0.81741, running_mf1: 0.30914
-Is_training: True. [0,99][601,16707], imps: 12.95, est: 143.30h, G_loss: 0.66241, running_mf1: 0.38665
-Is_training: True. [0,99][701,16707], imps: 12.94, est: 143.38h, G_loss: 0.57753, running_mf1: 0.43434
-Is_training: True. [0,99][801,16707], imps: 12.72, est: 145.88h, G_loss: 0.48548, running_mf1: 0.47746
-Is_training: True. [0,99][901,16707], imps: 12.70, est: 146.12h, G_loss: 0.47773, running_mf1: 0.46585
-Is_training: True. [0,99][1001,16707], imps: 12.73, est: 145.77h, G_loss: 0.54392, running_mf1: 0.44200
-Is_training: True. [0,99][1101,16707], imps: 12.66, est: 146.48h, G_loss: 0.63269, running_mf1: 0.40164
-Is_training: True. [0,99][1201,16707], imps: 12.69, est: 146.22h, G_loss: 0.56547, running_mf1: 0.43515
-Is_training: True. [0,99][1301,16707], imps: 12.71, est: 145.92h, G_loss: 0.65011, running_mf1: 0.39414
-Is_training: True. [0,99][1401,16707], imps: 12.73, est: 145.67h, G_loss: 0.68145, running_mf1: 0.37512
-Is_training: True. [0,99][1501,16707], imps: 12.75, est: 145.48h, G_loss: 0.77861, running_mf1: 0.31351
-Is_training: True. [0,99][1601,16707], imps: 12.71, est: 145.87h, G_loss: 0.47857, running_mf1: 0.47188
-Is_training: True. [0,99][1701,16707], imps: 12.72, est: 145.75h, G_loss: 0.39621, running_mf1: 0.48533
-Is_training: True. [0,99][1801,16707], imps: 12.73, est: 145.68h, G_loss: 0.61784, running_mf1: 0.40872
-Is_training: True. [0,99][1901,16707], imps: 12.74, est: 145.58h, G_loss: 0.55334, running_mf1: 0.43240
-Is_training: True. [0,99][2001,16707], imps: 12.74, est: 145.57h, G_loss: 0.81051, running_mf1: 0.30512
-Is_training: True. [0,99][2101,16707], imps: 12.68, est: 146.16h, G_loss: 0.58841, running_mf1: 0.42162
-Is_training: True. [0,99][2201,16707], imps: 12.69, est: 146.05h, G_loss: 0.62525, running_mf1: 0.40598
-Is_training: True. [0,99][2301,16707], imps: 12.71, est: 145.90h, G_loss: 0.61569, running_mf1: 0.41199
-Is_training: True. [0,99][2401,16707], imps: 12.72, est: 145.78h, G_loss: 0.56559, running_mf1: 0.43682
-Is_training: True. [0,99][2501,16707], imps: 12.72, est: 145.68h, G_loss: 0.57931, running_mf1: 0.42493
-Is_training: True. [0,99][2601,16707], imps: 12.72, est: 145.72h, G_loss: 0.91928, running_mf1: 0.26266
-Is_training: True. [0,99][2701,16707], imps: 12.73, est: 145.62h, G_loss: 0.55118, running_mf1: 0.43670
-Is_training: True. [0,99][2801,16707], imps: 12.73, est: 145.56h, G_loss: 0.61240, running_mf1: 0.41154
-Is_training: True. [0,99][2901,16707], imps: 12.74, est: 145.46h, G_loss: 0.73684, running_mf1: 0.36897
-Is_training: True. [0,99][3001,16707], imps: 12.75, est: 145.38h, G_loss: 0.59232, running_mf1: 0.42473
-Is_training: True. [0,99][3101,16707], imps: 12.74, est: 145.43h, G_loss: 0.56606, running_mf1: 0.43262
-Is_training: True. [0,99][3201,16707], imps: 12.74, est: 145.39h, G_loss: 0.56122, running_mf1: 0.43263
-Is_training: True. [0,99][3301,16707], imps: 12.75, est: 145.33h, G_loss: 0.67262, running_mf1: 0.38022
-Is_training: True. [0,99][3401,16707], imps: 12.75, est: 145.28h, G_loss: 0.59889, running_mf1: 0.41827
-Is_training: True. [0,99][3501,16707], imps: 12.76, est: 145.22h, G_loss: 0.92770, running_mf1: 0.25701
-Is_training: True. [0,99][3601,16707], imps: 12.75, est: 145.28h, G_loss: 0.63987, running_mf1: 0.39787
-Is_training: True. [0,99][3701,16707], imps: 12.75, est: 145.24h, G_loss: 0.72345, running_mf1: 0.34117
-Is_training: True. [0,99][3801,16707], imps: 12.75, est: 145.22h, G_loss: 0.52588, running_mf1: 0.44653
-Is_training: True. [0,99][3901,16707], imps: 12.75, est: 145.21h, G_loss: 0.75313, running_mf1: 0.34920
-Is_training: True. [0,99][4001,16707], imps: 12.74, est: 145.32h, G_loss: 0.69611, running_mf1: 0.37039
-Is_training: True. [0,99][4101,16707], imps: 12.74, est: 145.40h, G_loss: 0.71034, running_mf1: 0.36817
-Is_training: True. [0,99][4201,16707], imps: 12.74, est: 145.39h, G_loss: 0.66398, running_mf1: 0.38558
-Is_training: True. [0,99][4301,16707], imps: 12.74, est: 145.35h, G_loss: 0.79651, running_mf1: 0.24907
-Is_training: True. [0,99][4401,16707], imps: 12.73, est: 145.38h, G_loss: 0.67476, running_mf1: 0.37918
-================ (Wed Sep 24 09:40:50 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Wed Sep 24 09:41:24 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Wed Sep 24 10:11:34 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Wed Sep 24 10:11:57 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.33, est: 798.10h, G_loss: 0.66944, running_mf1: 0.49156
-================ (Wed Sep 24 10:27:36 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.19, est: 845.75h, G_loss: 0.70574, running_mf1: 0.49400
-================ (Wed Sep 24 10:28:31 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.87, est: 991.47h, G_loss: 0.65559, running_mf1: 0.41199
-================ (Wed Sep 24 10:44:54 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.13, est: 872.77h, G_loss: 0.62874, running_mf1: 0.43222
-================ (Wed Sep 24 10:46:31 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.56, est: 1193.19h, G_loss: 0.59450, running_mf1: 0.49038
-================ (Wed Sep 24 10:47:00 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.30, est: 805.98h, G_loss: 0.88685, running_mf1: 0.32316
-================ (Wed Sep 24 10:48:17 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.03, est: 914.11h, G_loss: 0.66556, running_mf1: 0.51902
-================ (Wed Sep 24 10:50:55 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.17, est: 856.80h, G_loss: 0.78329, running_mf1: 0.33791
-================ (Wed Sep 24 10:56:41 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 0.87, est: 2123.75h, G_loss: 0.62367, running_mf1: 0.51428
-================ (Wed Sep 24 10:58:53 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.29, est: 811.53h, G_loss: 0.58047, running_mf1: 0.46557
-================ (Wed Sep 24 10:59:48 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.46, est: 755.81h, G_loss: 0.64791, running_mf1: 0.48184
-Is_training: True. [0,99][101,16707], imps: 11.91, est: 155.87h, G_loss: 0.73985, running_mf1: 0.36372
-Is_training: True. [0,99][201,16707], imps: 12.70, est: 146.14h, G_loss: 0.58078, running_mf1: 0.43998
-Is_training: True. [0,99][301,16707], imps: 12.99, est: 142.90h, G_loss: 0.64153, running_mf1: 0.39926
-Is_training: True. [0,99][401,16707], imps: 13.10, est: 141.66h, G_loss: 0.66959, running_mf1: 0.38034
-Is_training: True. [0,99][501,16707], imps: 13.18, est: 140.76h, G_loss: 0.56153, running_mf1: 0.44226
-Is_training: True. [0,99][601,16707], imps: 13.04, est: 142.26h, G_loss: 0.53795, running_mf1: 0.44080
-Is_training: True. [0,99][701,16707], imps: 13.08, est: 141.87h, G_loss: 0.57513, running_mf1: 0.42613
-Is_training: True. [0,99][801,16707], imps: 13.08, est: 141.87h, G_loss: 0.57620, running_mf1: 0.45413
-Is_training: True. [0,99][901,16707], imps: 13.07, est: 141.99h, G_loss: 0.57055, running_mf1: 0.43571
-Is_training: True. [0,99][1001,16707], imps: 13.04, est: 142.27h, G_loss: 0.53629, running_mf1: 0.45499
-Is_training: True. [0,99][1101,16707], imps: 12.90, est: 143.78h, G_loss: 0.65075, running_mf1: 0.39627
-Is_training: True. [0,99][1201,16707], imps: 12.91, est: 143.71h, G_loss: 0.71617, running_mf1: 0.35033
-Is_training: True. [0,99][1301,16707], imps: 12.86, est: 144.27h, G_loss: 0.52815, running_mf1: 0.44183
-Is_training: True. [0,99][1401,16707], imps: 12.84, est: 144.49h, G_loss: 0.50594, running_mf1: 0.45330
-Is_training: True. [0,99][1501,16707], imps: 12.85, est: 144.35h, G_loss: 0.52880, running_mf1: 0.44834
-Is_training: True. [0,99][1601,16707], imps: 12.78, est: 145.11h, G_loss: 0.71461, running_mf1: 0.35252
-Is_training: True. [0,99][1701,16707], imps: 12.79, est: 145.00h, G_loss: 0.57145, running_mf1: 0.42739
-Is_training: True. [0,99][1801,16707], imps: 12.80, est: 144.86h, G_loss: 0.61237, running_mf1: 0.41742
-Is_training: True. [0,99][1901,16707], imps: 12.81, est: 144.72h, G_loss: 0.50618, running_mf1: 0.45610
-Is_training: True. [0,99][2001,16707], imps: 12.82, est: 144.59h, G_loss: 0.49086, running_mf1: 0.48034
-Is_training: True. [0,99][2101,16707], imps: 12.76, est: 145.29h, G_loss: 0.54274, running_mf1: 0.44399
-Is_training: True. [0,99][2201,16707], imps: 12.77, est: 145.17h, G_loss: 0.72528, running_mf1: 0.36262
-Is_training: True. [0,99][2301,16707], imps: 12.78, est: 145.04h, G_loss: 0.51734, running_mf1: 0.45759
-Is_training: True. [0,99][2401,16707], imps: 12.79, est: 144.95h, G_loss: 0.60700, running_mf1: 0.42305
-Is_training: True. [0,99][2501,16707], imps: 12.80, est: 144.85h, G_loss: 0.63352, running_mf1: 0.40123
-Is_training: True. [0,99][2601,16707], imps: 12.78, est: 145.07h, G_loss: 0.72406, running_mf1: 0.35807
-Is_training: True. [0,99][2701,16707], imps: 12.78, est: 145.00h, G_loss: 0.62143, running_mf1: 0.41083
-Is_training: True. [0,99][2801,16707], imps: 12.79, est: 144.95h, G_loss: 0.71934, running_mf1: 0.35865
-Is_training: True. [0,99][2901,16707], imps: 12.79, est: 144.86h, G_loss: 0.63704, running_mf1: 0.40361
-Is_training: True. [0,99][3001,16707], imps: 12.80, est: 144.78h, G_loss: 0.62600, running_mf1: 0.40930
-Is_training: True. [0,99][3101,16707], imps: 12.77, est: 145.13h, G_loss: 0.65323, running_mf1: 0.39067
-Is_training: True. [0,99][3201,16707], imps: 12.77, est: 145.04h, G_loss: 0.52738, running_mf1: 0.44819
-Is_training: True. [0,99][3301,16707], imps: 12.78, est: 144.96h, G_loss: 0.75038, running_mf1: 0.31483
-Is_training: True. [0,99][3401,16707], imps: 12.79, est: 144.89h, G_loss: 0.67479, running_mf1: 0.37755
-Is_training: True. [0,99][3501,16707], imps: 12.79, est: 144.81h, G_loss: 0.70595, running_mf1: 0.36635
-Is_training: True. [0,99][3601,16707], imps: 12.78, est: 144.99h, G_loss: 0.53777, running_mf1: 0.43996
-Is_training: True. [0,99][3701,16707], imps: 12.78, est: 144.92h, G_loss: 0.64057, running_mf1: 0.39924
-Is_training: True. [0,99][3801,16707], imps: 12.78, est: 144.87h, G_loss: 0.70814, running_mf1: 0.36126
-Is_training: True. [0,99][3901,16707], imps: 12.79, est: 144.82h, G_loss: 0.62356, running_mf1: 0.40680
-Is_training: True. [0,99][4001,16707], imps: 12.79, est: 144.77h, G_loss: 0.68577, running_mf1: 0.36511
-Is_training: True. [0,99][4101,16707], imps: 12.77, est: 145.00h, G_loss: 0.60533, running_mf1: 0.42140
-Is_training: True. [0,99][4201,16707], imps: 12.77, est: 144.96h, G_loss: 0.82232, running_mf1: 0.28344
-Is_training: True. [0,99][4301,16707], imps: 12.78, est: 144.91h, G_loss: 0.56241, running_mf1: 0.43659
-Is_training: True. [0,99][4401,16707], imps: 12.78, est: 144.85h, G_loss: 0.59717, running_mf1: 0.42065
-Is_training: True. [0,99][4501,16707], imps: 12.79, est: 144.79h, G_loss: 0.61898, running_mf1: 0.41005
-Is_training: True. [0,99][4601,16707], imps: 12.77, est: 145.02h, G_loss: 0.66478, running_mf1: 0.38580
-Is_training: True. [0,99][4701,16707], imps: 12.77, est: 144.97h, G_loss: 0.62249, running_mf1: 0.40747
-Is_training: True. [0,99][4801,16707], imps: 12.77, est: 144.92h, G_loss: 0.68041, running_mf1: 0.37885
-Is_training: True. [0,99][4901,16707], imps: 12.78, est: 144.88h, G_loss: 0.60956, running_mf1: 0.41230
-Is_training: True. [0,99][5001,16707], imps: 12.78, est: 144.83h, G_loss: 0.80086, running_mf1: 0.33724
-Is_training: True. [0,99][5101,16707], imps: 12.76, est: 145.03h, G_loss: 0.54144, running_mf1: 0.44563
-Is_training: True. [0,99][5201,16707], imps: 12.76, est: 145.00h, G_loss: 0.58409, running_mf1: 0.42859
-Is_training: True. [0,99][5301,16707], imps: 12.77, est: 144.95h, G_loss: 0.62981, running_mf1: 0.40420
-Is_training: True. [0,99][5401,16707], imps: 12.77, est: 144.92h, G_loss: 0.54882, running_mf1: 0.43923
-Is_training: True. [0,99][5501,16707], imps: 12.77, est: 144.88h, G_loss: 0.89190, running_mf1: 0.24047
-Is_training: True. [0,99][5601,16707], imps: 12.75, est: 145.11h, G_loss: 0.58607, running_mf1: 0.42386
-Is_training: True. [0,99][5701,16707], imps: 12.75, est: 145.05h, G_loss: 0.72137, running_mf1: 0.36015
-Is_training: True. [0,99][5801,16707], imps: 12.76, est: 145.02h, G_loss: 0.68463, running_mf1: 0.37194
-Is_training: True. [0,99][5901,16707], imps: 12.76, est: 144.97h, G_loss: 0.51142, running_mf1: 0.46296
-Is_training: True. [0,99][6001,16707], imps: 12.76, est: 144.93h, G_loss: 0.68887, running_mf1: 0.37590
-Is_training: True. [0,99][6101,16707], imps: 12.75, est: 145.04h, G_loss: 0.78851, running_mf1: 0.29732
-Is_training: True. [0,99][6201,16707], imps: 12.74, est: 145.13h, G_loss: 0.64400, running_mf1: 0.40296
-Is_training: True. [0,99][6301,16707], imps: 12.73, est: 145.31h, G_loss: 0.69767, running_mf1: 0.34316
-Is_training: True. [0,99][6401,16707], imps: 12.73, est: 145.30h, G_loss: 0.68497, running_mf1: 0.36726
-Is_training: True. [0,99][6501,16707], imps: 12.73, est: 145.26h, G_loss: 0.48014, running_mf1: 0.46730
-Is_training: True. [0,99][6601,16707], imps: 12.71, est: 145.46h, G_loss: 0.42119, running_mf1: 0.47894
-Is_training: True. [0,99][6701,16707], imps: 12.71, est: 145.42h, G_loss: 0.59039, running_mf1: 0.41954
-Is_training: True. [0,99][6801,16707], imps: 12.72, est: 145.39h, G_loss: 0.63661, running_mf1: 0.39939
-Is_training: True. [0,99][6901,16707], imps: 12.72, est: 145.35h, G_loss: 0.52795, running_mf1: 0.45910
-Is_training: True. [0,99][7001,16707], imps: 12.72, est: 145.34h, G_loss: 0.66541, running_mf1: 0.37797
-Is_training: True. [0,99][7101,16707], imps: 12.71, est: 145.48h, G_loss: 0.61716, running_mf1: 0.40213
-Is_training: True. [0,99][7201,16707], imps: 12.71, est: 145.44h, G_loss: 0.55511, running_mf1: 0.44697
-Is_training: True. [0,99][7301,16707], imps: 12.70, est: 145.49h, G_loss: 0.60630, running_mf1: 0.42894
-Is_training: True. [0,99][7401,16707], imps: 12.71, est: 145.45h, G_loss: 0.64964, running_mf1: 0.39227
-Is_training: True. [0,99][7501,16707], imps: 12.71, est: 145.45h, G_loss: 0.56066, running_mf1: 0.43532
-Is_training: True. [0,99][7601,16707], imps: 12.69, est: 145.57h, G_loss: 0.66636, running_mf1: 0.38179
-================ (Wed Sep 24 11:40:14 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.17, est: 855.63h, G_loss: 0.68396, running_mf1: 0.48287
-================ (Wed Sep 24 11:40:46 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.76, est: 1053.28h, G_loss: 0.57472, running_mf1: 0.49829
-================ (Wed Sep 24 11:43:58 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.16, est: 860.24h, G_loss: 0.65726, running_mf1: 0.46297
-================ (Wed Sep 24 11:44:34 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.07, est: 896.85h, G_loss: 0.69672, running_mf1: 0.40057
-================ (Wed Sep 24 11:47:14 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.22, est: 834.49h, G_loss: 0.62235, running_mf1: 0.48099
-================ (Wed Sep 24 11:47:41 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.84, est: 1007.14h, G_loss: 0.71404, running_mf1: 0.49475
-================ (Wed Sep 24 11:52:48 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.04, est: 911.43h, G_loss: 0.72316, running_mf1: 0.46423
-================ (Wed Sep 24 11:53:48 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.50, est: 1239.76h, G_loss: 0.78235, running_mf1: 0.35950
-================ (Wed Sep 24 11:54:21 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.05, est: 904.57h, G_loss: 0.65051, running_mf1: 0.45597
-Is_training: True. [0,99][101,16707], imps: 12.05, est: 153.99h, G_loss: 0.62381, running_mf1: 0.43613
-Is_training: True. [0,99][201,16707], imps: 12.76, est: 145.46h, G_loss: 0.92277, running_mf1: 0.31420
-================ (Wed Sep 24 12:04:30 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.09, est: 890.00h, G_loss: 0.74733, running_mf1: 0.44424
-Is_training: True. [0,99][101,16707], imps: 12.06, est: 153.86h, G_loss: 0.57582, running_mf1: 0.43767
-Is_training: True. [0,99][201,16707], imps: 12.80, est: 144.97h, G_loss: 0.64162, running_mf1: 0.40229
-Is_training: True. [0,99][301,16707], imps: 13.08, est: 141.92h, G_loss: 0.57735, running_mf1: 0.44541
-Is_training: True. [0,99][401,16707], imps: 13.21, est: 140.46h, G_loss: 0.69606, running_mf1: 0.36971
-Is_training: True. [0,99][501,16707], imps: 13.27, est: 139.84h, G_loss: 0.66990, running_mf1: 0.38812
-Is_training: True. [0,99][601,16707], imps: 13.23, est: 140.23h, G_loss: 0.64999, running_mf1: 0.39619
-Is_training: True. [0,99][701,16707], imps: 13.22, est: 140.40h, G_loss: 0.69837, running_mf1: 0.36276
-Is_training: True. [0,99][801,16707], imps: 13.19, est: 140.67h, G_loss: 0.53476, running_mf1: 0.45379
-Is_training: True. [0,99][901,16707], imps: 13.17, est: 140.86h, G_loss: 0.50324, running_mf1: 0.44910
-Is_training: True. [0,99][1001,16707], imps: 13.16, est: 141.02h, G_loss: 0.63491, running_mf1: 0.40174
-Is_training: True. [0,99][1101,16707], imps: 13.06, est: 142.04h, G_loss: 0.49656, running_mf1: 0.46590
-Is_training: True. [0,99][1201,16707], imps: 13.06, est: 142.07h, G_loss: 0.63856, running_mf1: 0.39917
-Is_training: True. [0,99][1301,16707], imps: 13.05, est: 142.09h, G_loss: 0.81710, running_mf1: 0.27499
-Is_training: True. [0,99][1401,16707], imps: 13.05, est: 142.14h, G_loss: 0.74448, running_mf1: 0.34434
-Is_training: True. [0,99][1501,16707], imps: 13.05, est: 142.16h, G_loss: 0.75297, running_mf1: 0.33605
-Is_training: True. [0,99][1601,16707], imps: 13.01, est: 142.55h, G_loss: 0.65074, running_mf1: 0.39351
-Is_training: True. [0,99][1701,16707], imps: 13.01, est: 142.53h, G_loss: 0.50268, running_mf1: 0.46028
-Is_training: True. [0,99][1801,16707], imps: 13.01, est: 142.52h, G_loss: 0.81013, running_mf1: 0.31372
-Is_training: True. [0,99][1901,16707], imps: 13.01, est: 142.50h, G_loss: 0.68003, running_mf1: 0.38378
-Is_training: True. [0,99][2001,16707], imps: 13.01, est: 142.49h, G_loss: 0.70867, running_mf1: 0.34961
-Is_training: True. [0,99][2101,16707], imps: 12.99, est: 142.68h, G_loss: 0.60245, running_mf1: 0.41858
-Is_training: True. [0,99][2201,16707], imps: 12.99, est: 142.68h, G_loss: 0.62195, running_mf1: 0.40897
-Is_training: True. [0,99][2301,16707], imps: 12.99, est: 142.66h, G_loss: 0.53359, running_mf1: 0.45636
-Is_training: True. [0,99][2401,16707], imps: 13.00, est: 142.64h, G_loss: 0.52310, running_mf1: 0.44463
-Is_training: True. [0,99][2501,16707], imps: 12.99, est: 142.64h, G_loss: 0.78348, running_mf1: 0.31227
-Is_training: True. [0,99][2601,16707], imps: 12.97, est: 142.95h, G_loss: 0.79750, running_mf1: 0.32538
-Is_training: True. [0,99][2701,16707], imps: 12.97, est: 142.94h, G_loss: 0.59844, running_mf1: 0.42528
-Is_training: True. [0,99][2801,16707], imps: 12.97, est: 142.91h, G_loss: 0.57418, running_mf1: 0.43195
-Is_training: True. [0,99][2901,16707], imps: 12.97, est: 142.89h, G_loss: 0.74901, running_mf1: 0.34225
-Is_training: True. [0,99][3001,16707], imps: 12.97, est: 142.88h, G_loss: 0.67648, running_mf1: 0.37356
-Is_training: True. [0,99][3101,16707], imps: 12.95, est: 143.07h, G_loss: 0.42037, running_mf1: 0.47151
-Is_training: True. [0,99][3201,16707], imps: 12.95, est: 143.07h, G_loss: 0.68314, running_mf1: 0.37482
-Is_training: True. [0,99][3301,16707], imps: 12.95, est: 143.05h, G_loss: 0.49948, running_mf1: 0.46346
-Is_training: True. [0,99][3401,16707], imps: 12.95, est: 143.05h, G_loss: 0.65071, running_mf1: 0.39337
-Is_training: True. [0,99][3501,16707], imps: 12.95, est: 143.01h, G_loss: 0.70272, running_mf1: 0.37015
-Is_training: True. [0,99][3601,16707], imps: 12.93, est: 143.22h, G_loss: 0.63083, running_mf1: 0.40311
-Is_training: True. [0,99][3701,16707], imps: 12.93, est: 143.20h, G_loss: 0.70312, running_mf1: 0.36707
-Is_training: True. [0,99][3801,16707], imps: 12.94, est: 143.18h, G_loss: 0.60278, running_mf1: 0.41756
-Is_training: True. [0,99][3901,16707], imps: 12.94, est: 143.15h, G_loss: 0.83559, running_mf1: 0.28531
-Is_training: True. [0,99][4001,16707], imps: 12.94, est: 143.13h, G_loss: 0.85138, running_mf1: 0.27562
-Is_training: True. [0,99][4101,16707], imps: 12.93, est: 143.26h, G_loss: 0.66020, running_mf1: 0.39289
-Is_training: True. [0,99][4201,16707], imps: 12.93, est: 143.24h, G_loss: 0.74377, running_mf1: 0.34311
-Is_training: True. [0,99][4301,16707], imps: 12.93, est: 143.21h, G_loss: 0.67072, running_mf1: 0.38142
-Is_training: True. [0,99][4401,16707], imps: 12.93, est: 143.20h, G_loss: 0.66631, running_mf1: 0.38908
-Is_training: True. [0,99][4501,16707], imps: 12.93, est: 143.18h, G_loss: 0.66317, running_mf1: 0.38679
-Is_training: True. [0,99][4601,16707], imps: 12.92, est: 143.31h, G_loss: 0.56691, running_mf1: 0.43920
-Is_training: True. [0,99][4701,16707], imps: 12.92, est: 143.29h, G_loss: 0.70275, running_mf1: 0.36094
-Is_training: True. [0,99][4801,16707], imps: 12.92, est: 143.26h, G_loss: 0.68818, running_mf1: 0.36821
-Is_training: True. [0,99][4901,16707], imps: 12.92, est: 143.24h, G_loss: 0.48579, running_mf1: 0.48906
-Is_training: True. [0,99][5001,16707], imps: 12.92, est: 143.23h, G_loss: 0.66370, running_mf1: 0.38655
-Is_training: True. [0,99][5101,16707], imps: 12.92, est: 143.28h, G_loss: 0.45892, running_mf1: 0.47027
-Is_training: True. [0,99][5201,16707], imps: 12.90, est: 143.46h, G_loss: 0.68741, running_mf1: 0.37556
-Is_training: True. [0,99][5301,16707], imps: 12.89, est: 143.51h, G_loss: 0.59460, running_mf1: 0.42117
-Is_training: True. [0,99][5401,16707], imps: 12.89, est: 143.57h, G_loss: 0.65909, running_mf1: 0.38902
-================ (Wed Sep 24 12:33:27 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.90, est: 976.63h, G_loss: 0.67231, running_mf1: 0.50690
-================ (Wed Sep 24 12:34:43 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.22, est: 836.24h, G_loss: 0.66440, running_mf1: 0.48841
-================ (Wed Sep 24 12:35:20 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.23, est: 833.58h, G_loss: 0.56557, running_mf1: 0.50123
-================ (Wed Sep 24 12:35:48 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.18, est: 850.67h, G_loss: 0.65725, running_mf1: 0.48936
-================ (Wed Sep 24 12:36:09 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.87, est: 991.94h, G_loss: 0.68068, running_mf1: 0.48155
-================ (Wed Sep 24 12:37:21 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.14, est: 865.45h, G_loss: 0.78015, running_mf1: 0.41930
-================ (Wed Sep 24 12:54:01 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.22, est: 837.97h, G_loss: 0.66719, running_mf1: 0.48498
-Is_training: True. [0,99][101,16707], imps: 11.48, est: 161.75h, G_loss: 0.76784, running_mf1: 0.31993
-Is_training: True. [0,99][201,16707], imps: 12.44, est: 149.15h, G_loss: 0.80194, running_mf1: 0.28275
-Is_training: True. [0,99][301,16707], imps: 12.82, est: 144.74h, G_loss: 0.60018, running_mf1: 0.41750
-Is_training: True. [0,99][401,16707], imps: 13.01, est: 142.67h, G_loss: 0.51664, running_mf1: 0.46268
-Is_training: True. [0,99][501,16707], imps: 13.11, est: 141.60h, G_loss: 0.46666, running_mf1: 0.47044
-Is_training: True. [0,99][601,16707], imps: 13.04, est: 142.34h, G_loss: 0.71628, running_mf1: 0.35445
-Is_training: True. [0,99][701,16707], imps: 13.06, est: 142.09h, G_loss: 0.64286, running_mf1: 0.39726
-Is_training: True. [0,99][801,16707], imps: 13.05, est: 142.13h, G_loss: 0.62034, running_mf1: 0.40910
-Is_training: True. [0,99][901,16707], imps: 13.05, est: 142.17h, G_loss: 0.74022, running_mf1: 0.33413
-Is_training: True. [0,99][1001,16707], imps: 13.05, est: 142.19h, G_loss: 0.49207, running_mf1: 0.46136
-Is_training: True. [0,99][1101,16707], imps: 13.01, est: 142.59h, G_loss: 0.74052, running_mf1: 0.33428
-Is_training: True. [0,99][1201,16707], imps: 13.00, est: 142.70h, G_loss: 0.72441, running_mf1: 0.34699
-Is_training: True. [0,99][1301,16707], imps: 12.98, est: 142.85h, G_loss: 0.63133, running_mf1: 0.40486
-Is_training: True. [0,99][1401,16707], imps: 12.97, est: 143.05h, G_loss: 0.59872, running_mf1: 0.41903
-Is_training: True. [0,99][1501,16707], imps: 12.96, est: 143.07h, G_loss: 0.53392, running_mf1: 0.45279
-Is_training: True. [0,99][1601,16707], imps: 12.91, est: 143.67h, G_loss: 0.68426, running_mf1: 0.37808
-Is_training: True. [0,99][1701,16707], imps: 12.91, est: 143.63h, G_loss: 0.57780, running_mf1: 0.43418
-Is_training: True. [0,99][1801,16707], imps: 12.92, est: 143.54h, G_loss: 0.51701, running_mf1: 0.45350
-Is_training: True. [0,99][1901,16707], imps: 12.92, est: 143.48h, G_loss: 0.54758, running_mf1: 0.45279
-Is_training: True. [0,99][2001,16707], imps: 12.93, est: 143.44h, G_loss: 0.69309, running_mf1: 0.37063
-Is_training: True. [0,99][2101,16707], imps: 12.89, est: 143.88h, G_loss: 0.57256, running_mf1: 0.43867
-Is_training: True. [0,99][2201,16707], imps: 12.89, est: 143.80h, G_loss: 0.60794, running_mf1: 0.41364
-Is_training: True. [0,99][2301,16707], imps: 12.90, est: 143.73h, G_loss: 0.73470, running_mf1: 0.34222
-Is_training: True. [0,99][2401,16707], imps: 12.90, est: 143.66h, G_loss: 0.58633, running_mf1: 0.42162
-Is_training: True. [0,99][2501,16707], imps: 12.91, est: 143.60h, G_loss: 0.58633, running_mf1: 0.42668
-Is_training: True. [0,99][2601,16707], imps: 12.87, est: 144.02h, G_loss: 0.68432, running_mf1: 0.37550
-Is_training: True. [0,99][2701,16707], imps: 12.86, est: 144.10h, G_loss: 0.78397, running_mf1: 0.32472
-Is_training: True. [0,99][2801,16707], imps: 12.85, est: 144.27h, G_loss: 0.66604, running_mf1: 0.38356
-Is_training: True. [0,99][2901,16707], imps: 12.83, est: 144.38h, G_loss: 0.54717, running_mf1: 0.45058
-Is_training: True. [0,99][3001,16707], imps: 12.84, est: 144.33h, G_loss: 0.52643, running_mf1: 0.45185
-Is_training: True. [0,99][3101,16707], imps: 12.83, est: 144.47h, G_loss: 1.01741, running_mf1: 0.16120
-Is_training: True. [0,99][3201,16707], imps: 12.83, est: 144.43h, G_loss: 0.49580, running_mf1: 0.46446
-Is_training: True. [0,99][3301,16707], imps: 12.83, est: 144.35h, G_loss: 0.78729, running_mf1: 0.31915
-Is_training: True. [0,99][3401,16707], imps: 12.84, est: 144.30h, G_loss: 0.71980, running_mf1: 0.35644
-Is_training: True. [0,99][3501,16707], imps: 12.84, est: 144.25h, G_loss: 0.60360, running_mf1: 0.41712
-Is_training: True. [0,99][3601,16707], imps: 12.83, est: 144.38h, G_loss: 0.50439, running_mf1: 0.45810
-Is_training: True. [0,99][3701,16707], imps: 12.83, est: 144.36h, G_loss: 0.57069, running_mf1: 0.43014
-Is_training: True. [0,99][3801,16707], imps: 12.83, est: 144.32h, G_loss: 0.49747, running_mf1: 0.46947
-Is_training: True. [0,99][3901,16707], imps: 12.83, est: 144.31h, G_loss: 0.55272, running_mf1: 0.43846
-Is_training: True. [0,99][4001,16707], imps: 12.83, est: 144.28h, G_loss: 0.65437, running_mf1: 0.39361
-Is_training: True. [0,99][4101,16707], imps: 12.81, est: 144.51h, G_loss: 0.57217, running_mf1: 0.43010
-Is_training: True. [0,99][4201,16707], imps: 12.82, est: 144.48h, G_loss: 0.64914, running_mf1: 0.39496
-Is_training: True. [0,99][4301,16707], imps: 12.82, est: 144.46h, G_loss: 0.79866, running_mf1: 0.31936
-Is_training: True. [0,99][4401,16707], imps: 12.82, est: 144.43h, G_loss: 0.76123, running_mf1: 0.31877
-Is_training: True. [0,99][4501,16707], imps: 12.82, est: 144.40h, G_loss: 0.49666, running_mf1: 0.45586
-Is_training: True. [0,99][4601,16707], imps: 12.80, est: 144.58h, G_loss: 0.63805, running_mf1: 0.40235
-Is_training: True. [0,99][4701,16707], imps: 12.81, est: 144.54h, G_loss: 0.56565, running_mf1: 0.43297
-Is_training: True. [0,99][4801,16707], imps: 12.81, est: 144.50h, G_loss: 0.58995, running_mf1: 0.42192
-Is_training: True. [0,99][4901,16707], imps: 12.81, est: 144.49h, G_loss: 0.79660, running_mf1: 0.29413
-Is_training: True. [0,99][5001,16707], imps: 12.81, est: 144.46h, G_loss: 0.60838, running_mf1: 0.41581
-Is_training: True. [0,99][5101,16707], imps: 12.79, est: 144.64h, G_loss: 0.83899, running_mf1: 0.28263
-Is_training: True. [0,99][5201,16707], imps: 12.80, est: 144.61h, G_loss: 0.64018, running_mf1: 0.39928
-Is_training: True. [0,99][5301,16707], imps: 12.80, est: 144.57h, G_loss: 0.56555, running_mf1: 0.43460
-Is_training: True. [0,99][5401,16707], imps: 12.80, est: 144.54h, G_loss: 0.70419, running_mf1: 0.36933
-Is_training: True. [0,99][5501,16707], imps: 12.80, est: 144.51h, G_loss: 0.63183, running_mf1: 0.40191
-Is_training: True. [0,99][5601,16707], imps: 12.79, est: 144.60h, G_loss: 0.81550, running_mf1: 0.31637
-Is_training: True. [0,99][5701,16707], imps: 12.80, est: 144.56h, G_loss: 0.78250, running_mf1: 0.33421
-Is_training: True. [0,99][5801,16707], imps: 12.80, est: 144.53h, G_loss: 0.51832, running_mf1: 0.45881
-Is_training: True. [0,99][5901,16707], imps: 12.80, est: 144.51h, G_loss: 0.64086, running_mf1: 0.39891
-Is_training: True. [0,99][6001,16707], imps: 12.80, est: 144.49h, G_loss: 0.51889, running_mf1: 0.45944
-Is_training: True. [0,99][6101,16707], imps: 12.79, est: 144.65h, G_loss: 0.58694, running_mf1: 0.42231
-Is_training: True. [0,99][6201,16707], imps: 12.79, est: 144.63h, G_loss: 0.63553, running_mf1: 0.39910
-Is_training: True. [0,99][6301,16707], imps: 12.79, est: 144.59h, G_loss: 0.63541, running_mf1: 0.39990
-Is_training: True. [0,99][6401,16707], imps: 12.79, est: 144.58h, G_loss: 0.76170, running_mf1: 0.33414
-Is_training: True. [0,99][6501,16707], imps: 12.79, est: 144.57h, G_loss: 0.60475, running_mf1: 0.41341
-Is_training: True. [0,99][6601,16707], imps: 12.78, est: 144.73h, G_loss: 0.51333, running_mf1: 0.47523
-Is_training: True. [0,99][6701,16707], imps: 12.78, est: 144.71h, G_loss: 0.64278, running_mf1: 0.39606
-Is_training: True. [0,99][6801,16707], imps: 12.78, est: 144.68h, G_loss: 0.60256, running_mf1: 0.41611
-Is_training: True. [0,99][6901,16707], imps: 12.78, est: 144.66h, G_loss: 0.60953, running_mf1: 0.41379
-Is_training: True. [0,99][7001,16707], imps: 12.78, est: 144.65h, G_loss: 0.78556, running_mf1: 0.33387
-Is_training: True. [0,99][7101,16707], imps: 12.76, est: 144.81h, G_loss: 0.66035, running_mf1: 0.39191
-Is_training: True. [0,99][7201,16707], imps: 12.76, est: 144.80h, G_loss: 0.66185, running_mf1: 0.39085
-Is_training: True. [0,99][7301,16707], imps: 12.77, est: 144.78h, G_loss: 0.62904, running_mf1: 0.40630
-Is_training: True. [0,99][7401,16707], imps: 12.77, est: 144.77h, G_loss: 0.54938, running_mf1: 0.44021
-Is_training: True. [0,99][7501,16707], imps: 12.77, est: 144.74h, G_loss: 0.69485, running_mf1: 0.36720
-Is_training: True. [0,99][7601,16707], imps: 12.76, est: 144.84h, G_loss: 0.55907, running_mf1: 0.43632
-Is_training: True. [0,99][7701,16707], imps: 12.76, est: 144.83h, G_loss: 0.63453, running_mf1: 0.40178
-Is_training: True. [0,99][7801,16707], imps: 12.76, est: 144.81h, G_loss: 0.56724, running_mf1: 0.43765
-Is_training: True. [0,99][7901,16707], imps: 12.76, est: 144.79h, G_loss: 0.45510, running_mf1: 0.47420
-Is_training: True. [0,99][8001,16707], imps: 12.76, est: 144.77h, G_loss: 0.63398, running_mf1: 0.40193
-Is_training: True. [0,99][8101,16707], imps: 12.75, est: 144.89h, G_loss: 0.53956, running_mf1: 0.44882
-Is_training: True. [0,99][8201,16707], imps: 12.75, est: 144.87h, G_loss: 0.79550, running_mf1: 0.29454
-Is_training: True. [0,99][8301,16707], imps: 12.75, est: 144.85h, G_loss: 0.70950, running_mf1: 0.36131
-Is_training: True. [0,99][8401,16707], imps: 12.75, est: 144.83h, G_loss: 0.57091, running_mf1: 0.42975
-Is_training: True. [0,99][8501,16707], imps: 12.75, est: 144.80h, G_loss: 0.61927, running_mf1: 0.40649
-Is_training: True. [0,99][8601,16707], imps: 12.74, est: 144.91h, G_loss: 0.56353, running_mf1: 0.43386
-Is_training: True. [0,99][8701,16707], imps: 12.75, est: 144.88h, G_loss: 0.70804, running_mf1: 0.35365
-Is_training: True. [0,99][8801,16707], imps: 12.75, est: 144.85h, G_loss: 0.61293, running_mf1: 0.41135
-Is_training: True. [0,99][8901,16707], imps: 12.75, est: 144.84h, G_loss: 0.64721, running_mf1: 0.39146
-Is_training: True. [0,99][9001,16707], imps: 12.75, est: 144.82h, G_loss: 0.77116, running_mf1: 0.31683
-Is_training: True. [0,99][9101,16707], imps: 12.74, est: 144.91h, G_loss: 0.62184, running_mf1: 0.40463
-Is_training: True. [0,99][9201,16707], imps: 12.74, est: 144.90h, G_loss: 0.49635, running_mf1: 0.46610
-Is_training: True. [0,99][9301,16707], imps: 12.74, est: 144.89h, G_loss: 0.59404, running_mf1: 0.42191
-Is_training: True. [0,99][9401,16707], imps: 12.74, est: 144.88h, G_loss: 0.82139, running_mf1: 0.31210
-Is_training: True. [0,99][9501,16707], imps: 12.74, est: 144.85h, G_loss: 0.62285, running_mf1: 0.40847
-Is_training: True. [0,99][9601,16707], imps: 12.73, est: 144.94h, G_loss: 0.59799, running_mf1: 0.41799
-Is_training: True. [0,99][9701,16707], imps: 12.74, est: 144.91h, G_loss: 0.73810, running_mf1: 0.35673
-Is_training: True. [0,99][9801,16707], imps: 12.74, est: 144.90h, G_loss: 0.66868, running_mf1: 0.38286
-Is_training: True. [0,99][9901,16707], imps: 12.74, est: 144.87h, G_loss: 0.78739, running_mf1: 0.31622
-Is_training: True. [0,99][10001,16707], imps: 12.74, est: 144.86h, G_loss: 0.58310, running_mf1: 0.43177
-Is_training: True. [0,99][10101,16707], imps: 12.73, est: 144.93h, G_loss: 0.50875, running_mf1: 0.45789
-Is_training: True. [0,99][10201,16707], imps: 12.73, est: 144.91h, G_loss: 0.51840, running_mf1: 0.46634
-Is_training: True. [0,99][10301,16707], imps: 12.73, est: 144.90h, G_loss: 0.52306, running_mf1: 0.45605
-Is_training: True. [0,99][10401,16707], imps: 12.73, est: 144.89h, G_loss: 0.70343, running_mf1: 0.36851
-Is_training: True. [0,99][10501,16707], imps: 12.73, est: 144.87h, G_loss: 0.48736, running_mf1: 0.46588
-Is_training: True. [0,99][10601,16707], imps: 12.73, est: 144.93h, G_loss: 0.60776, running_mf1: 0.41772
-Is_training: True. [0,99][10701,16707], imps: 12.73, est: 144.91h, G_loss: 0.81538, running_mf1: 0.26272
-Is_training: True. [0,99][10801,16707], imps: 12.73, est: 144.90h, G_loss: 0.68453, running_mf1: 0.37861
-Is_training: True. [0,99][10901,16707], imps: 12.73, est: 144.87h, G_loss: 0.65113, running_mf1: 0.38724
-Is_training: True. [0,99][11001,16707], imps: 12.73, est: 144.89h, G_loss: 0.55940, running_mf1: 0.44123
-Is_training: True. [0,99][11101,16707], imps: 12.72, est: 144.97h, G_loss: 0.58966, running_mf1: 0.42329
-Is_training: True. [0,99][11201,16707], imps: 12.72, est: 144.95h, G_loss: 0.61792, running_mf1: 0.40700
-Is_training: True. [0,99][11301,16707], imps: 12.72, est: 144.93h, G_loss: 0.49252, running_mf1: 0.46400
-Is_training: True. [0,99][11401,16707], imps: 12.72, est: 144.93h, G_loss: 0.58930, running_mf1: 0.41740
-Is_training: True. [0,99][11501,16707], imps: 12.72, est: 144.91h, G_loss: 0.61165, running_mf1: 0.40509
-Is_training: True. [0,99][11601,16707], imps: 12.72, est: 144.97h, G_loss: 0.58270, running_mf1: 0.42138
-Is_training: True. [0,99][11701,16707], imps: 12.72, est: 144.96h, G_loss: 0.47140, running_mf1: 0.47536
-Is_training: True. [0,99][11801,16707], imps: 12.72, est: 144.94h, G_loss: 0.61597, running_mf1: 0.41125
-Is_training: True. [0,99][11901,16707], imps: 12.72, est: 144.92h, G_loss: 1.00987, running_mf1: 0.24054
-Is_training: True. [0,99][12001,16707], imps: 12.72, est: 144.91h, G_loss: 0.61988, running_mf1: 0.40265
-Is_training: True. [0,99][12101,16707], imps: 12.71, est: 144.98h, G_loss: 0.67778, running_mf1: 0.36903
-Is_training: True. [0,99][12201,16707], imps: 12.71, est: 144.97h, G_loss: 0.68785, running_mf1: 0.35272
-Is_training: True. [0,99][12301,16707], imps: 12.71, est: 144.95h, G_loss: 0.52036, running_mf1: 0.44710
-Is_training: True. [0,99][12401,16707], imps: 12.71, est: 144.94h, G_loss: 0.57357, running_mf1: 0.41189
-Is_training: True. [0,99][12501,16707], imps: 12.71, est: 144.92h, G_loss: 0.59058, running_mf1: 0.42667
-Is_training: True. [0,99][12601,16707], imps: 12.71, est: 144.96h, G_loss: 0.77759, running_mf1: 0.31021
-Is_training: True. [0,99][12701,16707], imps: 12.71, est: 144.94h, G_loss: 0.52921, running_mf1: 0.45120
-Is_training: True. [0,99][12801,16707], imps: 12.71, est: 144.92h, G_loss: 0.60613, running_mf1: 0.43591
-Is_training: True. [0,99][12901,16707], imps: 12.71, est: 144.91h, G_loss: 0.72376, running_mf1: 0.35249
-Is_training: True. [0,99][13001,16707], imps: 12.71, est: 144.89h, G_loss: 0.56595, running_mf1: 0.43510
-Is_training: True. [0,99][13101,16707], imps: 12.71, est: 144.95h, G_loss: 0.79490, running_mf1: 0.33777
-Is_training: True. [0,99][13201,16707], imps: 12.71, est: 144.93h, G_loss: 0.66468, running_mf1: 0.38267
-Is_training: True. [0,99][13301,16707], imps: 12.71, est: 144.92h, G_loss: 0.59111, running_mf1: 0.42162
-Is_training: True. [0,99][13401,16707], imps: 12.71, est: 144.90h, G_loss: 0.49036, running_mf1: 0.45959
-Is_training: True. [0,99][13501,16707], imps: 12.71, est: 144.88h, G_loss: 0.61584, running_mf1: 0.41664
-Is_training: True. [0,99][13601,16707], imps: 12.70, est: 144.93h, G_loss: 0.71473, running_mf1: 0.35618
-Is_training: True. [0,99][13701,16707], imps: 12.71, est: 144.91h, G_loss: 0.49975, running_mf1: 0.46774
-Is_training: True. [0,99][13801,16707], imps: 12.71, est: 144.89h, G_loss: 0.73332, running_mf1: 0.36125
-Is_training: True. [0,99][13901,16707], imps: 12.71, est: 144.88h, G_loss: 0.57526, running_mf1: 0.42757
-Is_training: True. [0,99][14001,16707], imps: 12.71, est: 144.86h, G_loss: 0.63519, running_mf1: 0.39753
-Is_training: True. [0,99][14101,16707], imps: 12.70, est: 144.89h, G_loss: 0.55508, running_mf1: 0.42759
-Is_training: True. [0,99][14201,16707], imps: 12.70, est: 144.88h, G_loss: 0.62273, running_mf1: 0.40681
-Is_training: True. [0,99][14301,16707], imps: 12.70, est: 144.87h, G_loss: 0.49300, running_mf1: 0.45776
-Is_training: True. [0,99][14401,16707], imps: 12.71, est: 144.85h, G_loss: 0.56097, running_mf1: 0.42811
-Is_training: True. [0,99][14501,16707], imps: 12.71, est: 144.83h, G_loss: 0.49156, running_mf1: 0.44590
-Is_training: True. [0,99][14601,16707], imps: 12.70, est: 144.86h, G_loss: 0.58962, running_mf1: 0.43713
-Is_training: True. [0,99][14701,16707], imps: 12.70, est: 144.85h, G_loss: 0.66697, running_mf1: 0.38505
-Is_training: True. [0,99][14801,16707], imps: 12.70, est: 144.84h, G_loss: 0.47385, running_mf1: 0.47346
-Is_training: True. [0,99][14901,16707], imps: 12.70, est: 144.82h, G_loss: 0.53417, running_mf1: 0.44209
-Is_training: True. [0,99][15001,16707], imps: 12.70, est: 144.81h, G_loss: 0.60856, running_mf1: 0.41688
-Is_training: True. [0,99][15101,16707], imps: 12.70, est: 144.85h, G_loss: 0.60943, running_mf1: 0.40596
-Is_training: True. [0,99][15201,16707], imps: 12.70, est: 144.83h, G_loss: 0.76776, running_mf1: 0.35528
-Is_training: True. [0,99][15301,16707], imps: 12.70, est: 144.81h, G_loss: 0.77792, running_mf1: 0.32922
-Is_training: True. [0,99][15401,16707], imps: 12.70, est: 144.80h, G_loss: 0.58733, running_mf1: 0.42298
-Is_training: True. [0,99][15501,16707], imps: 12.70, est: 144.78h, G_loss: 0.51973, running_mf1: 0.45114
-Is_training: True. [0,99][15601,16707], imps: 12.70, est: 144.83h, G_loss: 0.77958, running_mf1: 0.32159
-Is_training: True. [0,99][15701,16707], imps: 12.70, est: 144.82h, G_loss: 0.74099, running_mf1: 0.33506
-Is_training: True. [0,99][15801,16707], imps: 12.70, est: 144.81h, G_loss: 0.66284, running_mf1: 0.38479
-Is_training: True. [0,99][15901,16707], imps: 12.70, est: 144.79h, G_loss: 0.64240, running_mf1: 0.39699
-Is_training: True. [0,99][16001,16707], imps: 12.70, est: 144.78h, G_loss: 0.61739, running_mf1: 0.41213
-Is_training: True. [0,99][16101,16707], imps: 12.70, est: 144.79h, G_loss: 0.73084, running_mf1: 0.35134
-Is_training: True. [0,99][16201,16707], imps: 12.70, est: 144.78h, G_loss: 0.65189, running_mf1: 0.36831
-Is_training: True. [0,99][16301,16707], imps: 12.70, est: 144.76h, G_loss: 0.62247, running_mf1: 0.34997
-Is_training: True. [0,99][16401,16707], imps: 12.70, est: 144.75h, G_loss: 0.69976, running_mf1: 0.37338
-Is_training: True. [0,99][16501,16707], imps: 12.70, est: 144.74h, G_loss: 0.68666, running_mf1: 0.37966
-Is_training: True. [0,99][16601,16707], imps: 12.70, est: 144.75h, G_loss: 0.77257, running_mf1: 0.32774
-Is_training: True. [0,99][16701,16707], imps: 12.70, est: 144.74h, G_loss: 0.68739, running_mf1: 0.36226
-Is_training: True. Epoch 0 / 99, epoch_mF1= 0.40275
-acc: 0.67189 miou: 0.33635 mf1: 0.40275 iou_0: 0.67179 iou_1: 0.00091 F1_0: 0.80368 F1_1: 0.00182 precision_0: 0.67221 precision_1: 0.32596 recall_0: 0.99908 recall_1: 0.00091 
+================ (Thu Sep 25 10:18:30 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+Is_training: True. [0,99][1,16707], imps: 2.14, est: 868.29h, G_loss: 0.71328, running_mf1: 0.34267
+Is_training: True. [0,99][101,16707], imps: 11.76, est: 157.81h, G_loss: 0.68973, running_mf1: 0.41211
+Is_training: True. [0,99][201,16707], imps: 12.41, est: 149.60h, G_loss: 0.71900, running_mf1: 0.35982
+Is_training: True. [0,99][301,16707], imps: 12.60, est: 147.29h, G_loss: 0.58991, running_mf1: 0.46816
+Is_training: True. [0,99][401,16707], imps: 12.69, est: 146.22h, G_loss: 0.65040, running_mf1: 0.46306
+Is_training: True. [0,99][501,16707], imps: 12.76, est: 145.47h, G_loss: 0.69419, running_mf1: 0.39138
+Is_training: True. [0,99][601,16707], imps: 12.58, est: 147.49h, G_loss: 0.71505, running_mf1: 0.34516
+Is_training: True. [0,99][701,16707], imps: 12.63, est: 146.91h, G_loss: 0.71398, running_mf1: 0.36496
+Is_training: True. [0,99][801,16707], imps: 12.67, est: 146.41h, G_loss: 0.70534, running_mf1: 0.36342
+Is_training: True. [0,99][901,16707], imps: 12.71, est: 145.97h, G_loss: 0.75189, running_mf1: 0.33051
+Is_training: True. [0,99][1001,16707], imps: 12.74, est: 145.61h, G_loss: 0.66525, running_mf1: 0.41971
+Is_training: True. [0,99][1101,16707], imps: 12.67, est: 146.40h, G_loss: 0.78250, running_mf1: 0.29419
+Is_training: True. [0,99][1201,16707], imps: 12.70, est: 146.07h, G_loss: 0.64666, running_mf1: 0.44544
+Is_training: True. [0,99][1301,16707], imps: 12.72, est: 145.78h, G_loss: 0.70218, running_mf1: 0.38390
+Is_training: True. [0,99][1401,16707], imps: 12.72, est: 145.77h, G_loss: 0.61779, running_mf1: 0.45640
+Is_training: True. [0,99][1501,16707], imps: 12.74, est: 145.54h, G_loss: 0.76621, running_mf1: 0.29720
+Is_training: True. [0,99][1601,16707], imps: 12.69, est: 146.11h, G_loss: 0.68140, running_mf1: 0.40668
+Is_training: True. [0,99][1701,16707], imps: 12.71, est: 145.88h, G_loss: 0.65475, running_mf1: 0.43877
+Is_training: True. [0,99][1801,16707], imps: 12.73, est: 145.68h, G_loss: 0.70007, running_mf1: 0.38376
+Is_training: True. [0,99][1901,16707], imps: 12.74, est: 145.50h, G_loss: 0.86593, running_mf1: 0.27020
+Is_training: True. [0,99][2001,16707], imps: 12.75, est: 145.36h, G_loss: 0.66879, running_mf1: 0.43195
+Is_training: True. [0,99][2101,16707], imps: 12.71, est: 145.84h, G_loss: 0.61496, running_mf1: 0.48509
+Is_training: True. [0,99][2201,16707], imps: 12.73, est: 145.68h, G_loss: 0.69911, running_mf1: 0.38001
+Is_training: True. [0,99][2301,16707], imps: 12.74, est: 145.53h, G_loss: 0.70127, running_mf1: 0.38307
+Is_training: True. [0,99][2401,16707], imps: 12.75, est: 145.39h, G_loss: 0.72197, running_mf1: 0.37570
+Is_training: True. [0,99][2501,16707], imps: 12.76, est: 145.26h, G_loss: 0.65898, running_mf1: 0.45718
+Is_training: True. [0,99][2601,16707], imps: 12.73, est: 145.58h, G_loss: 0.63552, running_mf1: 0.45453
+Is_training: True. [0,99][2701,16707], imps: 12.74, est: 145.46h, G_loss: 0.66881, running_mf1: 0.45169
+Is_training: True. [0,99][2801,16707], imps: 12.75, est: 145.38h, G_loss: 0.65459, running_mf1: 0.43046
+Is_training: True. [0,99][2901,16707], imps: 12.75, est: 145.35h, G_loss: 0.65505, running_mf1: 0.45660
+Is_training: True. [0,99][3001,16707], imps: 12.75, est: 145.29h, G_loss: 0.59686, running_mf1: 0.45684
+Is_training: True. [0,99][3101,16707], imps: 12.73, est: 145.58h, G_loss: 0.72169, running_mf1: 0.35641
+================ (Thu Sep 25 10:35:16 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+Is_training: True. [0,99][1,16707], imps: 2.26, est: 823.12h, G_loss: 0.69580, running_mf1: 0.43720
+Is_training: True. [0,99][101,16707], imps: 11.33, est: 163.76h, G_loss: 0.58167, running_mf1: 0.46766
+================ (Thu Sep 25 10:38:01 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+Is_training: True. [0,99][1,16707], imps: 2.44, est: 761.25h, G_loss: 0.61702, running_mf1: 0.50965
+Is_training: True. [0,99][101,16707], imps: 11.92, est: 155.77h, G_loss: 0.73067, running_mf1: 0.22908
+Is_training: True. [0,99][201,16707], imps: 12.61, est: 147.16h, G_loss: 0.65505, running_mf1: 0.40575
+Is_training: True. [0,99][301,16707], imps: 12.77, est: 145.35h, G_loss: 0.67027, running_mf1: 0.52497
+Is_training: True. [0,99][401,16707], imps: 12.83, est: 144.65h, G_loss: 0.66947, running_mf1: 0.54438
+Is_training: True. [0,99][501,16707], imps: 12.87, est: 144.22h, G_loss: 0.57968, running_mf1: 0.52979
+Is_training: True. [0,99][601,16707], imps: 12.77, est: 145.37h, G_loss: 0.61707, running_mf1: 0.73604
+Is_training: True. [0,99][701,16707], imps: 12.80, est: 145.01h, G_loss: 0.66500, running_mf1: 0.56486
+Is_training: True. [0,99][801,16707], imps: 12.82, est: 144.69h, G_loss: 0.68623, running_mf1: 0.53061
+Is_training: True. [0,99][901,16707], imps: 12.84, est: 144.50h, G_loss: 0.62954, running_mf1: 0.58284
+Is_training: True. [0,99][1001,16707], imps: 12.84, est: 144.47h, G_loss: 0.94833, running_mf1: 0.19872
+================ (Thu Sep 25 10:45:47 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+Is_training: True. [0,99][1,16707], imps: 2.04, est: 908.36h, G_loss: 0.74695, running_mf1: 0.33465
+Is_training: True. [0,99][101,16707], imps: 12.05, est: 154.01h, G_loss: 0.69454, running_mf1: 0.42224
+================ (Thu Sep 25 10:46:52 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+================ (Thu Sep 25 10:50:03 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+================ (Thu Sep 25 10:50:51 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+================ (Thu Sep 25 10:54:37 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+================ (Thu Sep 25 10:56:37 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+================ (Thu Sep 25 10:57:29 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+================ (Thu Sep 25 10:58:13 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+================ (Thu Sep 25 11:00:06 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+================ (Thu Sep 25 11:00:47 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+================ (Thu Sep 25 11:01:48 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+Is_training: True. [0,99][1,16707], imps: 2.41, est: 770.86h, G_loss: 0.71474, running_mf1: 0.43454
+Is_training: True. [0,99][101,16707], imps: 12.04, est: 154.22h, G_loss: 0.93428, running_mf1: 0.23222
+================ (Thu Sep 25 11:02:59 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+Is_training: True. [0,99][1,16707], imps: 2.22, est: 834.69h, G_loss: 0.69466, running_mf1: 0.48600
+================ (Thu Sep 25 11:03:31 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+Is_training: True. [0,99][1,16707], imps: 1.84, est: 1007.49h, G_loss: 0.65899, running_mf1: 0.41767
+================ (Thu Sep 25 11:05:35 2025) ================
+gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
+Is_training: True. [0,99][1,3678], imps: 1.81, est: 225.45h, G_loss: 0.69195, running_mf1: 0.52029
+Is_training: True. [0,99][101,3678], imps: 11.68, est: 34.98h, G_loss: 0.71078, running_mf1: 0.28747
+Is_training: True. [0,99][201,3678], imps: 12.56, est: 32.52h, G_loss: 0.66428, running_mf1: 0.42710
+Is_training: True. [0,99][301,3678], imps: 12.89, est: 31.68h, G_loss: 0.65489, running_mf1: 0.44529
+Is_training: True. [0,99][401,3678], imps: 13.02, est: 31.36h, G_loss: 0.57065, running_mf1: 0.47682
+Is_training: True. [0,99][501,3678], imps: 13.06, est: 31.25h, G_loss: 0.69084, running_mf1: 0.39497
+Is_training: True. [0,99][601,3678], imps: 12.91, est: 31.60h, G_loss: 0.62512, running_mf1: 0.45196
+Is_training: True. [0,99][701,3678], imps: 12.85, est: 31.75h, G_loss: 0.68906, running_mf1: 0.40150
+Is_training: True. [0,99][801,3678], imps: 12.87, est: 31.69h, G_loss: 0.61487, running_mf1: 0.45077
+Is_training: True. [0,99][901,3678], imps: 12.88, est: 31.64h, G_loss: 0.68657, running_mf1: 0.40032
+Is_training: True. [0,99][1001,3678], imps: 12.90, est: 31.60h, G_loss: 0.60397, running_mf1: 0.45281
+Is_training: True. [0,99][1101,3678], imps: 12.82, est: 31.78h, G_loss: 0.69791, running_mf1: 0.38972
+Is_training: True. [0,99][1201,3678], imps: 12.84, est: 31.73h, G_loss: 0.62856, running_mf1: 0.46751
+Is_training: True. [0,99][1301,3678], imps: 12.85, est: 31.69h, G_loss: 0.61914, running_mf1: 0.46218
+Is_training: True. [0,99][1401,3678], imps: 12.86, est: 31.66h, G_loss: 0.62807, running_mf1: 0.46292
+Is_training: True. [0,99][1501,3678], imps: 12.87, est: 31.62h, G_loss: 0.69408, running_mf1: 0.39836
+Is_training: True. [0,99][1601,3678], imps: 12.81, est: 31.76h, G_loss: 0.68148, running_mf1: 0.40742
+Is_training: True. [0,99][1701,3678], imps: 12.80, est: 31.77h, G_loss: 0.70843, running_mf1: 0.30849
+Is_training: True. [0,99][1801,3678], imps: 12.81, est: 31.74h, G_loss: 0.68091, running_mf1: 0.40552
+Is_training: True. [0,99][1901,3678], imps: 12.82, est: 31.71h, G_loss: 0.68670, running_mf1: 0.41046
+Is_training: True. [0,99][2001,3678], imps: 12.83, est: 31.68h, G_loss: 0.70010, running_mf1: 0.38437
+Is_training: True. [0,99][2101,3678], imps: 12.80, est: 31.75h, G_loss: 0.61645, running_mf1: 0.46011
+Is_training: True. [0,99][2201,3678], imps: 12.81, est: 31.72h, G_loss: 0.73118, running_mf1: 0.32643
+Is_training: True. [0,99][2301,3678], imps: 12.82, est: 31.68h, G_loss: 0.63758, running_mf1: 0.46410
+Is_training: True. [0,99][2401,3678], imps: 12.83, est: 31.66h, G_loss: 0.80050, running_mf1: 0.32672
+Is_training: True. [0,99][2501,3678], imps: 12.83, est: 31.63h, G_loss: 0.71472, running_mf1: 0.36456
+Is_training: True. [0,99][2601,3678], imps: 12.80, est: 31.71h, G_loss: 0.66916, running_mf1: 0.41854
+Is_training: True. [0,99][2701,3678], imps: 12.81, est: 31.68h, G_loss: 0.68596, running_mf1: 0.40173
+Is_training: True. [0,99][2801,3678], imps: 12.81, est: 31.65h, G_loss: 0.76975, running_mf1: 0.31182
+Is_training: True. [0,99][2901,3678], imps: 12.82, est: 31.63h, G_loss: 0.67992, running_mf1: 0.42663
+Is_training: True. [0,99][3001,3678], imps: 12.82, est: 31.61h, G_loss: 0.65342, running_mf1: 0.42632
+Is_training: True. [0,99][3101,3678], imps: 12.79, est: 31.67h, G_loss: 0.65081, running_mf1: 0.43179
+Is_training: True. [0,99][3201,3678], imps: 12.80, est: 31.65h, G_loss: 0.66707, running_mf1: 0.42029
+Is_training: True. [0,99][3301,3678], imps: 12.81, est: 31.62h, G_loss: 0.67072, running_mf1: 0.42559
+Is_training: True. [0,99][3401,3678], imps: 12.81, est: 31.60h, G_loss: 0.88490, running_mf1: 0.32781
+Is_training: True. [0,99][3501,3678], imps: 12.82, est: 31.58h, G_loss: 0.66582, running_mf1: 0.42307
+Is_training: True. [0,99][3601,3678], imps: 12.78, est: 31.65h, G_loss: 0.70508, running_mf1: 0.38799
+Is_training: True. Epoch 0 / 99, epoch_mF1= 0.40993
+acc: 0.66831 miou: 0.33852 mf1: 0.40993 iou_0: 0.66722 iou_1: 0.00983 F1_0: 0.80040 F1_1: 0.01946 precision_0: 0.67296 precision_1: 0.27894 recall_0: 0.98736 recall_1: 0.01008 
 
 Begin evaluation...
-Is_training: False. [0,99][1,3678], imps: 0.00, est: 1221946.32h, G_loss: 0.51534, running_mf1: 0.35332
-Is_training: False. [0,99][101,3678], imps: 0.08, est: 24077.96h, G_loss: 0.51534, running_mf1: 0.45058
-Is_training: False. [0,99][201,3678], imps: 0.15, est: 12220.88h, G_loss: 0.51534, running_mf1: 0.42413
-Is_training: False. [0,99][301,3678], imps: 0.23, est: 8214.37h, G_loss: 0.51534, running_mf1: 0.77113
-Is_training: False. [0,99][401,3678], imps: 0.30, est: 6198.74h, G_loss: 0.51534, running_mf1: 0.46112
-Is_training: False. [0,99][501,3678], imps: 0.37, est: 4988.40h, G_loss: 0.51534, running_mf1: 0.26987
-Is_training: False. [0,99][601,3678], imps: 0.44, est: 4180.43h, G_loss: 0.51534, running_mf1: 0.42860
-Is_training: False. [0,99][701,3678], imps: 0.52, est: 3601.55h, G_loss: 0.51534, running_mf1: 0.22520
-Is_training: False. [0,99][801,3678], imps: 0.59, est: 3167.04h, G_loss: 0.51534, running_mf1: 0.49423
-Is_training: False. [0,99][901,3678], imps: 0.66, est: 2829.53h, G_loss: 0.51534, running_mf1: 0.32633
-Is_training: False. [0,99][1001,3678], imps: 0.72, est: 2559.01h, G_loss: 0.51534, running_mf1: 0.43195
-Is_training: False. [0,99][1101,3678], imps: 0.79, est: 2337.41h, G_loss: 0.51534, running_mf1: 0.58747
-Is_training: False. [0,99][1201,3678], imps: 0.86, est: 2153.30h, G_loss: 0.51534, running_mf1: 0.46188
-Is_training: False. [0,99][1301,3678], imps: 0.93, est: 1997.47h, G_loss: 0.51534, running_mf1: 0.43535
-Is_training: False. [0,99][1401,3678], imps: 1.00, est: 1864.04h, G_loss: 0.51534, running_mf1: 0.46315
-Is_training: False. [0,99][1501,3678], imps: 1.06, est: 1747.28h, G_loss: 0.51534, running_mf1: 0.38050
-Is_training: False. [0,99][1601,3678], imps: 1.13, est: 1645.91h, G_loss: 0.51534, running_mf1: 0.35058
-Is_training: False. [0,99][1701,3678], imps: 1.19, est: 1557.85h, G_loss: 0.51534, running_mf1: 0.35523
-Is_training: False. [0,99][1801,3678], imps: 1.25, est: 1477.93h, G_loss: 0.51534, running_mf1: 0.42490
-Is_training: False. [0,99][1901,3678], imps: 1.32, est: 1406.50h, G_loss: 0.51534, running_mf1: 0.36808
-Is_training: False. [0,99][2001,3678], imps: 1.38, est: 1341.82h, G_loss: 0.51534, running_mf1: 0.38126
-================ (Wed Sep 24 14:31:36 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 8 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Wed Sep 24 14:32:08 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 4 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Wed Sep 24 14:32:27 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 3 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Wed Sep 24 14:32:45 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 3 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Wed Sep 24 14:32:59 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 3 split: train split_val: test img_size: 128 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Wed Sep 24 14:33:19 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.98, est: 937.40h, G_loss: 0.67335, running_mf1: 0.47372
-Is_training: True. [0,99][101,16707], imps: 11.98, est: 154.90h, G_loss: 0.59598, running_mf1: 0.41756
-Is_training: True. [0,99][201,16707], imps: 12.64, est: 146.79h, G_loss: 0.49300, running_mf1: 0.45636
-Is_training: True. [0,99][301,16707], imps: 12.79, est: 145.07h, G_loss: 0.54528, running_mf1: 0.45596
-Is_training: True. [0,99][401,16707], imps: 12.84, est: 144.55h, G_loss: 0.54590, running_mf1: 0.43945
-Is_training: True. [0,99][501,16707], imps: 12.87, est: 144.14h, G_loss: 0.75802, running_mf1: 0.30844
-Is_training: True. [0,99][601,16707], imps: 12.79, est: 145.13h, G_loss: 0.61260, running_mf1: 0.41205
-Is_training: True. [0,99][701,16707], imps: 12.77, est: 145.26h, G_loss: 0.66757, running_mf1: 0.38433
-Is_training: True. [0,99][801,16707], imps: 12.79, est: 145.11h, G_loss: 0.63010, running_mf1: 0.40320
-Is_training: True. [0,99][901,16707], imps: 12.81, est: 144.87h, G_loss: 0.79341, running_mf1: 0.32894
-Is_training: True. [0,99][1001,16707], imps: 12.82, est: 144.67h, G_loss: 0.51368, running_mf1: 0.45784
-Is_training: True. [0,99][1101,16707], imps: 12.78, est: 145.15h, G_loss: 0.92478, running_mf1: 0.17738
-Is_training: True. [0,99][1201,16707], imps: 12.80, est: 144.97h, G_loss: 0.59907, running_mf1: 0.41757
-Is_training: True. [0,99][1301,16707], imps: 12.80, est: 144.94h, G_loss: 0.74478, running_mf1: 0.34123
-Is_training: True. [0,99][1401,16707], imps: 12.79, est: 145.00h, G_loss: 0.62113, running_mf1: 0.40840
-Is_training: True. [0,99][1501,16707], imps: 12.79, est: 144.96h, G_loss: 0.56961, running_mf1: 0.43292
-Is_training: True. [0,99][1601,16707], imps: 12.76, est: 145.34h, G_loss: 0.68354, running_mf1: 0.37584
-Is_training: True. [0,99][1701,16707], imps: 12.77, est: 145.24h, G_loss: 0.57458, running_mf1: 0.43488
-Is_training: True. [0,99][1801,16707], imps: 12.77, est: 145.17h, G_loss: 0.49491, running_mf1: 0.47271
-Is_training: True. [0,99][1901,16707], imps: 12.78, est: 145.08h, G_loss: 0.73169, running_mf1: 0.33247
-Is_training: True. [0,99][2001,16707], imps: 12.78, est: 145.04h, G_loss: 0.68534, running_mf1: 0.37978
-Is_training: True. [0,99][2101,16707], imps: 12.74, est: 145.51h, G_loss: 0.71497, running_mf1: 0.36422
-================ (Wed Sep 24 14:50:05 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: bce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test ================ (Wed Sep 24 14:53:03 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.23, est: 1507.07h, G_loss: 0.74964, running_mf1: 0.43640
-================ (Wed Sep 24 14:54:03 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.39, est: 1339.68h, G_loss: 0.71346, running_mf1: 0.43368
-================ (Wed Sep 24 14:55:57 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.12, est: 873.92h, G_loss: 0.73559, running_mf1: 0.43167
-Is_training: True. [0,99][101,16707], imps: 11.94, est: 155.43h, G_loss: 0.76147, running_mf1: 0.29407
-================ (Wed Sep 24 14:58:45 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.33, est: 796.17h, G_loss: 0.59773, running_mf1: 0.49407
-================ (Wed Sep 24 15:04:14 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.02, est: 916.87h, G_loss: 0.67275, running_mf1: 0.49234
-================ (Wed Sep 24 15:04:54 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.01, est: 925.62h, G_loss: 0.68972, running_mf1: 0.44490
-Is_training: True. [0,99][101,16707], imps: 11.48, est: 161.73h, G_loss: 0.84997, running_mf1: 0.33456
-================ (Wed Sep 24 15:31:13 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.64, est: 1129.73h, G_loss: 0.73244, running_mf1: 0.42582
-================ (Wed Sep 24 15:31:49 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 3 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Wed Sep 24 15:32:09 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.97, est: 941.32h, G_loss: 0.69181, running_mf1: 0.50158
-Is_training: True. [0,99][101,16707], imps: 11.90, est: 156.02h, G_loss: 0.54216, running_mf1: 0.43542
-Is_training: True. [0,99][201,16707], imps: 12.57, est: 147.72h, G_loss: 0.64610, running_mf1: 0.40112
-Is_training: True. [0,99][301,16707], imps: 12.88, est: 144.12h, G_loss: 0.45129, running_mf1: 0.47189
-Is_training: True. [0,99][401,16707], imps: 13.00, est: 142.73h, G_loss: 0.61506, running_mf1: 0.41177
-Is_training: True. [0,99][501,16707], imps: 13.08, est: 141.83h, G_loss: 0.63066, running_mf1: 0.40324
-================ (Wed Sep 24 15:35:42 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.25, est: 823.84h, G_loss: 0.94616, running_mf1: 0.21949
-Is_training: True. [0,99][101,16707], imps: 12.09, est: 153.52h, G_loss: 0.69787, running_mf1: 0.35227
-Is_training: True. [0,99][201,16707], imps: 12.79, est: 145.09h, G_loss: 0.63441, running_mf1: 0.41520
-Is_training: True. [0,99][301,16707], imps: 12.97, est: 143.05h, G_loss: 0.58644, running_mf1: 0.42397
-Is_training: True. [0,99][401,16707], imps: 13.00, est: 142.75h, G_loss: 0.59002, running_mf1: 0.42831
-Is_training: True. [0,99][501,16707], imps: 13.01, est: 142.69h, G_loss: 0.75012, running_mf1: 0.34657
-Is_training: True. [0,99][601,16707], imps: 12.94, est: 143.37h, G_loss: 0.51145, running_mf1: 0.44795
-Is_training: True. [0,99][701,16707], imps: 12.95, est: 143.24h, G_loss: 0.65350, running_mf1: 0.39437
-================ (Wed Sep 24 15:39:53 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.90, est: 978.71h, G_loss: 0.69900, running_mf1: 0.50020
-================ (Wed Sep 24 15:40:31 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.09, est: 887.63h, G_loss: 0.58985, running_mf1: 0.49523
-Is_training: True. [0,99][101,16707], imps: 11.50, est: 161.43h, G_loss: 0.70602, running_mf1: 0.35416
-Is_training: True. [0,99][201,16707], imps: 12.32, est: 150.65h, G_loss: 0.62691, running_mf1: 0.41034
-Is_training: True. [0,99][301,16707], imps: 12.54, est: 147.99h, G_loss: 0.59198, running_mf1: 0.42451
-Is_training: True. [0,99][401,16707], imps: 12.65, est: 146.74h, G_loss: 0.72864, running_mf1: 0.35832
-Is_training: True. [0,99][501,16707], imps: 12.71, est: 145.99h, G_loss: 0.83226, running_mf1: 0.30924
-Is_training: True. [0,99][601,16707], imps: 12.69, est: 146.27h, G_loss: 0.72541, running_mf1: 0.33346
-Is_training: True. [0,99][701,16707], imps: 12.73, est: 145.80h, G_loss: 0.60294, running_mf1: 0.42519
-Is_training: True. [0,99][801,16707], imps: 12.76, est: 145.38h, G_loss: 0.69851, running_mf1: 0.36356
-Is_training: True. [0,99][901,16707], imps: 12.79, est: 145.06h, G_loss: 0.58602, running_mf1: 0.42384
-Is_training: True. [0,99][1001,16707], imps: 12.81, est: 144.79h, G_loss: 0.55242, running_mf1: 0.43589
-Is_training: True. [0,99][1101,16707], imps: 12.73, est: 145.74h, G_loss: 0.58511, running_mf1: 0.42101
-Is_training: True. [0,99][1201,16707], imps: 12.74, est: 145.57h, G_loss: 0.77434, running_mf1: 0.32692
-Is_training: True. [0,99][1301,16707], imps: 12.76, est: 145.37h, G_loss: 0.65517, running_mf1: 0.38855
-Is_training: True. [0,99][1401,16707], imps: 12.78, est: 145.18h, G_loss: 0.62332, running_mf1: 0.41017
-================ (Wed Sep 24 15:54:04 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test ================ (Wed Sep 24 15:54:53 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Wed Sep 24 15:55:21 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Wed Sep 24 15:55:47 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-================ (Wed Sep 24 15:56:09 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.26, est: 821.98h, G_loss: 0.71990, running_mf1: 0.50263
-Is_training: True. [0,99][101,16707], imps: 11.71, est: 158.53h, G_loss: 0.73490, running_mf1: 0.08080
-Is_training: True. [0,99][201,16707], imps: 12.48, est: 148.76h, G_loss: 0.70731, running_mf1: 0.17886
-Is_training: True. [0,99][301,16707], imps: 12.81, est: 144.85h, G_loss: 0.68520, running_mf1: 0.41871
-Is_training: True. [0,99][401,16707], imps: 12.92, est: 143.62h, G_loss: 0.66097, running_mf1: 0.44701
-Is_training: True. [0,99][501,16707], imps: 12.94, est: 143.40h, G_loss: 0.73875, running_mf1: 0.26765
-Is_training: True. [0,99][601,16707], imps: 12.86, est: 144.29h, G_loss: 0.67330, running_mf1: 0.43333
-Is_training: True. [0,99][701,16707], imps: 12.88, est: 144.03h, G_loss: 0.66056, running_mf1: 0.48596
-Is_training: True. [0,99][801,16707], imps: 12.90, est: 143.83h, G_loss: 0.68447, running_mf1: 0.42203
-Is_training: True. [0,99][901,16707], imps: 12.79, est: 145.03h, G_loss: 0.71562, running_mf1: 0.36881
-Is_training: True. [0,99][1001,16707], imps: 12.80, est: 144.92h, G_loss: 0.67393, running_mf1: 0.46419
-Is_training: True. [0,99][1101,16707], imps: 12.76, est: 145.37h, G_loss: 0.69553, running_mf1: 0.39024
-Is_training: True. [0,99][1201,16707], imps: 12.78, est: 145.13h, G_loss: 0.68867, running_mf1: 0.31122
-Is_training: True. [0,99][1301,16707], imps: 12.80, est: 144.91h, G_loss: 0.68950, running_mf1: 0.41382
-================ (Wed Sep 24 16:03:31 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.74, est: 1068.66h, G_loss: 0.72654, running_mf1: 0.39719
-Is_training: True. [0,99][101,16707], imps: 11.38, est: 163.18h, G_loss: 0.72269, running_mf1: 0.11277
-Is_training: True. [0,99][201,16707], imps: 12.13, est: 152.96h, G_loss: 0.66654, running_mf1: 0.23451
-Is_training: True. [0,99][301,16707], imps: 12.39, est: 149.84h, G_loss: 0.67106, running_mf1: 0.21867
-Is_training: True. [0,99][401,16707], imps: 12.53, est: 148.06h, G_loss: 0.66576, running_mf1: 0.22456
-Is_training: True. [0,99][501,16707], imps: 12.61, est: 147.11h, G_loss: 0.64808, running_mf1: 0.25135
-Is_training: True. [0,99][601,16707], imps: 12.48, est: 148.66h, G_loss: 0.58217, running_mf1: 0.33936
-Is_training: True. [0,99][701,16707], imps: 12.49, est: 148.62h, G_loss: 0.64951, running_mf1: 0.24946
-Is_training: True. [0,99][801,16707], imps: 12.51, est: 148.27h, G_loss: 0.63909, running_mf1: 0.25174
-Is_training: True. [0,99][901,16707], imps: 12.54, est: 147.96h, G_loss: 0.81633, running_mf1: 0.09371
-Is_training: True. [0,99][1001,16707], imps: 12.57, est: 147.57h, G_loss: 0.67942, running_mf1: 0.21195
-================ (Wed Sep 24 16:09:00 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.13, est: 871.52h, G_loss: 0.61779, running_mf1: 0.39665
-Is_training: True. [0,99][101,16707], imps: 11.40, est: 162.76h, G_loss: 0.68424, running_mf1: 0.23354
-Is_training: True. [0,99][201,16707], imps: 12.05, est: 154.07h, G_loss: 0.64732, running_mf1: 0.30886
-Is_training: True. [0,99][301,16707], imps: 12.30, est: 150.85h, G_loss: 0.64274, running_mf1: 0.28587
-Is_training: True. [0,99][401,16707], imps: 12.43, est: 149.25h, G_loss: 0.63190, running_mf1: 0.29644
-Is_training: True. [0,99][501,16707], imps: 12.50, est: 148.47h, G_loss: 0.70601, running_mf1: 0.40757
-Is_training: True. [0,99][601,16707], imps: 12.46, est: 148.97h, G_loss: 0.69677, running_mf1: 0.17879
-Is_training: True. [0,99][701,16707], imps: 12.50, est: 148.44h, G_loss: 0.62681, running_mf1: 0.35089
-Is_training: True. [0,99][801,16707], imps: 12.54, est: 147.99h, G_loss: 0.76073, running_mf1: 0.12605
-Is_training: True. [0,99][901,16707], imps: 12.56, est: 147.75h, G_loss: 0.75137, running_mf1: 0.11423
-Is_training: True. [0,99][1001,16707], imps: 12.59, est: 147.40h, G_loss: 0.68810, running_mf1: 0.22507
-Is_training: True. [0,99][1101,16707], imps: 12.49, est: 148.58h, G_loss: 0.69263, running_mf1: 0.20917
-Is_training: True. [0,99][1201,16707], imps: 12.52, est: 148.19h, G_loss: 0.64143, running_mf1: 0.30340
-Is_training: True. [0,99][1301,16707], imps: 12.54, est: 147.92h, G_loss: 0.73276, running_mf1: 0.08230
-Is_training: True. [0,99][1401,16707], imps: 12.55, est: 147.76h, G_loss: 0.70246, running_mf1: 0.35264
-Is_training: True. [0,99][1501,16707], imps: 12.57, est: 147.59h, G_loss: 0.64131, running_mf1: 0.29795
-Is_training: True. [0,99][1601,16707], imps: 12.53, est: 148.02h, G_loss: 0.70994, running_mf1: 0.17977
-Is_training: True. [0,99][1701,16707], imps: 12.54, est: 147.83h, G_loss: 0.70656, running_mf1: 0.18817
-Is_training: True. [0,99][1801,16707], imps: 12.56, est: 147.67h, G_loss: 0.80114, running_mf1: 0.12086
-Is_training: True. [0,99][1901,16707], imps: 12.57, est: 147.52h, G_loss: 0.64595, running_mf1: 0.29689
-Is_training: True. [0,99][2001,16707], imps: 12.58, est: 147.42h, G_loss: 0.68870, running_mf1: 0.22475
-Is_training: True. [0,99][2101,16707], imps: 12.55, est: 147.67h, G_loss: 0.67261, running_mf1: 0.27489
-Is_training: True. [0,99][2201,16707], imps: 12.56, est: 147.57h, G_loss: 0.66899, running_mf1: 0.27505
-Is_training: True. [0,99][2301,16707], imps: 12.57, est: 147.44h, G_loss: 0.78366, running_mf1: 0.06427
-Is_training: True. [0,99][2401,16707], imps: 12.58, est: 147.34h, G_loss: 0.64847, running_mf1: 0.29212
-Is_training: True. [0,99][2501,16707], imps: 12.59, est: 147.24h, G_loss: 0.64269, running_mf1: 0.35030
-Is_training: True. [0,99][2601,16707], imps: 12.56, est: 147.52h, G_loss: 0.70806, running_mf1: 0.19384
-Is_training: True. [0,99][2701,16707], imps: 12.57, est: 147.41h, G_loss: 0.71776, running_mf1: 0.20639
-================ (Wed Sep 24 16:23:55 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.32, est: 798.59h, G_loss: 0.81296, running_mf1: 0.27341
-Is_training: True. [0,99][101,16707], imps: 11.44, est: 162.22h, G_loss: 0.72835, running_mf1: 0.27745
-Is_training: True. [0,99][201,16707], imps: 12.17, est: 152.53h, G_loss: 0.81180, running_mf1: 0.34129
-Is_training: True. [0,99][301,16707], imps: 12.36, est: 150.12h, G_loss: 0.69054, running_mf1: 0.47187
-Is_training: True. [0,99][401,16707], imps: 12.47, est: 148.85h, G_loss: 0.70559, running_mf1: 0.20580
-Is_training: True. [0,99][501,16707], imps: 12.53, est: 148.16h, G_loss: 0.66492, running_mf1: 0.36714
-Is_training: True. [0,99][601,16707], imps: 12.50, est: 148.50h, G_loss: 0.62911, running_mf1: 0.38066
-Is_training: True. [0,99][701,16707], imps: 12.54, est: 147.95h, G_loss: 0.67566, running_mf1: 0.29820
-Is_training: True. [0,99][801,16707], imps: 12.56, est: 147.68h, G_loss: 0.69328, running_mf1: 0.45227
-Is_training: True. [0,99][901,16707], imps: 12.59, est: 147.42h, G_loss: 0.68481, running_mf1: 0.28582
-Is_training: True. [0,99][1001,16707], imps: 12.60, est: 147.22h, G_loss: 0.69661, running_mf1: 0.21766
-Is_training: True. [0,99][1101,16707], imps: 12.52, est: 148.15h, G_loss: 0.69452, running_mf1: 0.20417
-Is_training: True. [0,99][1201,16707], imps: 12.53, est: 148.04h, G_loss: 0.68752, running_mf1: 0.43419
-Is_training: True. [0,99][1301,16707], imps: 12.55, est: 147.84h, G_loss: 0.69430, running_mf1: 0.22502
-Is_training: True. [0,99][1401,16707], imps: 12.56, est: 147.65h, G_loss: 0.69376, running_mf1: 0.22105
-Is_training: True. [0,99][1501,16707], imps: 12.57, est: 147.51h, G_loss: 0.68471, running_mf1: 0.26783
-Is_training: True. [0,99][1601,16707], imps: 12.52, est: 148.17h, G_loss: 0.75348, running_mf1: 0.03794
-Is_training: True. [0,99][1701,16707], imps: 12.53, est: 147.98h, G_loss: 0.71816, running_mf1: 0.17035
-Is_training: True. [0,99][1801,16707], imps: 12.54, est: 147.85h, G_loss: 0.70417, running_mf1: 0.11376
-Is_training: True. [0,99][1901,16707], imps: 12.55, est: 147.71h, G_loss: 0.69293, running_mf1: 0.40528
-Is_training: True. [0,99][2001,16707], imps: 12.56, est: 147.60h, G_loss: 0.71544, running_mf1: 0.19864
-Is_training: True. [0,99][2101,16707], imps: 12.51, est: 148.15h, G_loss: 0.70037, running_mf1: 0.16701
-Is_training: True. [0,99][2201,16707], imps: 12.53, est: 148.00h, G_loss: 0.68104, running_mf1: 0.35033
-Is_training: True. [0,99][2301,16707], imps: 12.54, est: 147.86h, G_loss: 0.71595, running_mf1: 0.17690
-Is_training: True. [0,99][2401,16707], imps: 12.54, est: 147.78h, G_loss: 0.72185, running_mf1: 0.07763
-================ (Wed Sep 24 16:37:08 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.67, est: 695.55h, G_loss: 0.69420, running_mf1: 0.46753
-Is_training: True. [0,99][101,16707], imps: 11.64, est: 159.43h, G_loss: 0.61631, running_mf1: 0.48938
-Is_training: True. [0,99][201,16707], imps: 12.22, est: 151.86h, G_loss: 0.74536, running_mf1: 0.28447
-Is_training: True. [0,99][301,16707], imps: 12.39, est: 149.85h, G_loss: 0.68512, running_mf1: 0.39632
-Is_training: True. [0,99][401,16707], imps: 12.48, est: 148.66h, G_loss: 0.57381, running_mf1: 0.46274
-Is_training: True. [0,99][501,16707], imps: 12.54, est: 147.96h, G_loss: 0.66828, running_mf1: 0.40380
-Is_training: True. [0,99][601,16707], imps: 12.45, est: 149.09h, G_loss: 0.61161, running_mf1: 0.44056
-Is_training: True. [0,99][701,16707], imps: 12.50, est: 148.49h, G_loss: 0.65013, running_mf1: 0.41897
-Is_training: True. [0,99][801,16707], imps: 12.52, est: 148.14h, G_loss: 0.64246, running_mf1: 0.42540
-Is_training: True. [0,99][901,16707], imps: 12.55, est: 147.83h, G_loss: 0.70114, running_mf1: 0.36444
-Is_training: True. [0,99][1001,16707], imps: 12.57, est: 147.56h, G_loss: 0.77031, running_mf1: 0.32749
-Is_training: True. [0,99][1101,16707], imps: 12.52, est: 148.13h, G_loss: 0.73212, running_mf1: 0.33786
-Is_training: True. [0,99][1201,16707], imps: 12.54, est: 147.89h, G_loss: 0.59103, running_mf1: 0.44738
-Is_training: True. [0,99][1301,16707], imps: 12.56, est: 147.69h, G_loss: 0.68178, running_mf1: 0.39265
-Is_training: True. [0,99][1401,16707], imps: 12.57, est: 147.57h, G_loss: 0.66353, running_mf1: 0.40814
-Is_training: True. [0,99][1501,16707], imps: 12.58, est: 147.38h, G_loss: 0.67803, running_mf1: 0.39587
-================ (Wed Sep 24 16:45:27 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.76, est: 1052.96h, G_loss: 0.70677, running_mf1: 0.49339
-Is_training: True. [0,99][101,16707], imps: 11.10, est: 167.25h, G_loss: 0.68015, running_mf1: 0.41550
-Is_training: True. [0,99][201,16707], imps: 11.83, est: 156.84h, G_loss: 0.64636, running_mf1: 0.43650
-Is_training: True. [0,99][301,16707], imps: 12.16, est: 152.67h, G_loss: 0.79082, running_mf1: 0.34903
-Is_training: True. [0,99][401,16707], imps: 12.31, est: 150.82h, G_loss: 0.71994, running_mf1: 0.33747
-Is_training: True. [0,99][501,16707], imps: 12.41, est: 149.55h, G_loss: 0.74451, running_mf1: 0.29809
-================ (Wed Sep 24 16:48:53 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.12, est: 874.32h, G_loss: 0.74578, running_mf1: 0.52414
-Is_training: True. [0,99][101,16707], imps: 11.35, est: 163.56h, G_loss: 0.79096, running_mf1: 0.35701
-Is_training: True. [0,99][201,16707], imps: 12.05, est: 153.99h, G_loss: 0.64240, running_mf1: 0.43892
-Is_training: True. [0,99][301,16707], imps: 12.29, est: 151.08h, G_loss: 0.65577, running_mf1: 0.43542
-Is_training: True. [0,99][401,16707], imps: 12.38, est: 149.87h, G_loss: 0.67974, running_mf1: 0.42175
-Is_training: True. [0,99][501,16707], imps: 12.44, est: 149.16h, G_loss: 0.70314, running_mf1: 0.38980
-================ (Wed Sep 24 16:52:06 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 2.38, est: 779.10h, G_loss: 0.70513, running_mf1: 0.45901
-Is_training: True. [0,99][101,16707], imps: 11.79, est: 157.42h, G_loss: 1.06351, running_mf1: 0.27517
-Is_training: True. [0,99][201,16707], imps: 12.29, est: 151.02h, G_loss: 0.60782, running_mf1: 0.48641
-Is_training: True. [0,99][301,16707], imps: 12.44, est: 149.14h, G_loss: 0.61644, running_mf1: 0.44980
-Is_training: True. [0,99][401,16707], imps: 12.50, est: 148.41h, G_loss: 0.69851, running_mf1: 0.39629
-================ (Wed Sep 24 16:54:27 2025) ================
-gpu_ids: [0] project_name: test checkpoint_root: checkpoints2 num_workers: 8 dataset: CDDataset data_name: SenForFlood batch_size: 2 split: train split_val: test img_size: 256 n_class: 2 net_G: base_GCN loss: ce optimizer: sgd lr: 0.01 max_epochs: 100 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints2/test vis_dir: vis/test lr: 0.0100000
-Is_training: True. [0,99][1,16707], imps: 1.70, est: 1094.41h, G_loss: 0.72181, running_mf1: 0.44049
-Is_training: True. [0,99][101,16707], imps: 11.19, est: 165.89h, G_loss: 0.71548, running_mf1: 0.39182
-Is_training: True. [0,99][201,16707], imps: 11.95, est: 155.30h, G_loss: 0.70429, running_mf1: 0.35406
-Is_training: True. [0,99][301,16707], imps: 12.20, est: 152.18h, G_loss: 0.67225, running_mf1: 0.39414
-Is_training: True. [0,99][401,16707], imps: 12.33, est: 150.57h, G_loss: 0.64213, running_mf1: 0.42073
-Is_training: True. [0,99][501,16707], imps: 12.38, est: 149.84h, G_loss: 0.55814, running_mf1: 0.44713
-Is_training: True. [0,99][601,16707], imps: 12.29, est: 151.04h, G_loss: 0.55125, running_mf1: 0.47079
+Is_training: False. [0,99][1,3678], imps: 0.01, est: 58887.95h, G_loss: 0.68577, running_mf1: 0.33546
+Is_training: False. [0,99][101,3678], imps: 0.35, est: 1176.62h, G_loss: 0.68577, running_mf1: 0.37888
+Is_training: False. [0,99][201,3678], imps: 0.68, est: 604.74h, G_loss: 0.68577, running_mf1: 0.41316
+Is_training: False. [0,99][301,3678], imps: 0.99, est: 412.08h, G_loss: 0.68577, running_mf1: 0.41200
+Is_training: False. [0,99][401,3678], imps: 1.29, est: 315.55h, G_loss: 0.68577, running_mf1: 0.39406
+Is_training: False. [0,99][501,3678], imps: 1.59, est: 256.95h, G_loss: 0.68577, running_mf1: 0.34292
+Is_training: False. [0,99][601,3678], imps: 1.87, est: 218.02h, G_loss: 0.68577, running_mf1: 0.42107
+Is_training: False. [0,99][701,3678], imps: 2.15, est: 190.03h, G_loss: 0.68577, running_mf1: 0.41527
+Is_training: False. [0,99][801,3678], imps: 2.41, est: 168.93h, G_loss: 0.68577, running_mf1: 0.31808
+Is_training: False. [0,99][901,3678], imps: 2.67, est: 152.58h, G_loss: 0.68577, running_mf1: 0.45440
+Is_training: False. [0,99][1001,3678], imps: 2.93, est: 139.32h, G_loss: 0.68577, running_mf1: 0.42205
+Is_training: False. [0,99][1101,3678], imps: 3.17, est: 128.68h, G_loss: 0.68577, running_mf1: 0.40517
+Is_training: False. [0,99][1201,3678], imps: 3.40, est: 119.89h, G_loss: 0.68577, running_mf1: 0.41651
+Is_training: False. [0,99][1301,3678], imps: 3.63, est: 112.26h, G_loss: 0.68577, running_mf1: 0.43467
+Is_training: False. [0,99][1401,3678], imps: 3.85, est: 105.72h, G_loss: 0.68577, running_mf1: 0.46669
+Is_training: False. [0,99][1501,3678], imps: 4.07, est: 100.07h, G_loss: 0.68577, running_mf1: 0.39196
+Is_training: False. [0,99][1601,3678], imps: 4.27, est: 95.20h, G_loss: 0.68577, running_mf1: 0.27421
+Is_training: False. [0,99][1701,3678], imps: 4.48, est: 90.84h, G_loss: 0.68577, running_mf1: 0.40822
+Is_training: False. [0,99][1801,3678], imps: 4.67, est: 87.00h, G_loss: 0.68577, running_mf1: 0.37303
+Is_training: False. [0,99][1901,3678], imps: 4.87, est: 83.50h, G_loss: 0.68577, running_mf1: 0.40370
+Is_training: False. [0,99][2001,3678], imps: 5.04, est: 80.57h, G_loss: 0.68577, running_mf1: 0.38248
+Is_training: False. [0,99][2101,3678], imps: 5.22, est: 77.82h, G_loss: 0.68577, running_mf1: 0.39369
+Is_training: False. [0,99][2201,3678], imps: 5.40, est: 75.25h, G_loss: 0.68577, running_mf1: 0.43904
+Is_training: False. [0,99][2301,3678], imps: 5.57, est: 72.90h, G_loss: 0.68577, running_mf1: 0.38711
+Is_training: False. [0,99][2401,3678], imps: 5.74, est: 70.78h, G_loss: 0.68577, running_mf1: 0.36217
+Is_training: False. [0,99][2501,3678], imps: 5.90, est: 68.76h, G_loss: 0.68577, running_mf1: 0.33964
+Is_training: False. [0,99][2601,3678], imps: 6.06, est: 66.96h, G_loss: 0.68577, running_mf1: 0.41508
+Is_training: False. [0,99][2701,3678], imps: 6.20, est: 65.38h, G_loss: 0.68577, running_mf1: 0.46366
+Is_training: False. [0,99][2801,3678], imps: 6.36, est: 63.80h, G_loss: 0.68577, running_mf1: 0.40735
+Is_training: False. [0,99][2901,3678], imps: 6.51, est: 62.29h, G_loss: 0.68577, running_mf1: 0.45902
