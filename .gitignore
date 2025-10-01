@@ -8,7 +8,8 @@ __pycache__/
 
 # Distribution / packaging
 first_test_results
-checkpoints
+checkpoints*
+test*
 vis
 .Python
 build/

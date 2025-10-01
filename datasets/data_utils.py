@@ -10,16 +10,6 @@ from torchvision import transforms
 import torch
 import cv2
 
-def to_tensor_and_norm(imgs, labels):
-    # imgs: list of np.ndarray (H, W, C)
-    imgs = [torch.from_numpy(img.transpose(2, 0, 1)).float() for img in imgs]
-
-    # Scale floats from [0,1] → [0,255] and cast to uint8
-    imgs = [ (img * 255).to(torch.uint8) for img in imgs ]
-
-    labels = [torch.from_numpy(np.array(img, np.uint8)).unsqueeze(dim=0)
-              for img in labels]
-    return imgs, labels
 
 def pil_crop(image, box, cropsize, default_value):
     assert isinstance(image, Image.Image)
@@ -86,6 +76,8 @@ class CDDataAugmentation:
             with_random_crop=False,
             with_scale_random_crop=False,
             with_random_blur=False,
+            mean=None,
+            std=None
     ):
         self.img_size = img_size
         if self.img_size is None:
@@ -98,7 +90,8 @@ class CDDataAugmentation:
         self.with_random_crop = with_random_crop
         self.with_scale_random_crop = with_scale_random_crop
         self.with_random_blur = with_random_blur
-
+        self.mean = mean
+        self.std = std
 
 
     def transform(self, imgs, labels, to_tensor=True, rasterio_read=True):
@@ -107,6 +100,7 @@ class CDDataAugmentation:
         :param labels: [ndarray,]
         :return: [ndarray,],[ndarray,]
         """
+        
         if rasterio_read:
             # Use numpy and torchvision transforms
             random_base = 0.5
@@ -153,7 +147,14 @@ class CDDataAugmentation:
                 
                 imgs = [torch.from_numpy(img.copy()).float() for img in imgs]
                 labels = [torch.from_numpy(label.copy()).long() for label in labels]
-            #print(imgs[0].device)
+                #print(imgs[0].shape)
+                
+                #imgs = [TF.normalize(img, mean=[0.5]*8,std=[0.5]*8)
+
+                std = [s if s > 0 else 1.0 for s in self.std]  # avoid zero std
+                imgs = [TF.normalize(img, mean=self.mean, std=self.std) for img in imgs]
+                #for c in range(len(imgs[0])):
+                #    print(f"channel {c} unique values: {torch.unique(imgs[0][c])}")
             return imgs, labels
 
         else:

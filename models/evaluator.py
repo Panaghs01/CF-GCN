@@ -7,7 +7,7 @@ from misc.metric_tool import ConfuseMatrixMeter
 from misc.logger_tool import Logger
 from utils import de_norm
 import utils
-
+from models.trainer import resize, replace_bn_with_gn
 
 # Decide which device we want to run on
 # torch.cuda.current_device()
@@ -24,8 +24,11 @@ class CDEvaluator():
         self.n_class = args.n_class
         # define G
         self.net_G = define_G(args=args, gpu_ids=args.gpu_ids)
+        
         self.device = torch.device("cuda:%s" % args.gpu_ids[0] if torch.cuda.is_available() and len(args.gpu_ids)>0
                                    else "cpu")
+        replace_bn_with_gn(self.net_G, num_groups=8)
+        self.net_G.to(self.device)
         print(self.device)
 
         # define some other vars to record the training states
@@ -118,8 +121,11 @@ class CDEvaluator():
             vis_pred = utils.make_numpy_grid(self._visualize_pred())
 
             vis_gt = utils.make_numpy_grid(self.batch['L'])
-            vis = np.concatenate([vis_input, vis_input2, vis_pred, vis_gt], axis=0)
-            vis = np.clip(vis, a_min=0.0, a_max=1.0)
+
+            target_shape = vis_pred.shape[:2]
+            vis_gt = resize(vis_gt, target_shape)
+            vis = np.concatenate([vis_pred[:,:,0], vis_gt[:,:,0]], axis=0)
+            vis = np.clip(vis, a_min=0.0, a_max=255.0)
             file_name = os.path.join(
                 self.vis_dir, 'eval_' + str(self.batch_id)+'.jpg')
             plt.imsave(file_name, vis)

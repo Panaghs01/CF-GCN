@@ -17,6 +17,54 @@ from misc.logger_tool import Logger, Timer
 
 from utils import de_norm
 
+def replace_bn_with_gn(module, num_groups=32):
+    """
+    Recursively replaces all BatchNorm layers in a module with GroupNorm layers.
+    
+    Args:
+        module (nn.Module): The module to traverse and modify.
+        num_groups (int): The number of groups for GroupNorm.
+                          A common choice is 32.
+    """
+    for name, child in module.named_children():
+        if isinstance(child, nn.BatchNorm1d):
+            # Batch norm 1D is usually applied to sequences/features
+            # This is tricky because BatchNorm1d only takes 'num_features'
+            # GroupNorm is generally for NCHW data. For sequence data (NCL),
+            # this replacement might be conceptually problematic but mathematically possible.
+            # However, for robustness, it's often better to focus on 2D/3D.
+            # For 1D, if it's acting on the C dimension, we can replace it.
+            # Assuming C is the only dimension after batch:
+            num_channels = child.num_features
+            new_module = nn.GroupNorm(num_groups=min(num_groups, num_channels), 
+                                     num_channels=num_channels, 
+                                     eps=child.eps, 
+                                     affine=child.affine)
+            setattr(module, name, new_module)
+
+        elif isinstance(child, nn.BatchNorm2d) or isinstance(child, nn.BatchNorm3d):
+            # These are the most common uses of BatchNorm.
+            num_channels = child.num_features
+            new_module = nn.GroupNorm(num_groups=min(num_groups, num_channels), # Ensure num_groups <= num_channels
+                                     num_channels=num_channels, 
+                                     eps=child.eps, 
+                                     affine=child.affine)
+            # Copy momentum/track_running_stats properties for completeness if needed, 
+            # though GroupNorm doesn't use them directly.
+            
+            # Transfer learned parameters (gamma and beta)
+            if child.affine:
+                 # GroupNorm params are weight/bias, BatchNorm's are weight/bias
+                if child.weight is not None:
+                    new_module.weight.data = child.weight.data
+                if child.bias is not None:
+                    new_module.bias.data = child.bias.data
+            
+            setattr(module, name, new_module)
+        
+        else:
+            # Recursively apply the replacement to submodules
+            replace_bn_with_gn(child, num_groups)
 
 class CDTrainer():
 
@@ -31,14 +79,24 @@ class CDTrainer():
         self.device = torch.device("cuda:%s" % args.gpu_ids[0] if torch.cuda.is_available() and len(args.gpu_ids)>0
                                    else "cpu")
         print(self.device)
+        replace_bn_with_gn(self.net_G)
+        self.net_G.to(self.device)
 
         # Learning rate and Beta1 for Adam optimizers
         self.lr = args.lr
 
         # define optimizers
-        self.optimizer_G = optim.SGD(self.net_G.parameters(), lr=self.lr,
-                                     momentum=0.9,
-                                     weight_decay=5e-4)
+        if args.optimizer == 'sgd':
+            self.optimizer_G = optim.SGD(self.net_G.parameters(), lr=self.lr,
+                                        momentum=0.9,
+                                        weight_decay=5e-4)
+
+        elif args.optimizer == 'adam':
+            self.optimizer_G = optim.AdamW(
+                self.net_G.parameters(),
+                lr=self.lr,           # e.g. 1e-3
+                betas=(0.9, 0.999)    
+            )
 
         # define lr schedulers
         self.exp_lr_scheduler_G = get_scheduler(self.optimizer_G, args)
@@ -95,7 +153,6 @@ class CDTrainer():
         if os.path.exists(self.vis_dir) is False:
             os.mkdir(self.vis_dir)
 
-
     def _load_checkpoint(self, ckpt_name='last_ckpt.pt'):
 
         if os.path.exists(os.path.join(self.checkpoint_dir, ckpt_name)):
@@ -138,7 +195,7 @@ class CDTrainer():
 
         pred = torch.argmax(self.G_pred, dim=1, keepdim=True)
         pred_vis = pred * 255
-        print(pred)
+        #print(pred)
         return pred_vis
 
     def _save_checkpoint(self, ckpt_name):
@@ -183,31 +240,31 @@ class CDTrainer():
             self.logger.write(message)
 
 
-        if np.mod(self.batch_id, 500) == 1:
-            vis_input = utils.make_numpy_grid(self.batch['A']) #de_norm
-            vis_input2 = utils.make_numpy_grid(self.batch['B'])
+        if np.mod(self.batch_id, 4000) == 1:
+            #vis_input = utils.make_numpy_grid(self.batch['A']) #de_norm
+            #vis_input2 = utils.make_numpy_grid(self.batch['B'])
 
             vis_pred = utils.make_numpy_grid(self._visualize_pred())
 
             vis_gt = utils.make_numpy_grid(self.batch['L'])
 
             # Convert all to 8-channel format
-            target_shape = vis_input.shape[:2]
+            target_shape = vis_pred.shape[:2]
 
-            if self.data_name == 'SenForFlood':
+            """ if self.data_name == 'SenForFlood':
                 # Ensure vis_gt has 8 channels using np.stack([vis_gt]*8, axis=2)
                 if vis_gt.shape[2] < 8:
                     vis_gt = np.stack([vis_gt[..., 0]] * 8, axis=2)
                 # Ensure vis_pred has 8 channels using np.stack([vis_pred]*8, axis=2)
                 if vis_pred.shape[2] < 8:
-                    vis_pred = np.stack([vis_pred[..., 0]] * 8, axis=2)
+                    vis_pred = np.stack([vis_pred[..., 0]] * 8, axis=2) """
 
-                vis_gt = resize(vis_gt, target_shape)
+            vis_gt = resize(vis_gt, target_shape)
             #vis_pred = resize(vis_pred, target_shape)
-            print(f"visgt: {vis_gt.shape}, vispred: {vis_pred.shape}, target: {target_shape}")
+            #print(f"visgt: {vis_gt.shape}, vispred: {vis_pred.shape}, target: {target_shape}")
             
-            print(f"\n\n\nattempting to conacat {vis_input.shape, vis_input2.shape, vis_pred.shape, vis_gt.shape}, {type(vis_input)}")
-            vis = np.concatenate([vis_input, vis_input2, vis_pred, vis_gt], axis=0)
+            print(f"\n\n\nattempting to conacat {vis_pred.shape, vis_gt.shape}")
+            vis = np.concatenate([vis_pred[:,:,0], vis_gt[:,:,0]], axis=0)
             vis = np.clip(vis, a_min=0.0, a_max=255.0)
 
             file_name = os.path.join(
@@ -216,13 +273,13 @@ class CDTrainer():
             #print(vis.shape,type(vis))
 
 
-            if self.data_name == 'SenForFlood':
+            """ if self.data_name == 'SenForFlood':
                 with rasterio.open(file_name, 'w', driver='GTiff', height=vis.shape[0],\
                                     width=vis.shape[1], count=vis.shape[2], dtype=vis.dtype) as dst:
                     for i in range(8):
                         dst.write((vis[:,:,i]).astype(np.uint8), i+1)
-            else:
-                plt.imsave(file_name, vis)
+            else: """
+            plt.imsave(file_name, vis)
                     
 
     def _collect_epoch_states(self):
@@ -271,12 +328,13 @@ class CDTrainer():
         img_in1 = batch['A'].to(self.device)
         img_in2 = batch['B'].to(self.device)
         self.G_pred = self.net_G(img_in1, img_in2)
+        #print(self.G_pred.min(), self.G_pred.max())
 
 
 
     def _backward_G(self):
         gt = self.batch['L'].to(self.device).long()
-        self.G_loss = self._pxl_loss(self.G_pred, gt, ignore_index=255,weight=torch.tensor([0.5,0.8]).to(self.device))
+        self.G_loss = self._pxl_loss(self.G_pred, gt, ignore_index=255)
         self.G_loss.backward()
 
 
@@ -293,11 +351,11 @@ class CDTrainer():
             self.net_G.train()  # Set model to training mode
             # Iterate over data.
             self.logger.write('lr: %0.7f\n' % self.optimizer_G.param_groups[0]['lr'])
-            print(self.dataloaders['train'].__len__())
+            #print(self.dataloaders['train'].__len__())
             for self.batch_id, batch in enumerate(self.dataloaders['train'], 0):
                 
                 self._forward_pass(batch)
-                
+                #print(f"Prediction min/max: {self.G_pred.min()}, {self.G_pred.max()}\n label min/max: {batch['L'].min()}, {batch['L'].max()}   ")
                 # update G
                 
                 self.optimizer_G.zero_grad()
