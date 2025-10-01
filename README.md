@@ -22,6 +22,6 @@ To run the model check the `main_cd.py` file for the available model parameters 
 A basic way to train the model is to run the following command:
 ```
 python main_cd.py --gpu_ids 0 --data_name SenForFlood --batch_size 16 --split_val test
- --num_workers 8 --checkpoint_root checkpoints --split train --optimizer adam
+ --num_workers 8 --checkpoint_root checkpoints --split train
 ```
 
