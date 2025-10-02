@@ -2,7 +2,7 @@ import torch
 import torch.nn.functional as F
 
 
-def cross_entropy(input, target, weight=None, reduction='mean',ignore_index=255):
+def cross_entropy(input, target, weight=torch.Tensor([0.3,0.7]).to('cuda' if torch.cuda.is_available() else 'cpu'), reduction='mean',ignore_index=255):
     """
     logSoftmax_with_loss
     :param input: torch.Tensor, N*C*H*W
