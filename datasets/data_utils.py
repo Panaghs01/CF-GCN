@@ -4,6 +4,7 @@ import numpy as np
 from PIL import Image
 from PIL import ImageFilter
 import rasterio
+import data_config
 from rasterio.plot import show
 import torchvision.transforms.functional as TF
 from torchvision import transforms
@@ -64,6 +65,7 @@ def pil_rescale(img, scale, order):
     height, width = img.size
     target_size = (int(np.round(height*scale)), int(np.round(width*scale)))
     return pil_resize(img, target_size, order)
+
 
 class CDDataAugmentation:
 
@@ -142,17 +144,19 @@ class CDDataAugmentation:
                 imgs = [TF.resize(torch.from_numpy(img.transpose(2, 0, 1).copy()), [self.img_size, self.img_size], interpolation=TF.InterpolationMode.BICUBIC).numpy().transpose(1, 2, 0) for img in imgs]
                 labels = [TF.resize(torch.from_numpy(label[np.newaxis, ...].copy()), [self.img_size, self.img_size], interpolation=TF.InterpolationMode.NEAREST).numpy()[0] for label in labels]
         """ 
-            #rasterio.plot.show(imgs[0][:3])
+
             if to_tensor:
                 
                 imgs = [torch.from_numpy(img.copy()).float() for img in imgs]
                 labels = [torch.from_numpy(label.copy()).long() for label in labels]
+                imgs = [(x - x.min()) / (x.max() - x.min()) for x in imgs]  # Normalize to [0, 1]
                 #print(imgs[0].shape)
                 
                 #imgs = [TF.normalize(img, mean=[0.5]*8,std=[0.5]*8)
 
-                std = [s if s > 0 else 1.0 for s in self.std]  # avoid zero std
+
                 imgs = [TF.normalize(img, mean=self.mean, std=self.std) for img in imgs]
+                imgs = [torch.nan_to_num(img) for img in imgs]
                 #for c in range(len(imgs[0])):
                 #    print(f"channel {c} unique values: {torch.unique(imgs[0][c])}")
             return imgs, labels

@@ -2,9 +2,37 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader
 from torchvision import utils
+from datasets.CD_dataset import CDDataset
 
 import data_config
-from datasets.CD_dataset import CDDataset
+from datasets import CD_dataset as cd
+
+
+
+def get_dataset_mean_std(num_channels=6):
+    root_dir = data_config.DataConfig().get_data_config('SenForFlood').root_dir
+    img_list = cd.load_img_name_list(f"{root_dir}/list/train.txt")
+    size = len(img_list)
+    pixel_count = 0    
+    channel_sum = torch.zeros(num_channels, dtype=torch.float64)
+    channel_squared_sum = torch.zeros(num_channels, dtype=torch.float64)
+    for img_name in img_list:
+        for i in range(2):  # Loop over both images (pre and post)
+            if i == 0:
+                img = cd.get_img_path(root_dir, img_name)
+            else:
+                img = cd.get_img_post_path(root_dir, img_name)
+            img = cd.load_multispectral_image(img)
+            img = torch.from_numpy(img).float()
+
+            c, h, w = img.shape
+            pixel_count += h * w
+            channel_sum += img.view(c, -1).sum(dim=1)
+            channel_squared_sum += (img ** 2).view(c, -1).sum(dim=1)
+    mean = (channel_sum / pixel_count).tolist()
+    std = ((channel_squared_sum / pixel_count - torch.tensor(mean) ** 2).sqrt()).tolist()
+
+    return mean, std
 
 
 def get_loader(data_name, img_size=256, batch_size=8, split='test',
@@ -87,3 +115,8 @@ def get_device(args):
             args.gpu_ids.append(id)
     if len(args.gpu_ids) > 0:
         torch.cuda.set_device(args.gpu_ids[0])
+
+if __name__ == '__main__':
+    mean, std = get_dataset_mean_std()
+    print('mean:', mean)
+    print('std:', std)

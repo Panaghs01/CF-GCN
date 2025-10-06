@@ -2,6 +2,8 @@
 class DataConfig:
     data_name = ""
     root_dir = ""
+    mean = None
+    std = None
     label_transform = None
     def get_data_config(self, data_name):
         self.data_name = data_name
@@ -22,6 +24,14 @@ class DataConfig:
             self.root_dir = 'raw_data/SenForFlood'
         else:
             raise TypeError('%s has not defined' % data_name)
+        
+        if data_name == 'SenForFlood':  # 6 channels
+            self.mean = [3288.250685293216, 3142.6076760452397,\
+                        3167.0665465272696, 3730.833737398937,\
+                        2297.8053741934746, 1645.5760596861048]
+            self.std = [2730.3334944919493, 2607.3674210507534,\
+                        2781.12544738576, 2461.4640886942675,\
+                        1373.1495343166732, 1068.134491107072]
         return self
 
 

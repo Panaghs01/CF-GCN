@@ -7,6 +7,7 @@ from PIL import Image
 import numpy as np
 import rasterio
 
+import data_config
 import torch
 from torch.utils import data
 from datasets import FDA_source_to_target_np
@@ -57,16 +58,7 @@ def load_multispectral_image(path,channels=[0,1,2,3,4,5]):
     with rasterio.open(path) as src:
         img = src.read()[channels]  # shape: (bands, H, W)
         img = img.astype(np.float32)
-        #flip = img[:,:,::-1]
-        """plt.figure(figsize=(10, 4))
-        plt.subplot(1, 2, 1)
-        plt.imshow(img[0], cmap='gray')
-        plt.title('Original')
-        plt.subplot(1, 2, 2)
-        plt.imshow(flip[0], cmap='gray')
-        plt.title('Flipped')
-        plt.show() """
-        #img = np.transpose(img, (1, 2, 0))  # shape: (H, W, bands)
+
     return img
 
 def scale(img):
@@ -95,7 +87,7 @@ class ImageDataset(data.Dataset):
                 with_random_hflip=True,
                 with_random_vflip=True,
                 with_scale_random_crop=True,
-                with_random_blur=True,
+                with_random_blur=True
             )
         else:
             self.augm = CDDataAugmentation(
@@ -132,14 +124,17 @@ class CDDataset(ImageDataset):
         self.label_transform = label_transform
         self.data_name = data_name
         self.raster = True if self.data_name in ['SenForFlood', 'OMBRIA'] else False
-
-        # Compute mean and std from the first image (once)
+        if data_name == 'SenForFlood':
+            self.augm.mean = data_config.DataConfig().get_data_config('SenForFlood').mean
+            self.augm.std = data_config.DataConfig().get_data_config('SenForFlood').std
+        
+    """ 
         self.img_mean, self.img_std = self.compute_mean_std_single_image()
         self.augm.mean = self.img_mean
         self.augm.std = self.img_std
 
     def compute_mean_std_single_image(self):
-        """Compute mean and std of the first image in the dataset (all bands)."""
+        
         A_path = get_img_path(self.root_dir, self.img_name_list[0])
         if self.data_name == 'SenForFlood':
             img = load_multispectral_image(A_path)  # shape: (bands, H, W)
@@ -147,9 +142,11 @@ class CDDataset(ImageDataset):
         else:
             img = np.asarray(Image.open(A_path).convert('RGB'))
         img = img.astype(np.float32) / 255.0
+
         mean = img.mean(axis=(0, 1))  # shape: (bands,)
         std = img.std(axis=(0, 1))    # shape: (bands,)
-        return mean, std
+        return mean, std  """
+
 
     def __getitem__(self, index):
         name = self.img_name_list[index]

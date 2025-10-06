@@ -195,7 +195,8 @@ class CDTrainer():
 
         pred = torch.argmax(self.G_pred, dim=1, keepdim=True)
         pred_vis = pred * 255
-        #print(pred)
+        #rasterio.plot.show(self.G_pred[0,0,:,:].cpu().detach().numpy())
+        #print(pred,"aaa")
         return pred_vis
 
     def _save_checkpoint(self, ckpt_name):
@@ -263,7 +264,7 @@ class CDTrainer():
             #vis_pred = resize(vis_pred, target_shape)
             #print(f"visgt: {vis_gt.shape}, vispred: {vis_pred.shape}, target: {target_shape}")
             
-            print(f"\n\n\nattempting to conacat {vis_pred.shape, vis_gt.shape}")
+            #print(f"\n\n\nattempting to conacat {vis_pred.shape, vis_gt.shape}")
             vis = np.concatenate([vis_pred[:,:,0], vis_gt[:,:,0]], axis=0)
             vis = np.clip(vis, a_min=0.0, a_max=255.0)
 
@@ -357,7 +358,7 @@ class CDTrainer():
                 self._forward_pass(batch)
                 #print(f"Prediction min/max: {self.G_pred.min()}, {self.G_pred.max()}\n label min/max: {batch['L'].min()}, {batch['L'].max()}   ")
                 # update G
-                
+                #print("mean-std:",batch['A'].mean(), batch['A'].std())
                 self.optimizer_G.zero_grad()
                 self._backward_G()
                 #print(self.G_pred)
