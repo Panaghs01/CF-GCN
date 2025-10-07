@@ -104,6 +104,7 @@ class CDDataAugmentation:
         """
         
         if rasterio_read:
+
             # Use numpy and torchvision transforms
             random_base = 0.5
             # Random horizontal flip
@@ -149,14 +150,21 @@ class CDDataAugmentation:
                 
                 imgs = [torch.from_numpy(img.copy()).float() for img in imgs]
                 labels = [torch.from_numpy(label.copy()).long() for label in labels]
-                imgs = [(x - x.min()) / (x.max() - x.min()) for x in imgs]  # Normalize to [0, 1]
+                if not self.img_size_dynamic:
+                    if imgs[0].size != (self.img_size, self.img_size):
+                        imgs = [TF.resize(img, [self.img_size, self.img_size], interpolation=3)
+                                for img in imgs]
+                        labels = [TF.resize(img, [self.img_size, self.img_size], interpolation=0)
+                                for img in labels]
+                        
+                #imgs = [(x - x.min()) / (x.max() - x.min()) for x in imgs]  # Normalize to [0, 1]
                 #print(imgs[0].shape)
                 
-                #imgs = [TF.normalize(img, mean=[0.5]*8,std=[0.5]*8)
+                imgs = [TF.normalize(img, mean=[0.5]*6,std=[0.5]*6) for img in imgs]
 
 
-                imgs = [TF.normalize(img, mean=self.mean, std=self.std) for img in imgs]
-                imgs = [torch.nan_to_num(img) for img in imgs]
+                #imgs = [TF.normalize(img, mean=self.mean, std=self.std) for img in imgs]
+                #imgs = [torch.nan_to_num(img) for img in imgs]
                 #for c in range(len(imgs[0])):
                 #    print(f"channel {c} unique values: {torch.unique(imgs[0][c])}")
             return imgs, labels

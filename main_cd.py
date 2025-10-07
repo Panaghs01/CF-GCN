@@ -64,6 +64,7 @@ if __name__ == '__main__':
     parser.add_argument('--lr_policy', default='linear', type=str,
                         help='linear | step')
     parser.add_argument('--lr_decay_iters', default=100, type=int)
+    parser.add_argument('--accumulation_steps', default=0, type=int)
 
     args = parser.parse_args()
     utils.get_device(args)

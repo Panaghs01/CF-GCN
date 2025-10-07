@@ -73,6 +73,7 @@ class CDTrainer():
         self.dataloaders = dataloaders
         self.data_name = args.data_name
         self.n_class = args.n_class
+        self.accumlation_steps = args.accumulation_steps
         # define G
         self.net_G = define_G(args=args, gpu_ids=args.gpu_ids)
 
@@ -137,6 +138,10 @@ class CDTrainer():
             self._pxl_loss = cross_entropy
         elif args.loss == 'bce':
             self._pxl_loss = losses.binary_ce
+        elif args.loss == 'dice':
+            self._pxl_loss = losses.dice_loss
+        elif args.loss == 'ce_dice':
+            self._pxl_loss = losses.CE_with_Dice
         else:
             raise NotImplemented(args.loss)
 
@@ -356,13 +361,19 @@ class CDTrainer():
             for self.batch_id, batch in enumerate(self.dataloaders['train'], 0):
                 
                 self._forward_pass(batch)
-                #print(f"Prediction min/max: {self.G_pred.min()}, {self.G_pred.max()}\n label min/max: {batch['L'].min()}, {batch['L'].max()}   ")
+                #print(f"Prediction min/max: {self.G_pred.min()}, {self.G_pred.max()}\n iomg : {batch['A']}")
                 # update G
                 #print("mean-std:",batch['A'].mean(), batch['A'].std())
-                self.optimizer_G.zero_grad()
                 self._backward_G()
-                #print(self.G_pred)
-                self.optimizer_G.step()
+                if self.accumlation_steps > 0:
+                    if (self.batch_id + 1) % self.accumlation_steps == 0:
+                        self.optimizer_G.step()
+                        self.optimizer_G.zero_grad()
+                else:
+                    self.optimizer_G.step()
+                    self.optimizer_G.zero_grad()
+
+
                 self._collect_running_batch_states()
                 self._timer_update()
 
