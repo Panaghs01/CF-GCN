@@ -131,7 +131,8 @@ def define_G(args, init_type='normal', init_gain=0.02, gpu_ids=[]):
         net = BASE_GCN(input_nc=6, output_nc=2,  resnet_stages_num=4)
     elif args.net_G == 'base_GCN':
         net = BASE_GCN(input_nc=3, output_nc=2,  resnet_stages_num=4)
-
+    if args.net_G == 'base_GCN_with_fusion':
+        net = BASE_GCN_WITH_FUSION(input_nc=6, output_nc=2,  resnet_stages_num=4)
     else:
         raise NotImplementedError('Generator model name [%s] is not recognized' % args.net_G)
     return init_net(net, init_type, init_gain, gpu_ids)
@@ -488,11 +489,13 @@ class BASE_GCN_WITH_FUSION(ResNet):
                  resnet_stages_num=4,
                  if_upsample_2x=True,
                  pool_size=2,
-                 backbone='resnet50'):
+                 backbone='resnet50',
+                 s1_input_nc=3):
         super(BASE_GCN, self).__init__(input_nc, output_nc, backbone=backbone,
                                                resnet_stages_num=resnet_stages_num,
                                                if_upsample_2x=if_upsample_2x,
                                                )
+        self.s1_input_nc = s1_input_nc
         self.pooling_size = pool_size
         self.cfgcn = CFGCNHead(612, 256, num_classes=64)        # 612=256+256+100
         self.cfgcndecode = CFGCNHead(306, 128, num_classes=32)
@@ -511,7 +514,41 @@ class BASE_GCN_WITH_FUSION(ResNet):
             nn.GroupNorm(256),
             nn.ReLU(inplace=True)
         )
+        self.s1_conv = nn.Conv2d(s1_input_nc,64, kernel_size=7, padding=3, stride=2,bias=False)
 
+    def forward_single(self, x):
+        # resnet layers
+        if x.shape[1] == self.s1_input_nc:
+            x = self.s1_conv(x)
+        else:
+            x = self.resnet.conv1(x)
+        x = self.resnet.bn1(x)
+        x = self.resnet.relu(x)
+        # 32,64,128,128  | BCWH |  senforflood: 2,64,256,256
+        # 第一层
+        x1_rfb = self.rfb2_1(x)
+        x = self.resnet.maxpool(x)
+        x_4 = self.resnet.layer1(x)  # 1/4, in=64, out=64
+        # 第二层的
+        x2_rfb = self.rfb3_1(x_4)
+        x_8 = self.resnet.layer2(x_4)  # 1/8, in=64,base_transformer_pos_s4
+        # 第3层
+        x3_rfb = self.rfb4_1(x_8)
+
+        if self.resnet_stages_num > 3:
+            x_8 = self.resnet.layer3(x_8)  # 1/8, in=128, out=256
+        if self.resnet_stages_num == 5:
+            x_8 = self.resnet.layer4(x_8)  # 1/32, in=256, out=512
+        elif self.resnet_stages_num > 5:
+            raise NotImplementedError
+
+        edge_feat = self.edge(x3_rfb, x2_rfb, x1_rfb)
+        alledges = F.interpolate(edge_feat, size=(64,64), mode='bilinear', align_corners=True)  #TODO 64-32
+
+        # resnet50
+        x_8 = self.pre(x_8)
+
+        return x_8, alledges, x3_rfb, x2_rfb, x1_rfb
 
     def forward(self, x1, x2, x3, x4):
         # forward backbone resnet

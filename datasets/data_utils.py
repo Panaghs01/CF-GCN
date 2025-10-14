@@ -159,8 +159,8 @@ class CDDataAugmentation:
                         
                 #imgs = [(x - x.min()) / (x.max() - x.min()) for x in imgs]  # Normalize to [0, 1]
                 #print(imgs[0].shape)
-                
-                imgs = [TF.normalize(img, mean=[0.5]*6,std=[0.5]*6) for img in imgs]
+
+                imgs = [TF.normalize(img, mean=[0.5]*img.shape[0],std=[0.5]*img.shape[0]) for img in imgs]
 
 
                 #imgs = [TF.normalize(img, mean=self.mean, std=self.std) for img in imgs]
