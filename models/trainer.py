@@ -200,8 +200,7 @@ class CDTrainer():
 
         pred = torch.argmax(self.G_pred, dim=1, keepdim=True)
         pred_vis = pred * 255
-        #rasterio.plot.show(self.G_pred[0,0,:,:].cpu().detach().numpy())
-        #print(pred,"aaa")
+
         return pred_vis
 
     def _save_checkpoint(self, ckpt_name):
@@ -336,6 +335,13 @@ class CDTrainer():
         self.G_pred = self.net_G(img_in1, img_in2)
         #print(self.G_pred.min(), self.G_pred.max())
 
+    def _forward_pass_fusion(self,batch):
+        self.batch = batch
+        img_in1 = batch['A'].to(self.device)
+        img_in2 = batch['B'].to(self.device)
+        img_in3 = batch['C'].to(self.device)
+        img_in4 = batch['D'].to(self.device)
+        self.G_pred = self.net_G(img_in1, img_in2, img_in3, img_in4)
 
 
     def _backward_G(self):

@@ -2,8 +2,6 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader
 from torchvision import utils
-from datasets.CD_dataset import CDDataset
-
 import data_config
 from datasets import CD_dataset as cd
 
@@ -42,7 +40,7 @@ def get_loader(data_name, img_size=256, batch_size=8, split='test',
     label_transform = dataConfig.label_transform
 
     if dataset == 'CDDataset':
-        data_set = CDDataset(root_dir=root_dir, split=split,data_name=data_name,
+        data_set = cd.CDDataset(root_dir=root_dir, split=split,data_name=data_name,
                                  img_size=img_size, is_train=is_train,
                                  label_transform=label_transform)
     else:
@@ -68,13 +66,26 @@ def get_loaders(args):
     if hasattr(args, 'split_val'):
         split_val = args.split_val
     if args.dataset == 'CDDataset':
-        training_set = CDDataset(root_dir=root_dir, split=split,
+        training_set = cd.CDDataset(root_dir=root_dir, split=split,
                                  img_size=args.img_size,
                                  data_name=args.data_name,
                                  is_train=True,
                                  label_transform=label_transform,
                                 )
-        val_set = CDDataset(root_dir=root_dir, split=split_val,
+        val_set = cd.CDDataset(root_dir=root_dir, split=split_val,
+                                 img_size=args.img_size,
+                                 data_name=args.data_name,
+                                 is_train=False,
+                                 label_transform=label_transform
+                               )
+    elif args.dataset == 'CDDataset_fusion':
+        training_set = cd.CDDataset_fusion(root_dir=root_dir, split=split,
+                                 img_size=args.img_size,
+                                 data_name=args.data_name,
+                                 is_train=True,
+                                 label_transform=label_transform,
+                                )
+        val_set = cd.CDDataset_fusion(root_dir=root_dir, split=split_val,
                                  img_size=args.img_size,
                                  data_name=args.data_name,
                                  is_train=False,

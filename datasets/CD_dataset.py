@@ -127,25 +127,6 @@ class CDDataset(ImageDataset):
         if data_name == 'SenForFlood':
             self.augm.mean = data_config.DataConfig().get_data_config('SenForFlood').mean
             self.augm.std = data_config.DataConfig().get_data_config('SenForFlood').std
-        
-    """ 
-        self.img_mean, self.img_std = self.compute_mean_std_single_image()
-        self.augm.mean = self.img_mean
-        self.augm.std = self.img_std
-
-    def compute_mean_std_single_image(self):
-        
-        A_path = get_img_path(self.root_dir, self.img_name_list[0])
-        if self.data_name == 'SenForFlood':
-            img = load_multispectral_image(A_path)  # shape: (bands, H, W)
-            img = np.transpose(img, (1, 2, 0))      # (H, W, bands)
-        else:
-            img = np.asarray(Image.open(A_path).convert('RGB'))
-        img = img.astype(np.float32) / 255.0
-
-        mean = img.mean(axis=(0, 1))  # shape: (bands,)
-        std = img.std(axis=(0, 1))    # shape: (bands,)
-        return mean, std  """
 
 
     def __getitem__(self, index):
@@ -178,28 +159,26 @@ class CDDataset(ImageDataset):
         with rasterio.open(L_path) as src:
             label = src.read()  
             label = (label > 0).astype(np.uint8)  # binarize 0/1
-            #rasterio.plot.show(label)
-            #print(label.shape)
 
-
-        
         #  二分类中，前景标注为255
         if self.label_transform == 'norm':
             label = label // 255
-        #print(f"A:{img.shape}, B:{img_B.shape}, L:{label.shape}, uniq={torch.unique(label)}"))
-        #img = scale(img)
-        #img_B = scale(img_B)
-        #rasterio.plot.show(img[4:7])
 
         [img, img_B], [label] = self.augm.transform([np.asarray(img, np.uint8),\
                                                       img_B], [label], to_tensor=self.to_tensor,rasterio_read=self.raster)
         label = label.long() 
 
-        #plt.imshow(np.transpose(img.numpy(),(1,2,0)))
-        #plt.show()
-
-        #print(torch.unique(img))
-        # print(label.max())
-        #label = label.unsqueeze(0) 
         return {'name': name, 'A': img, 'B': img_B, 'L': label}
 
+class CDDataset_fusion(ImageDataset):
+
+    def __init__(self, root_dir, img_size, data_name, split='train', is_train=True, label_transform=None,
+                 to_tensor=True):
+        super(CDDataset_fusion, self).__init__(root_dir, img_size=img_size, split=split, is_train=is_train,
+                                        to_tensor=to_tensor)
+        self.label_transform = label_transform
+        self.data_name = data_name
+        self.raster = True if self.data_name in ['SenForFlood', 'OMBRIA'] else False
+        if data_name == 'SenForFlood':
+            self.augm.mean = data_config.DataConfig().get_data_config('SenForFlood').mean
+            self.augm.std = data_config.DataConfig().get_data_config('SenForFlood').std

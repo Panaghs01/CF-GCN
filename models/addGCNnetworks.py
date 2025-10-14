@@ -220,7 +220,7 @@ class ResNet(torch.nn.Module):
         x = self.resnet.conv1(x)
         x = self.resnet.bn1(x)
         x = self.resnet.relu(x)
-        # 32,64,128,128
+        # 32,64,128,128  | BCWH |  senforflood: 2,64,256,256
         # 第一层
         x1_rfb = self.rfb2_1(x)
         x = self.resnet.maxpool(x)
@@ -427,7 +427,7 @@ class BASE_GCN(ResNet):
         # forward backbone resnet
         x1, alledges1, A3, A2, A1 = self.forward_single(x1)
         x2, alledges2, B3, B2, B1 = self.forward_single(x2)
-        #print("a")
+
         # KRMmask
         x1_coarse = x1
         x2_coarse = x2
@@ -446,6 +446,109 @@ class BASE_GCN(ResNet):
         token1, token2 = self.tokens.chunk(2, dim=1)
 
         #print(x1.shape,x2.shape,"aaa")
+        x1 = torch.cat([x1, alledges1], dim=1)
+        x2 = torch.cat([x2, alledges2], dim=1)
+
+        # decoder
+        x1 = self.cfgcndecode(x1, token1)
+        x2 = self.cfgcndecode(x2, token2)
+
+        # KRM
+        x1_mask = self.mask_generation(x1)
+        x2_mask = self.mask_generation(x2)
+
+        token1_mask = self.mask_generation(token1)
+        token2_mask = self.mask_generation(token2)
+
+        # one-temple KRM
+        x1_krm_corase = self.krm(torch.cat((x1, x1_coarse), dim=1), x1_mask, x1_coarse_mask)
+        x1_krm_token = self.krmtoken(torch.cat((x1, token1), dim=1), x1_mask, token1_mask)
+        x1_krm = self.fusion_conv(torch.cat((x1_krm_corase, x1_krm_token), dim=1))
+
+        # other-temple KRM
+        x2_krm_corase = self.krm(torch.cat((x2, x2_coarse), dim=1), x2_mask, x2_coarse_mask)
+        x2_krm_token = self.krmtoken(torch.cat((x2, token2), dim=1), x2_mask, token2_mask)
+        x2_krm = self.fusion_conv(torch.cat((x2_krm_corase, x2_krm_token), dim=1))
+
+        # feature differencing
+        x = torch.abs(x1_krm - x2_krm)
+        x = self.upsamplex2(x)
+        x = self.upsamplex4(x)
+        x = self.classifier(x)
+        if self.output_sigmoid:
+            x = self.sigmoid(x)
+        return x
+
+class BASE_GCN_WITH_FUSION(ResNet):
+    """
+    Resnet of 8 downsampling + BIT + bitemporal feature Differencing + a small CNN
+    """
+
+    def __init__(self, input_nc, output_nc,
+                 resnet_stages_num=4,
+                 if_upsample_2x=True,
+                 pool_size=2,
+                 backbone='resnet50'):
+        super(BASE_GCN, self).__init__(input_nc, output_nc, backbone=backbone,
+                                               resnet_stages_num=resnet_stages_num,
+                                               if_upsample_2x=if_upsample_2x,
+                                               )
+        self.pooling_size = pool_size
+        self.cfgcn = CFGCNHead(612, 256, num_classes=64)        # 612=256+256+100
+        self.cfgcndecode = CFGCNHead(306, 128, num_classes=32)
+        self.conv_c = nn.Conv2d(256, 32, kernel_size=3, padding=1)
+        self.krm = KnowledgeReviewModule(320, 64)
+        self.krmtoken = KnowledgeReviewModule(128, 64)
+        self.mask_generation = PredictionHead(64)
+        self.coarse_mask_generation = PredictionHead(256)
+        self.fusion_conv = nn.Sequential(
+            nn.Conv2d(128, 64, kernel_size=1),
+            nn.GroupNorm(64),
+            nn.ReLU(inplace=True)
+        )
+        self.reduction = nn.Sequential(
+            nn.Conv2d(512, 256, kernel_size=1),
+            nn.GroupNorm(256),
+            nn.ReLU(inplace=True)
+        )
+
+
+    def forward(self, x1, x2, x3, x4):
+        # forward backbone resnet
+        x1, alledges1, A3, A2, A1 = self.forward_single(x1)
+        x2, alledges2, B3, B2, B1 = self.forward_single(x2)
+
+        x3, alledges3, C3, C2, C1 = self.forward_single(x3)
+        x4, alledges4, D3, D2, D1 = self.forward_single(x4)
+        
+        # feature fusion
+        x1 = self.reduction(torch.cat((x1, x3), dim=1))
+        x2 = self.reduction(torch.cat((x2, x4), dim=1))
+
+        alledges1 = torch.cat((alledges1, alledges3), dim=1)
+        alledges2 = torch.cat((alledges2, alledges4), dim=1)
+
+        # KRMmask
+        x1_coarse = x1
+        x2_coarse = x2
+        x1_coarse_mask = self.coarse_mask_generation(x1)
+        x2_coarse_mask = self.coarse_mask_generation(x2)
+
+
+        edge_abs_S2 = self.edge(A3-B3, A2-B2, A1-B1)
+        edge_abs_S1 = self.edge(C3-D3, C2-D2, C1-D1)
+        alledge_abs_S2 = F.interpolate(edge_abs_S2, size=(64,64), mode='bilinear', align_corners=True)
+        alledge_abs_S1 = F.interpolate(edge_abs_S1, size=(64,64), mode='bilinear', align_corners=True)
+
+        alledge_abs = torch.cat((alledge_abs_S2, alledge_abs_S1), dim=1)    # (B, 100, 64, 64)
+
+        #encoder
+
+        self.tokens_ = torch.cat([x1, x2, alledge_abs], dim=1)  # (B, 612, 64, 64)  x1,x2:256C
+        self.tokens = self.cfgcn(self.tokens_, None)
+
+        token1, token2 = self.tokens.chunk(2, dim=1)
+
         x1 = torch.cat([x1, alledges1], dim=1)
         x2 = torch.cat([x2, alledges2], dim=1)
 
