@@ -1,27 +1,44 @@
 #!/bin/bash
 
-mkdir -p "A" "B" "MASKS"
+mkdir -p "A" "B" "MASKS" "C" "D"
 
+sat=$1  # "S1" or "S2"
+root=$2
+mask=$3
 modes=('before' 'during')
 counterA=1
 counterB=1
 counterM=1
+
+if [[ $sat == 's1' ]]; then
+    bef='C'
+    dur='D'
+else
+    bef='A'
+    dur='B'
+fi
+
 for mode in ${modes[@]}; do
-    for folder in CEMS/*/; do
+    for folder in ${root}/CEMS/*/; do
         if [[ -d "$folder" ]]; then
-            echo "inside folder: $folder/s2_${mode}_flood"
-            if [[ -d "$folder/s2_${mode}_flood" ]]; then
-                for img in "$folder/s2_${mode}_flood"/*; do
+            echo "inside folder: $folder/${sat}_${mode}_flood"
+            if [[ -d "$folder/${sat}_${mode}_flood" ]]; then
+                for img in "$folder/${sat}_${mode}_flood"/*; do
                     ext="${img##*.}"
+
                     if [[ $mode == 'before' ]]; then
-                        cp "$img" "A/s2_$(printf %06d $counterA).$ext"
+                    
+                        cp "$img" "${bef}/s2_$(printf %06d $counterA).$ext"
                         counterA=$((counterA+1))
                     else
-                        cp "$img" "B/s2_$(printf %06d $counterB).$ext"
+                        cp "$img" "${dur}/s2_$(printf %06d $counterB).$ext"
                         counterB=$((counterB+1))
                     fi
                     
                 done
+            fi
+            if [[ $mask == 'no' ]];then
+                continue
             fi
             if [[ -d "$folder/flood_mask" ]]; then
                 for img in "$folder/flood_mask"/*; do
@@ -33,20 +50,23 @@ for mode in ${modes[@]}; do
         fi
     done
 
-    for folder in DFO/*/*/; do
+    for folder in ${root}/DFO/*/*/; do
         if [[ -d "$folder" ]]; then
-            echo "inside folder: $folder/s2_${mode}_flood"
-            if [[ -d "$folder/s2_${mode}_flood" ]]; then
-                for img in "$folder/s2_${mode}_flood"/*; do
+            echo "inside folder: $folder/${sat}_${mode}_flood"
+            if [[ -d "$folder/${sat}_${mode}_flood" ]]; then
+                for img in "$folder/${sat}_${mode}_flood"/*; do
                     ext="${img##*.}"
                     if [[ $mode == 'before' ]]; then
-                        cp "$img" "A/s2_$(printf %06d $counterA).$ext"
+                        cp "$img" "${bef}/s2_$(printf %06d $counterA).$ext"
                         counterA=$((counterA+1))
                     else
-                        cp "$img" "B/s2_$(printf %06d $counterB).$ext"
+                        cp "$img" "${dur}/s2_$(printf %06d $counterB).$ext"
                         counterB=$((counterB+1))
                     fi
                 done
+            fi
+            if [[ $mask == 'no' ]];then
+                continue
             fi
             if [[ -d "$folder/flood_mask" ]]; then
                 for img in "$folder/flood_mask"/*; do

@@ -49,6 +49,10 @@ class Identity(nn.Module):
     def forward(self, x):
         return x
 
+def edge_resize(x):
+    input_ = x.shape[2]*4
+    target = (input_//8, input_//8)
+    return target
 
 def get_norm_layer(norm_type='instance'):
     """Return a normalization layer
@@ -240,7 +244,7 @@ class ResNet(torch.nn.Module):
             raise NotImplementedError
 
         edge_feat = self.edge(x3_rfb, x2_rfb, x1_rfb)
-        alledges = F.interpolate(edge_feat, size=(64,64), mode='bilinear', align_corners=True)  #TODO 64-32
+        alledges = F.interpolate(edge_feat, size=(edge_resize(x)), mode='bilinear', align_corners=True)  #TODO 64-32
 
         # resnet50
         x_8 = self.pre(x_8)
@@ -436,7 +440,7 @@ class BASE_GCN(ResNet):
         x2_coarse_mask = self.coarse_mask_generation(x2)
 
         edge_abs = self.edge(A3-B3, A2-B2, A1-B1)
-        alledge_abs = F.interpolate(edge_abs, size=(64,64), mode='bilinear', align_corners=True)
+        alledge_abs = F.interpolate(edge_abs, size=(edge_resize(x1)), mode='bilinear', align_corners=True)
 
         #  encoder
         #print(x1.shape,x2.shape,alledge_abs.shape,type(x1),'\n\n\n\n')
@@ -544,15 +548,16 @@ class BASE_GCN_WITH_FUSION(ResNet):
             raise NotImplementedError
 
         edge_feat = self.edge(x3_rfb, x2_rfb, x1_rfb)
-        alledges = F.interpolate(edge_feat, size=(64,64), mode='bilinear', align_corners=True)  #TODO 64-32
+        alledges = F.interpolate(edge_feat, size=(edge_resize(x)), mode='bilinear', align_corners=True)  #TODO 64-32
 
         # resnet50
         x_8 = self.pre(x_8)
-
+        #print(x_8.shape)
         return x_8, alledges, x3_rfb, x2_rfb, x1_rfb
 
     def forward(self, x1, x2, x3, x4):
         # forward backbone resnet
+        target = (x1.shape[2]//8, x1.shape[3]//8)
         x1, alledges1, A3, A2, A1 = self.forward_single(x1)
         x2, alledges2, B3, B2, B1 = self.forward_single(x2)
 
@@ -562,7 +567,7 @@ class BASE_GCN_WITH_FUSION(ResNet):
         # feature fusion
         x1 = self.reduction(torch.cat((x1, x3), dim=1))
         x2 = self.reduction(torch.cat((x2, x4), dim=1))
-
+        #print(f"x1 shape after fusion: {x1.shape}, x2 shape after fusion: {x2.shape}")
         alledges1 = torch.cat((alledges1, alledges3), dim=1)
         alledges2 = torch.cat((alledges2, alledges4), dim=1)
 
@@ -575,13 +580,13 @@ class BASE_GCN_WITH_FUSION(ResNet):
 
         edge_abs_S2 = self.edge(A3-B3, A2-B2, A1-B1)
         edge_abs_S1 = self.edge(C3-D3, C2-D2, C1-D1)
-        alledge_abs_S2 = F.interpolate(edge_abs_S2, size=(64,64), mode='bilinear', align_corners=True)
-        alledge_abs_S1 = F.interpolate(edge_abs_S1, size=(64,64), mode='bilinear', align_corners=True)
+        alledge_abs_S2 = F.interpolate(edge_abs_S2, size=(target), mode='bilinear', align_corners=True)
+        alledge_abs_S1 = F.interpolate(edge_abs_S1, size=(target), mode='bilinear', align_corners=True)
 
         alledge_abs = torch.cat((alledge_abs_S2, alledge_abs_S1), dim=1)    # (B, 100, 64, 64)
 
         #encoder
-
+        #print(f"x1:{x1.shape}, x2:{x2.shape}, alledge_abs:{alledge_abs.shape}")
         self.tokens_ = torch.cat([x1, x2, alledge_abs], dim=1)  # (B, 612, 64, 64)  x1,x2:256C
         self.tokens = self.cfgcn(self.tokens_, None)
 
