@@ -71,6 +71,7 @@ class CDTrainer():
     def __init__(self, args, dataloaders):
 
         self.dataloaders = dataloaders
+        self.dataset = args.dataset
         self.data_name = args.data_name
         self.n_class = args.n_class
         self.accumlation_steps = args.accumulation_steps
@@ -330,18 +331,17 @@ class CDTrainer():
 
     def _forward_pass(self, batch):
         self.batch = batch
-        img_in1 = batch['A'].to(self.device)
-        img_in2 = batch['B'].to(self.device)
-        self.G_pred = self.net_G(img_in1, img_in2)
+        if self.dataset == 'CDDataset_fusion':
+            img_in1 = batch['A'].to(self.device)
+            img_in2 = batch['B'].to(self.device)
+            img_in3 = batch['C'].to(self.device)
+            img_in4 = batch['D'].to(self.device)
+            self.G_pred = self.net_G(img_in1, img_in2, img_in3, img_in4)
+        else:
+            img_in1 = batch['A'].to(self.device)
+            img_in2 = batch['B'].to(self.device)
+            self.G_pred = self.net_G(img_in1, img_in2)
         #print(self.G_pred.min(), self.G_pred.max())
-
-    def _forward_pass_fusion(self,batch):
-        self.batch = batch
-        img_in1 = batch['A'].to(self.device)
-        img_in2 = batch['B'].to(self.device)
-        img_in3 = batch['C'].to(self.device)
-        img_in4 = batch['D'].to(self.device)
-        self.G_pred = self.net_G(img_in1, img_in2, img_in3, img_in4)
 
 
     def _backward_G(self):

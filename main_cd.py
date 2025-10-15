@@ -47,7 +47,7 @@ if __name__ == '__main__':
     parser.add_argument('--split', default="train", type=str)
     parser.add_argument('--split_val', default="val", type=str)
 
-    parser.add_argument('--img_size', default=256, type=int)
+    parser.add_argument('--img_size', default=512, type=int)
 
     # model
     parser.add_argument('--n_class', default=2, type=int)

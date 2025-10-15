@@ -26,7 +26,7 @@ IMG_POST_FOLDER_NAME = "B"
 IMG_S1_FOLDER_NAME = "C"
 IMG_POST_S1_FOLDER_NAME = "D"
 LIST_FOLDER_NAME = 'list'
-ANNOT_FOLDER_NAME = "MASKS"
+ANNOT_FOLDER_NAME = "mask"
 
 IGNORE = 255
 
@@ -140,14 +140,12 @@ class CDDataset(ImageDataset):
         name = self.img_name_list[index]
         A_path = get_img_path(self.root_dir, self.img_name_list[index % self.A_size])
         B_path = get_img_post_path(self.root_dir, self.img_name_list[index % self.A_size])
-        C_path = get_img_s1_path(self.root_dir, self.img_name_list[index % self.A_size])
-        D_path = get_img_post_s1_path(self.root_dir, self.img_name_list[index % self.A_size])
+
         if self.data_name=='SenForFlood':
 
             img = load_multispectral_image(A_path)  # shape: (H, W, 8)
             img_B = load_multispectral_image(B_path)
-            img_C = load_multispectral_image(C_path, channels=[0,1,2])  # shape: (H, W, 8)
-            img_D = load_multispectral_image(D_path, channels=[0,1,2])
+
         else:
             img = np.asarray(Image.open(A_path).convert('RGB'))
             # print(img_B.type())
@@ -198,10 +196,14 @@ class CDDataset_fusion(ImageDataset):
         name = self.img_name_list[index]
         A_path = get_img_path(self.root_dir, self.img_name_list[index % self.A_size])
         B_path = get_img_post_path(self.root_dir, self.img_name_list[index % self.A_size])
+        C_path = get_img_s1_path(self.root_dir, self.img_name_list[index % self.A_size])
+        D_path = get_img_post_s1_path(self.root_dir, self.img_name_list[index % self.A_size])
         if self.data_name=='SenForFlood':
 
             img = load_multispectral_image(A_path)  # shape: (H, W, 8)
             img_B = load_multispectral_image(B_path)
+            img_C = load_multispectral_image(C_path,channels=[0,1])  # shape: (H, W, 2)
+            img_D = load_multispectral_image(D_path,channels=[0,1])
         else:
             img = np.asarray(Image.open(A_path).convert('RGB'))
             # print(img_B.type())
@@ -229,8 +231,7 @@ class CDDataset_fusion(ImageDataset):
         if self.label_transform == 'norm':
             label = label // 255
 
-        [img, img_B], [label] = self.augm.transform([np.asarray(img, np.uint8),\
-                                                      img_B], [label], to_tensor=self.to_tensor,rasterio_read=self.raster)
+        [img, img_B, img_C, img_D], [label] = self.augm.transform([img,img_B,img_C,img_D], [label], to_tensor=self.to_tensor,rasterio_read=self.raster)
         label = label.long() 
 
-        return {'name': name, 'A': img, 'B': img_B, 'L': label}
+        return {'name': name, 'A': img, 'B': img_B, 'C': img_C, 'D': img_D, 'L': label}

@@ -490,15 +490,15 @@ class BASE_GCN_WITH_FUSION(ResNet):
                  if_upsample_2x=True,
                  pool_size=2,
                  backbone='resnet50',
-                 s1_input_nc=3):
-        super(BASE_GCN, self).__init__(input_nc, output_nc, backbone=backbone,
+                 s1_input_nc=2):
+        super(BASE_GCN_WITH_FUSION, self).__init__(input_nc, output_nc, backbone=backbone,
                                                resnet_stages_num=resnet_stages_num,
                                                if_upsample_2x=if_upsample_2x,
                                                )
         self.s1_input_nc = s1_input_nc
         self.pooling_size = pool_size
         self.cfgcn = CFGCNHead(612, 256, num_classes=64)        # 612=256+256+100
-        self.cfgcndecode = CFGCNHead(306, 128, num_classes=32)
+        self.cfgcndecode = CFGCNHead(356, 128, num_classes=32)
         self.conv_c = nn.Conv2d(256, 32, kernel_size=3, padding=1)
         self.krm = KnowledgeReviewModule(320, 64)
         self.krmtoken = KnowledgeReviewModule(128, 64)
@@ -506,18 +506,19 @@ class BASE_GCN_WITH_FUSION(ResNet):
         self.coarse_mask_generation = PredictionHead(256)
         self.fusion_conv = nn.Sequential(
             nn.Conv2d(128, 64, kernel_size=1),
-            nn.GroupNorm(64),
+            nn.GroupNorm(num_channels=64, num_groups=8),
             nn.ReLU(inplace=True)
         )
         self.reduction = nn.Sequential(
             nn.Conv2d(512, 256, kernel_size=1),
-            nn.GroupNorm(256),
+            nn.GroupNorm(num_channels=256, num_groups=8),
             nn.ReLU(inplace=True)
         )
         self.s1_conv = nn.Conv2d(s1_input_nc,64, kernel_size=7, padding=3, stride=2,bias=False)
 
     def forward_single(self, x):
         # resnet layers
+        #print(f"x shape: {x.shape}, s1_input_nc: {self.s1_input_nc}")
         if x.shape[1] == self.s1_input_nc:
             x = self.s1_conv(x)
         else:

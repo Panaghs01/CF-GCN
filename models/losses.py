@@ -2,7 +2,7 @@ import torch
 import torch.nn.functional as F
 import rasterio
 
-def cross_entropy(input, target, weight=torch.Tensor([0.35,0.65]).to('cuda'),ignore_index=255, reduction='mean'):
+def cross_entropy(input, target, weight=torch.Tensor([0.35,0.65]).to('cuda' if torch.cuda.is_available() else 'cpu'),ignore_index=255, reduction='mean'):
     """
     logSoftmax_with_loss
     :param input: torch.Tensor, N*C*H*W

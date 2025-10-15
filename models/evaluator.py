@@ -20,7 +20,7 @@ class CDEvaluator():
     def __init__(self, args, dataloader):
 
         self.dataloader = dataloader
-
+        self.dataset = args.dataset
         self.n_class = args.n_class
         # define G
         self.net_G = define_G(args=args, gpu_ids=args.gpu_ids)
@@ -155,9 +155,16 @@ class CDEvaluator():
 
     def _forward_pass(self, batch):
         self.batch = batch
-        img_in1 = batch['A'].to(self.device)
-        img_in2 = batch['B'].to(self.device)
-        self.G_pred = self.net_G(img_in1, img_in2)
+        if self.dataset=='CDDataset_fusion':
+            img_in1 = batch['A'].to(self.device)
+            img_in2 = batch['B'].to(self.device)
+            img_in3 = batch['C'].to(self.device)
+            img_in4 = batch['D'].to(self.device)
+            self.G_pred = self.net_G(img_in1, img_in2,img_in3,img_in4)
+        else:
+            img_in1 = batch['A'].to(self.device)
+            img_in2 = batch['B'].to(self.device)
+            self.G_pred = self.net_G(img_in1, img_in2)
 
     def eval_models(self,checkpoint_name='best_ckpt.pt'):
 
