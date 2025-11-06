@@ -27,7 +27,7 @@ class CDEvaluator():
         
         self.device = torch.device("cuda:%s" % args.gpu_ids[0] if torch.cuda.is_available() and len(args.gpu_ids)>0
                                    else "cpu")
-        replace_bn_with_gn(self.net_G, num_groups=8)
+        replace_bn_with_gn(self.net_G)
         self.net_G.to(self.device)
         print(self.device)
 
@@ -53,7 +53,7 @@ class CDEvaluator():
         self.is_training = False
         self.batch_id = 0
         self.epoch_id = 0
-        self.checkpoint_dir = args.checkpoint_dir
+        self.checkpoint_dir = args.checkpoint_root + '/' + args.project_name
         self.vis_dir = args.vis_dir
 
         # check and create model dir
@@ -66,6 +66,7 @@ class CDEvaluator():
     def _load_checkpoint(self, checkpoint_name='best_ckpt.pt'):
 
         if os.path.exists(os.path.join(self.checkpoint_dir, checkpoint_name)):
+
             self.logger.write('loading last checkpoint...\n')
             # load the entire checkpoint
             checkpoint = torch.load(os.path.join(self.checkpoint_dir, checkpoint_name), map_location=self.device)

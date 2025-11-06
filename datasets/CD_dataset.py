@@ -121,6 +121,62 @@ class ImageDataset(data.Dataset):
         """Return the total number of images in the dataset."""
         return self.A_size
 
+class CDDataset_s1only(ImageDataset):
+
+    def __init__(self, root_dir, img_size, data_name, split='train', is_train=True, label_transform=None,
+                 to_tensor=True):
+        super(CDDataset, self).__init__(root_dir, img_size=img_size, split=split, is_train=is_train,
+                                        to_tensor=to_tensor)
+        self.label_transform = label_transform
+        self.data_name = data_name
+        self.raster = True if self.data_name in ['SenForFlood', 'OMBRIA'] else False
+        if data_name == 'SenForFlood':
+            self.augm.mean = data_config.DataConfig().get_data_config('SenForFlood').mean
+            self.augm.std = data_config.DataConfig().get_data_config('SenForFlood').std
+
+
+    def __getitem__(self, index):
+        name = self.img_name_list[index]
+        A_path = get_img_s1_path(self.root_dir, self.img_name_list[index % self.A_size])
+        B_path = get_img_post_s1_path(self.root_dir, self.img_name_list[index % self.A_size])
+
+        if self.data_name=='SenForFlood':
+
+            img = load_multispectral_image(A_path)  # shape: (H, W, 8)
+            img_B = load_multispectral_image(B_path)
+
+        else:
+            img = np.asarray(Image.open(A_path).convert('RGB'))
+            # print(img_B.type())
+            img_B = np.asarray(Image.open(B_path).convert('RGB'))
+
+
+        L_path = get_label_path(self.root_dir, self.img_name_list[index % self.A_size])
+
+        if self.data_name=='WHU':
+            # 风格统一，使用傅立叶变换
+           im_src = np.asarray(img, np.float32)
+           im_trg = np.asarray(img_B, np.float32)
+
+           im_src = im_src.transpose((2, 0, 1))
+           im_trg = im_trg.transpose((2, 0, 1))
+
+           src_in_trg = FDA_source_to_target_np(im_src, im_trg, L=0.01)
+            #  A偏向于B风格
+           img = src_in_trg.transpose((1, 2, 0))
+        with rasterio.open(L_path) as src:
+            label = src.read()  
+            label = (label > 0).astype(np.uint8)  # binarize 0/1
+
+        #  二分类中，前景标注为255
+        if self.label_transform == 'norm':
+            label = label // 255
+
+        [img, img_B], [label] = self.augm.transform([np.asarray(img, np.uint8),\
+                                                      img_B], [label], to_tensor=self.to_tensor,rasterio_read=self.raster)
+        label = label.long() 
+
+        return {'name': name, 'A': img, 'B': img_B, 'L': label}
 
 class CDDataset(ImageDataset):
 

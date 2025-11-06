@@ -133,9 +133,11 @@ def define_G(args, init_type='normal', init_gain=0.02, gpu_ids=[]):
 
     if args.data_name == 'SenForFlood' and args.net_G == 'base_GCN':
         net = BASE_GCN(input_nc=6, output_nc=2,  resnet_stages_num=4)
+    elif args.net_G == 'base_GCN' and args.dataset == 'CDDataset_s1only':
+        net = BASE_GCN(input_nc=2, output_nc=2,  resnet_stages_num=4)
     elif args.net_G == 'base_GCN':
         net = BASE_GCN(input_nc=3, output_nc=2,  resnet_stages_num=4)
-    if args.net_G == 'base_GCN_with_fusion':
+    elif args.net_G == 'base_GCN_with_fusion':
         net = BASE_GCN_WITH_FUSION(input_nc=6, output_nc=2,  resnet_stages_num=4)
     else:
         raise NotImplementedError('Generator model name [%s] is not recognized' % args.net_G)
@@ -429,6 +431,7 @@ class BASE_GCN(ResNet):
 
 
     def forward(self, x1, x2):
+        target = (x1.shape[2]//8, x1.shape[3]//8)
         # forward backbone resnet
         x1, alledges1, A3, A2, A1 = self.forward_single(x1)
         x2, alledges2, B3, B2, B1 = self.forward_single(x2)
@@ -440,7 +443,7 @@ class BASE_GCN(ResNet):
         x2_coarse_mask = self.coarse_mask_generation(x2)
 
         edge_abs = self.edge(A3-B3, A2-B2, A1-B1)
-        alledge_abs = F.interpolate(edge_abs, size=(edge_resize(x1)), mode='bilinear', align_corners=True)
+        alledge_abs = F.interpolate(edge_abs, size=(target), mode='bilinear', align_corners=True)
 
         #  encoder
         #print(x1.shape,x2.shape,alledge_abs.shape,type(x1),'\n\n\n\n')

@@ -2,7 +2,7 @@ import torch
 import torch.nn.functional as F
 import rasterio
 
-def cross_entropy(input, target, weight=torch.Tensor([0.35,0.65]).to('cuda' if torch.cuda.is_available() else 'cpu'),ignore_index=255, reduction='mean'):
+def cross_entropy(input, target, weight=torch.Tensor([0.8,1]).to('cuda' if torch.cuda.is_available() else 'cpu'),ignore_index=255, reduction='mean'):
     """
     logSoftmax_with_loss
     :param input: torch.Tensor, N*C*H*W
@@ -40,6 +40,6 @@ def dice_loss(input, target, smooth=1e-5):
 
     return 1 - dice.mean()
 
-def CE_with_Dice(input,target,weights=[0.9,1],smooth=1e-5,ignore_index=255):
+def CE_with_Dice(input,target,weights=[0.7,1],smooth=1e-5,ignore_index=255):
 
     return weights[0]*cross_entropy(input,target) + weights[1]*dice_loss(input,target,smooth)

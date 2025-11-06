@@ -43,6 +43,10 @@ def get_loader(data_name, img_size=256, batch_size=8, split='test',
         data_set = cd.CDDataset(root_dir=root_dir, split=split,data_name=data_name,
                                  img_size=img_size, is_train=is_train,
                                  label_transform=label_transform)
+    elif dataset == 'CDDataset_fusion':
+        data_set = cd.CDDataset_fusion(root_dir=root_dir, split=split,data_name=data_name,
+                                 img_size=img_size, is_train=is_train,
+                                 label_transform=label_transform)
     else:
         raise NotImplementedError(
             'Wrong dataset name %s (choose one from [CDDataset])'
@@ -50,7 +54,7 @@ def get_loader(data_name, img_size=256, batch_size=8, split='test',
 
     shuffle = is_train
     dataloader = DataLoader(data_set, batch_size=batch_size,
-                                 shuffle=shuffle, num_workers=4)
+                                 shuffle=shuffle, num_workers=8,pin_memory=True)
 
     return dataloader
 

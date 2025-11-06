@@ -17,6 +17,9 @@ from misc.logger_tool import Logger, Timer
 
 from utils import de_norm
 
+def count_parameters(model):
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
+
 def replace_bn_with_gn(module, num_groups=32):
     """
     Recursively replaces all BatchNorm layers in a module with GroupNorm layers.
@@ -352,7 +355,7 @@ class CDTrainer():
 
     def train_models(self):
         self._load_checkpoint()
-
+        print(count_parameters(self.net_G))
         # loop over the dataset multiple times
         for self.epoch_id in range(self.epoch_to_start, self.max_num_epochs):
 
