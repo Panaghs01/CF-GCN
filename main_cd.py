@@ -54,7 +54,7 @@ if __name__ == '__main__':
     parser.add_argument('--net_G', default='base_GCN', type=str,
                         help='base_resnet18 | base_transformer_pos_s4 | '
                              'base_transformer_pos_s4_dd8 | '
-                             'base_transformer_pos_s4_dd8_dedim8| base_GCN_with_fusion | base_GCN')
+                             'base_transformer_pos_s4_dd8_dedim8| base_GCN_with_fusion | base_GCN | mamba')
     parser.add_argument('--loss', default='ce', type=str)
 
     # optimizer
